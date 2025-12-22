@@ -3,32 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FridgeChef — Что приготовить?</title>
-    <meta name="description" content="Подбор рецептов из того, что есть в холодильнике.">
+    <title>ilovecook — Умный подбор рецептов</title>
+    <meta name="description" content="Готовь из того, что есть в холодильнике.">
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍳</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍🍳</text></svg>">
 </head>
 <body>
 
 <header class="app-header">
-    <div class="logo">🍳 FridgeChef</div>
+    <div class="logo">❤️ ilovecook</div>
     <button id="toggle-sidebar" class="mobile-only" aria-label="Открыть ингредиенты">🧾 Продукты</button>
 </header>
 
 <div class="app-container">
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
-            <h2>Ваш холодильник</h2>
+            <h2>Твой холодильник</h2>
             <button id="close-sidebar" class="mobile-only">✕</button>
         </div>
         
-        <input type="text" id="ingredient-search" placeholder="🔍 Найти продукт..." aria-label="Поиск ингредиентов">
+        <input type="text" id="ingredient-search" placeholder="🔍 Что у нас есть?..." aria-label="Поиск ингредиентов">
         
         <div id="ingredients-list" class="ingredients-list">
             <div class="loader">Загрузка продуктов...</div>
         </div>
 
-        <button id="clear-ingredients" class="btn-secondary">🗑 Очистить выбор</button>
+        <button id="clear-ingredients" class="btn-secondary">🗑 Сбросить всё</button>
     </aside>
 
     <main class="content">
@@ -41,15 +41,15 @@
             </label>
             <select id="filter-time" class="select-styled">
                 <option value="999">⏱ Любое время</option>
-                <option value="15">до 15 мин</option>
-                <option value="30">до 30 мин</option>
-                <option value="60">до 60 мин</option>
+                <option value="20">до 20 мин</option>
+                <option value="40">до 40 мин</option>
+                <option value="90">до 1.5 часов</option>
             </select>
-            <button id="show-favorites" class="btn-icon" title="Избранное">⭐</button>
+            <button id="show-favorites" class="btn-icon" title="Избранное">❤️</button>
         </section>
 
         <div id="recipes-grid" class="recipes-grid">
-            <div class="placeholder-text">Выберите продукты слева, чтобы найти рецепты.</div>
+            <div class="placeholder-text">Отметь продукты слева, и я скажу, что приготовить!</div>
         </div>
     </main>
 </div>
@@ -59,17 +59,17 @@
         <button class="modal-close" id="close-modal">✕</button>
         <div class="modal-header">
             <img id="modal-img" src="" alt="" class="modal-image" style="display: none;">
-            <h2 id="modal-title">Название</h2>
+            <h2 id="modal-title">Название блюда</h2>
         </div>
         <div class="modal-body">
             <h3>🛒 Ингредиенты</h3>
             <ul id="modal-ingredients" class="recipe-ing-list"></ul>
 
-            <h3>📜 Инструкция</h3>
+            <h3>👩‍🍳 Пошаговый рецепт</h3>
             <ol id="modal-steps" class="recipe-steps"></ol>
         </div>
         <div class="modal-footer">
-            <button class="btn-primary" onclick="window.closeRecipeModal()">Понятно, готовлю! 👨‍🍳</button>
+            <button class="btn-primary" onclick="window.closeRecipeModal()">Супер, готовлю!</button>
         </div>
     </div>
 </div>
