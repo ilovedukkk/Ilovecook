@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FridgeChef — Что приготовить?</title>
+    <meta name="description" content="Подбор рецептов из того, что есть в холодильнике.">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍳</text></svg>">
+</head>
+<body>
+
+<header class="app-header">
+    <div class="logo">🍳 FridgeChef</div>
+    <button id="toggle-sidebar" class="mobile-only" aria-label="Открыть ингредиенты">🧾 Продукты</button>
+</header>
+
+<div class="app-container">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Ваш холодильник</h2>
+            <button id="close-sidebar" class="mobile-only">✕</button>
+        </div>
+        
+        <input type="text" id="ingredient-search" placeholder="🔍 Найти продукт..." aria-label="Поиск ингредиентов">
+        
+        <div id="ingredients-list" class="ingredients-list">
+            <div class="loader">Загрузка продуктов...</div>
+        </div>
+
+        <button id="clear-ingredients" class="btn-secondary">🗑 Очистить выбор</button>
+    </aside>
+
+    <main class="content">
+        <section class="filters-bar">
+            <label class="chip">
+                <input type="checkbox" id="filter-veg"> 🥦 Вег
+            </label>
+            <label class="chip">
+                <input type="checkbox" id="filter-budget"> 💸 Эконом
+            </label>
+            <select id="filter-time" class="select-styled">
+                <option value="999">⏱ Любое время</option>
+                <option value="15">до 15 мин</option>
+                <option value="30">до 30 мин</option>
+                <option value="60">до 60 мин</option>
+            </select>
+            <button id="show-favorites" class="btn-icon" title="Избранное">⭐</button>
+        </section>
+
+        <div id="recipes-grid" class="recipes-grid">
+            <div class="placeholder-text">Выберите продукты слева, чтобы найти рецепты.</div>
+        </div>
+    </main>
+</div>
+
+<dialog id="shopping-dialog">
+    <h3>🛒 Список покупок</h3>
+    <ul id="shopping-list"></ul>
+    <button onclick="document.getElementById('shopping-dialog').close()">Закрыть</button>
+</dialog>
+
+<script type="module" src="scripts/app.js"></script>
+
+</body>
+</html>
