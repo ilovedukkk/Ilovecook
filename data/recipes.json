@@ -1,0 +1,32 @@
+[
+  {
+    "id": "omelette",
+    "name": "Классический омлет",
+    "time": 10,
+    "budget": true,
+    "vegetarian": true,
+    "required": ["egg", "milk"],
+    "optional": ["cheese", "salt"],
+    "image": "https://images.unsplash.com/photo-1510693206972-df098062cb71?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "carbonara_fake",
+    "name": "Паста Карбонара (простая)",
+    "time": 25,
+    "budget": false,
+    "vegetarian": false,
+    "required": ["pasta", "egg", "bacon", "cheese"],
+    "optional": ["pepper"],
+    "image": "https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "fried_potatoes",
+    "name": "Жареная картошка",
+    "time": 40,
+    "budget": true,
+    "vegetarian": true,
+    "required": ["potato", "onion"],
+    "optional": ["salt", "bacon"],
+    "image": "https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=600&q=80"
+  }
+]
