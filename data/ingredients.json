@@ -1,0 +1,14 @@
+[
+  { "id": "egg", "name": "Яйца", "category": "dairy" },
+  { "id": "milk", "name": "Молоко", "category": "dairy" },
+  { "id": "cheese", "name": "Сыр", "category": "dairy" },
+  { "id": "chicken", "name": "Курица", "category": "meat" },
+  { "id": "bacon", "name": "Бекон", "category": "meat" },
+  { "id": "potato", "name": "Картофель", "category": "vegetables" },
+  { "id": "onion", "name": "Лук", "category": "vegetables" },
+  { "id": "tomato", "name": "Томаты", "category": "vegetables" },
+  { "id": "rice", "name": "Рис", "category": "grains" },
+  { "id": "pasta", "name": "Макароны", "category": "grains" },
+  { "id": "salt", "name": "Соль", "category": "spices" },
+  { "id": "pepper", "name": "Перец", "category": "spices" }
+]
