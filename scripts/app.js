@@ -34,11 +34,11 @@ const dom = {
 // --- Initialization ---
 async function init() {
     try {
-        // Внутри функции init()
-const [ingRes, recRes, subRes] = await Promise.all([
-    fetch('./data/ingredients.json'), // Добавлена точка в начале
-    fetch('./data/recipes.json'),     // Добавлена точка в начале
-    fetch('./data/substitutes.json')  // Добавлена точка в начале
+        // Загрузка JSON с учетом GitHub Pages (пути ./)
+        const [ingRes, recRes, subRes] = await Promise.all([
+            fetch('./data/ingredients.json'),
+            fetch('./data/recipes.json'),
+            fetch('./data/substitutes.json')
         ]);
 
         state.ingredients = await ingRes.json();
@@ -46,11 +46,11 @@ const [ingRes, recRes, subRes] = await Promise.all([
         state.substitutes = await subRes.json();
 
         renderIngredients();
-        processRecipes(); // Initial render
+        processRecipes(); // Первичный рендер
         setupEventListeners();
     } catch (error) {
         console.error("Ошибка загрузки данных:", error);
-        dom.recipeGrid.innerHTML = `<p style="color:red">Ошибка загрузки данных. Проверьте подключение.</p>`;
+        dom.recipeGrid.innerHTML = `<p style="color:red">Ошибка загрузки данных. Проверьте подключение и пути к файлам.</p>`;
     }
 }
 
@@ -59,7 +59,7 @@ const [ingRes, recRes, subRes] = await Promise.all([
 function getRecipeMatch(recipe) {
     const required = recipe.required;
     let found = 0;
-    const details = []; // { id, status: 'ok' | 'sub' | 'missing', name }
+    const details = []; 
 
     required.forEach(reqId => {
         const ingName = state.ingredients.find(i => i.id === reqId)?.name || reqId;
@@ -76,7 +76,6 @@ function getRecipeMatch(recipe) {
         if (possibleSubs) {
             const hasSub = possibleSubs.find(subId => state.selectedIngredients.has(subId));
             if (hasSub) {
-                // Считаем как 0.8 совпадения для сортировки, но как "наличие"
                 found += 0.8; 
                 const subName = state.ingredients.find(i => i.id === hasSub)?.name || hasSub;
                 details.push({ name: ingName, status: 'sub', subName });
@@ -93,13 +92,12 @@ function getRecipeMatch(recipe) {
 }
 
 function processRecipes() {
-    // 1. Вычисляем совпадения
     let processed = state.recipes.map(getRecipeMatch);
-
-    // 2. Сортировка: Сначала высокий процент, потом время
+    
+    // Сортировка
     processed.sort((a, b) => b.matchPercent - a.matchPercent || a.time - b.time);
 
-    // 3. Фильтрация
+    // Фильтрация
     processed = Filters.filterRecipes(processed, state.filters);
 
     if (state.filters.showFavoritesOnly) {
@@ -115,13 +113,11 @@ function renderIngredients(filterText = '') {
     const list = Filters.searchIngredients(state.ingredients, filterText);
     const groups = {};
 
-    // Группировка
     list.forEach(ing => {
         if (!groups[ing.category]) groups[ing.category] = [];
         groups[ing.category].push(ing);
     });
 
-    // Генерация HTML (эффективно через map join)
     const html = Object.keys(groups).map(cat => `
         <div class="category-title">${cat}</div>
         ${groups[cat].map(ing => `
@@ -149,7 +145,9 @@ function renderRecipes(recipes) {
         
         return `
         <article class="recipe-card">
-            <img src="${r.image}" alt="${r.name}" class="card-img" loading="lazy">
+            <div class="card-img">
+                 🍳
+            </div>
             <div class="card-body">
                 <div class="card-header">
                     <h3 class="card-title">${r.name}</h3>
@@ -157,70 +155,106 @@ function renderRecipes(recipes) {
                 </div>
                 <div class="card-meta">
                     <span>⏳ ${r.time} мин</span>
-                    <span>${r.budget ? '💲 Бюджетно' : '💲💲'}</span>
+                    <span>${r.budget ? '💲 Эконом' : '💲💲'}</span>
                 </div>
                 <ul class="ing-list">
-                    ${r.details.map(d => {
-                        let text = d.name;
+                    ${r.details.slice(0, 3).map(d => {
                         let className = 'status-' + d.status;
-                        if (d.status === 'sub') text += ` (замена: ${d.subName})`;
-                        return `<li class="ing-item ${className}">${text}</li>`;
+                        return `<li class="ing-item ${className}">${d.name}</li>`;
                     }).join('')}
+                    ${r.details.length > 3 ? `<li style="color:#888; font-size:0.8rem">+ еще ${r.details.length - 3}</li>` : ''}
                 </ul>
                 <div class="card-actions">
                     <button class="btn-action" onclick="window.toggleFav('${r.id}')">
-                        ${isFav ? '★ В избранном' : '☆ В избранное'}
+                        ${isFav ? '★' : '☆'}
                     </button>
-                    </div>
+                    <button class="btn-action btn-primary-outline" onclick="window.openRecipeModal('${r.id}')" style="flex:2; font-weight:bold;">
+                        📖 Рецепт
+                    </button>
+                </div>
             </div>
         </article>
     `}).join('');
 }
 
-// --- Global Handlers (for HTML access) ---
-window.toggleIngredient = (id) => {
-    if (state.selectedIngredients.has(id)) {
-        state.selectedIngredients.delete(id);
+// --- Modal Logic ---
+const modal = {
+    overlay: document.getElementById('recipe-modal'),
+    closeBtn: document.getElementById('close-modal'),
+    title: document.getElementById('modal-title'),
+    img: document.getElementById('modal-img'),
+    steps: document.getElementById('modal-steps'),
+    ingredients: document.getElementById('modal-ingredients')
+};
+
+window.openRecipeModal = (id) => {
+    const recipe = state.recipes.find(r => r.id === id);
+    if (!recipe) return;
+
+    const matchData = getRecipeMatch(recipe);
+
+    modal.title.textContent = recipe.name;
+    modal.img.style.display = 'none'; // Пока скрываем картинку
+
+    modal.ingredients.innerHTML = matchData.details.map(d => {
+        const icon = d.status === 'ok' ? '✅' : (d.status === 'sub' ? '🔄' : '❌');
+        const style = d.status === 'missing' ? 'opacity: 0.6' : '';
+        const subText = d.status === 'sub' ? ` (замена: ${d.subName})` : '';
+        return `<li style="${style}">${icon} ${d.name}${subText}</li>`;
+    }).join('');
+
+    if (recipe.instructions && recipe.instructions.length > 0) {
+        modal.steps.innerHTML = recipe.instructions.map(step => `<li>${step}</li>`).join('');
     } else {
-        state.selectedIngredients.add(id);
+        modal.steps.innerHTML = '<p>Инструкция скоро появится...</p>';
     }
+
+    modal.overlay.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+};
+
+window.closeRecipeModal = () => {
+    modal.overlay.classList.add('hidden');
+    document.body.style.overflow = '';
+};
+
+// --- Handlers & Events ---
+window.toggleIngredient = (id) => {
+    if (state.selectedIngredients.has(id)) state.selectedIngredients.delete(id);
+    else state.selectedIngredients.add(id);
     Storage.set(Storage.KEYS.INGREDIENTS, Array.from(state.selectedIngredients));
     processRecipes();
 };
 
 window.toggleFav = (id) => {
-    if (state.favorites.has(id)) {
-        state.favorites.delete(id);
-    } else {
-        state.favorites.add(id);
-    }
+    if (state.favorites.has(id)) state.favorites.delete(id);
+    else state.favorites.add(id);
     Storage.set(Storage.KEYS.FAVORITES, Array.from(state.favorites));
-    processRecipes(); // Re-render to update button state
+    processRecipes();
 };
 
-// --- Event Listeners ---
 function setupEventListeners() {
     dom.search.addEventListener('input', (e) => renderIngredients(e.target.value));
-    
     dom.clearBtn.addEventListener('click', () => {
         state.selectedIngredients.clear();
         Storage.set(Storage.KEYS.INGREDIENTS, []);
         renderIngredients();
         processRecipes();
     });
-
     dom.sidebarToggle.addEventListener('click', () => dom.sidebar.classList.add('open'));
     dom.sidebarClose.addEventListener('click', () => dom.sidebar.classList.remove('open'));
-
-    // Filters
     dom.filterTime.addEventListener('change', (e) => { state.filters.maxTime = Number(e.target.value); processRecipes(); });
     dom.filterVeg.addEventListener('change', (e) => { state.filters.vegOnly = e.target.checked; processRecipes(); });
     dom.filterBudget.addEventListener('change', (e) => { state.filters.budgetOnly = e.target.checked; processRecipes(); });
-    
     dom.favBtn.addEventListener('click', () => {
         state.filters.showFavoritesOnly = !state.filters.showFavoritesOnly;
         dom.favBtn.classList.toggle('active');
         processRecipes();
+    });
+    
+    modal.closeBtn.addEventListener('click', window.closeRecipeModal);
+    modal.overlay.addEventListener('click', (e) => {
+        if (e.target === modal.overlay) window.closeRecipeModal();
     });
 }
 
