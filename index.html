@@ -54,11 +54,25 @@
     </main>
 </div>
 
-<dialog id="shopping-dialog">
-    <h3>🛒 Список покупок</h3>
-    <ul id="shopping-list"></ul>
-    <button onclick="document.getElementById('shopping-dialog').close()">Закрыть</button>
-</dialog>
+<div id="recipe-modal" class="modal-overlay hidden">
+    <div class="modal-content">
+        <button class="modal-close" id="close-modal">✕</button>
+        <div class="modal-header">
+            <img id="modal-img" src="" alt="" class="modal-image" style="display: none;">
+            <h2 id="modal-title">Название</h2>
+        </div>
+        <div class="modal-body">
+            <h3>🛒 Ингредиенты</h3>
+            <ul id="modal-ingredients" class="recipe-ing-list"></ul>
+
+            <h3>📜 Инструкция</h3>
+            <ol id="modal-steps" class="recipe-steps"></ol>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-primary" onclick="window.closeRecipeModal()">Понятно, готовлю! 👨‍🍳</button>
+        </div>
+    </div>
+</div>
 
 <script type="module" src="scripts/app.js"></script>
 
