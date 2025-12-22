@@ -34,10 +34,11 @@ const dom = {
 // --- Initialization ---
 async function init() {
     try {
-        const [ingRes, recRes, subRes] = await Promise.all([
-            fetch('data/ingredients.json'),
-            fetch('data/recipes.json'),
-            fetch('data/substitutes.json')
+        // Внутри функции init()
+const [ingRes, recRes, subRes] = await Promise.all([
+    fetch('./data/ingredients.json'), // Добавлена точка в начале
+    fetch('./data/recipes.json'),     // Добавлена точка в начале
+    fetch('./data/substitutes.json')  // Добавлена точка в начале
         ]);
 
         state.ingredients = await ingRes.json();
