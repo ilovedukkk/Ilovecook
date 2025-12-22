@@ -7,7 +7,14 @@
     "vegetarian": true,
     "required": ["egg", "milk"],
     "optional": ["cheese", "salt", "butter"],
-    "image": "assets/images/placeholder.jpg"
+    "image": "assets/images/placeholder.jpg",
+    "instructions": [
+      "Разбейте яйца в глубокую миску.",
+      "Добавьте молоко и соль. Взбейте вилкой до однородности (но не в пену).",
+      "Разогрейте сковороду со сливочным маслом на среднем огне.",
+      "Вылейте смесь. Накройте крышкой и готовьте 3-4 минуты.",
+      "Когда верх схватится, можно посыпать сыром и сложить пополам."
+    ]
   },
   {
     "id": "fried_eggs",
@@ -17,7 +24,14 @@
     "vegetarian": false,
     "required": ["egg", "bacon"],
     "optional": ["oil", "salt"],
-    "image": "assets/images/placeholder.jpg"
+    "image": "assets/images/placeholder.jpg",
+    "instructions": [
+      "Нарежьте бекон или колбасу ломтиками/кубиками.",
+      "Обжарьте на сковороде 2-3 минуты до корочки.",
+      "Аккуратно разбейте яйца сверху, стараясь не повредить желток.",
+      "Посолите белок (не желток, чтобы не пошел пятнами).",
+      "Готовьте 3-5 минут до желаемой консистенции белка."
+    ]
   },
   {
     "id": "pancakes",
@@ -27,7 +41,14 @@
     "vegetarian": true,
     "required": ["flour", "egg", "milk"],
     "optional": ["sugar", "oil", "butter"],
-    "image": "assets/images/placeholder.jpg"
+    "image": "assets/images/placeholder.jpg",
+    "instructions": [
+      "Смешайте яйца с сахаром и солью.",
+      "Влейте молоко, перемешайте.",
+      "Постепенно всыпайте муку, постоянно помешивая, чтобы не было комков.",
+      "Влейте ложку масла прямо в тесто.",
+      "Разогрейте сковороду и жарьте с двух сторон до золотистого цвета."
+    ]
   },
   {
     "id": "syrniki",
@@ -37,7 +58,14 @@
     "vegetarian": true,
     "required": ["cheese", "egg", "flour"],
     "optional": ["sugar", "kefir"],
-    "image": "assets/images/placeholder.jpg"
+    "image": "assets/images/placeholder.jpg",
+    "instructions": [
+      "Творог (сыр) хорошо разомните вилкой.",
+      "Добавьте яйцо, сахар и щепотку соли. Перемешайте.",
+      "Всыпьте муку. Тесто должно быть мягким, но держать форму.",
+      "Сформируйте шарики, обваляйте в муке и приплюсните их.",
+      "Жарьте на медленном огне под крышкой по 4-5 минут с каждой стороны."
+    ]
   },
   {
     "id": "pasta_cheese",
@@ -47,7 +75,13 @@
     "vegetarian": true,
     "required": ["pasta", "cheese"],
     "optional": ["butter", "salt"],
-    "image": "assets/images/placeholder.jpg"
+    "image": "assets/images/placeholder.jpg",
+    "instructions": [
+      "Отварите макароны в подсоленной воде по инструкции на пачке.",
+      "Слейте воду, оставив буквально пару ложек на дне.",
+      "Добавьте сливочное масло и тертый сыр прямо в горячие макароны.",
+      "Быстро и интенсивно перемешивайте, пока сыр не превратится в соус."
+    ]
   },
   {
     "id": "carbonara_fake",
@@ -57,7 +91,14 @@
     "vegetarian": false,
     "required": ["pasta", "egg", "bacon", "cheese"],
     "optional": ["pepper", "garlic"],
-    "image": "assets/images/placeholder.jpg"
+    "image": "assets/images/placeholder.jpg",
+    "instructions": [
+      "Поставьте вариться макароны.",
+      "Нарежьте бекон и обжарьте до хруста. Можно добавить чеснок.",
+      "В миске смешайте яйца, тертый сыр и много черного перца.",
+      "Слейте воду с готовых макарон, выложите их к горячему бекону.",
+      "Снимите сковороду с огня (!важно) и влейте яичную смесь, быстро мешая, чтобы яйца загустели, но не свернулись."
+    ]
   },
   {
     "id": "fried_potatoes",
@@ -67,7 +108,14 @@
     "vegetarian": true,
     "required": ["potato", "onion", "oil"],
     "optional": ["salt", "garlic"],
-    "image": "assets/images/placeholder.jpg"
+    "image": "assets/images/placeholder.jpg",
+    "instructions": [
+      "Очистите картофель и нарежьте брусочками.",
+      "Разогрейте масло. Выложите картофель в один слой (если влезает).",
+      "Жарьте на сильном огне без крышки 5-7 минут, не мешая, чтобы схватилась корочка.",
+      "Переверните, убавьте огонь до среднего.",
+      "За 5 минут до конца добавьте нарезанный лук и соль."
+    ]
   },
   {
     "id": "mashed_potatoes",
@@ -77,7 +125,13 @@
     "vegetarian": true,
     "required": ["potato", "milk", "butter"],
     "optional": ["salt"],
-    "image": "assets/images/placeholder.jpg"
+    "image": "assets/images/placeholder.jpg",
+    "instructions": [
+      "Отварите картофель до полной мягкости (проверяйте ножом).",
+      "Слейте воду. Картофель помните толкушкой.",
+      "Добавьте сливочное масло и горячее молоко.",
+      "Взбейте пюре до пышности."
+    ]
   },
   {
     "id": "french_toast",
@@ -87,7 +141,12 @@
     "vegetarian": true,
     "required": ["bread", "egg", "milk"],
     "optional": ["sugar", "butter"],
-    "image": "assets/images/placeholder.jpg"
+    "image": "assets/images/placeholder.jpg",
+    "instructions": [
+      "Смешайте яйцо, молоко и сахар.",
+      "Обмакните ломтики хлеба в смесь с двух сторон (не держите долго, чтобы не размокли).",
+      "Жарьте на сливочном масле до румяной корочки."
+    ]
   },
   {
     "id": "grilled_cheese",
@@ -97,7 +156,13 @@
     "vegetarian": true,
     "required": ["bread", "cheese"],
     "optional": ["butter", "bacon"],
-    "image": "assets/images/placeholder.jpg"
+    "image": "assets/images/placeholder.jpg",
+    "instructions": [
+      "Положите сыр между двумя ломтиками хлеба.",
+      "Смажьте хлеб снаружи сливочным маслом (тонким слоем).",
+      "Положите на сухую разогретую сковороду.",
+      "Жарьте по 2-3 минуты с каждой стороны, пока сыр не расплавится."
+    ]
   },
   {
     "id": "greek_salad",
@@ -107,7 +172,13 @@
     "vegetarian": true,
     "required": ["tomato", "cucumber", "cheese", "onion"],
     "optional": ["oil", "pepper"],
-    "image": "assets/images/placeholder.jpg"
+    "image": "assets/images/placeholder.jpg",
+    "instructions": [
+      "Крупно нарежьте овощи.",
+      "Лук нарежьте полукольцами.",
+      "Сыр (фета или брынза) нарежьте крупными кубиками.",
+      "Смешайте овощи, полейте маслом, сверху выложите сыр и посыпьте орегано/перцем."
+    ]
   },
   {
     "id": "chicken_soup",
@@ -117,7 +188,13 @@
     "vegetarian": false,
     "required": ["chicken", "potato", "carrot", "onion"],
     "optional": ["pasta", "salt", "pepper"],
-    "image": "assets/images/placeholder.jpg"
+    "image": "assets/images/placeholder.jpg",
+    "instructions": [
+      "Сварите бульон из курицы (30 мин). Мясо достаньте и нарежьте.",
+      "В кипящий бульон киньте нарезанный картофель.",
+      "Сделайте зажарку: обжарьте лук и морковь, добавьте в суп.",
+      "Когда картофель готов, верните мясо и добавьте вермишель (варить еще 3-5 мин)."
+    ]
   },
   {
     "id": "rice_chicken",
@@ -127,7 +204,14 @@
     "vegetarian": false,
     "required": ["rice", "chicken", "onion", "carrot"],
     "optional": ["oil", "garlic", "spices"],
-    "image": "assets/images/placeholder.jpg"
+    "image": "assets/images/placeholder.jpg",
+    "instructions": [
+      "Нарежьте курицу кусочками, обжарьте до белого цвета.",
+      "Добавьте лук и морковь, жарьте еще 5 минут.",
+      "Всыпьте промытый рис, перемешайте, чтобы он пропитался маслом.",
+      "Залейте водой (2 стакана воды на 1 стакан риса). Посолите.",
+      "Накройте крышкой и тушите на малом огне 20 минут, не открывая."
+    ]
   },
   {
     "id": "oatmeal",
@@ -137,7 +221,13 @@
     "vegetarian": true,
     "required": ["oats", "milk"],
     "optional": ["sugar", "butter"],
-    "image": "assets/images/placeholder.jpg"
+    "image": "assets/images/placeholder.jpg",
+    "instructions": [
+      "Вскипятите молоко (или смесь молока и воды).",
+      "Всыпьте овсянку и щепотку соли.",
+      "Варите на медленном огне 5-10 минут (в зависимости от хлопьев).",
+      "В конце добавьте масло и сахар. Дайте настояться под крышкой."
+    ]
   },
   {
     "id": "draniki",
@@ -147,6 +237,12 @@
     "vegetarian": true,
     "required": ["potato", "onion", "egg", "flour"],
     "optional": ["oil", "kefir"],
-    "image": "assets/images/placeholder.jpg"
+    "image": "assets/images/placeholder.jpg",
+    "instructions": [
+      "Картофель и лук натрите на мелкой терке.",
+      "Если жидкости слишком много — слейте лишнюю.",
+      "Добавьте яйцо, соль и ложку муки.",
+      "Выкладывайте ложкой на разогретую сковороду и жарьте до румяности."
+    ]
   }
 ]
