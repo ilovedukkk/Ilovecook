@@ -52,7 +52,7 @@ body {
     background: var(--card-bg);
     border-right: 1px solid var(--border);
     padding: 1rem;
-    height: calc(100vh - 60px); /* Высота минус хедер */
+    height: calc(100vh - 60px); 
     position: sticky;
     top: 60px;
     overflow-y: auto;
@@ -100,13 +100,11 @@ body {
 }
 .recipe-card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); border-color: var(--primary); }
 
-/* Заглушка для фото, если нет картинок */
 .card-img {
     height: 160px; width: 100%; object-fit: cover; background: #eee;
     display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #ccc;
 }
-.card-img::after { content: '🍳'; } /* Эмодзи если картинка не грузится */
-img.card-img { content: normal; } /* Если реальная картинка, убираем эмодзи */
+.card-img::after { content: '🍳'; } 
 
 .card-body { padding: 1rem; flex: 1; display: flex; flex-direction: column; }
 .card-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem; }
@@ -135,6 +133,51 @@ img.card-img { content: normal; } /* Если реальная картинка,
 
 .btn-secondary { width: 100%; padding: 12px; margin-top: 1rem; background: #eee; border: none; border-radius: var(--radius); cursor: pointer; font-weight: bold; }
 .btn-secondary:hover { background: #e0e0e0; }
+.btn-primary-outline { border: 1px solid var(--primary); color: var(--primary-dark); }
+.btn-primary-outline:hover { background: var(--primary); color: white; }
+
+/* --- Modal Styles --- */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 2000;
+    display: flex; justify-content: center; align-items: center;
+    opacity: 1; transition: opacity 0.3s ease;
+}
+
+.modal-overlay.hidden { opacity: 0; pointer-events: none; visibility: hidden; }
+
+.modal-content {
+    background: white; width: 90%; max-width: 600px; max-height: 90vh;
+    border-radius: 16px; overflow-y: auto; position: relative;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-close {
+    position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.1); border: none;
+    width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; z-index: 5;
+}
+.modal-close:hover { background: rgba(0,0,0,0.2); }
+
+.modal-image { width: 100%; height: 200px; object-fit: cover; background: #eee; }
+.modal-header { padding: 1.5rem 1.5rem 0.5rem; }
+.modal-header h2 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); }
+.modal-body { padding: 0 1.5rem 1.5rem; }
+.modal-body h3 { margin: 1.5rem 0 0.8rem; color: var(--primary-dark); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.recipe-steps { padding-left: 20px; line-height: 1.6; }
+.recipe-steps li { margin-bottom: 12px; }
+.recipe-ing-list { list-style: none; }
+.recipe-ing-list li { padding: 5px 0; border-bottom: 1px solid #f0f0f0; }
+.modal-footer { padding: 1rem; border-top: 1px solid #eee; background: #f9f9f9; position: sticky; bottom: 0; }
+.btn-primary { width: 100%; background: var(--primary); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 1rem; cursor: pointer; }
+.btn-primary:hover { background: var(--primary-dark); }
 
 /* Mobile Logic */
 .mobile-only { display: none; }
@@ -151,6 +194,5 @@ img.card-img { content: normal; } /* Если реальная картинка,
     }
     .sidebar.open { transform: translateX(0); }
     .sidebar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
-    
     .content { padding: 1rem; }
 }
