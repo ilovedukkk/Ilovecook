@@ -1,6 +1,8 @@
 {
-  "milk": ["water", "cream"],
+  "milk": ["water", "kefir"],
   "bacon": ["chicken", "sausage"],
-  "onion": ["garlic_powder"],
-  "tomato": ["ketchup", "tomato_paste"]
+  "onion": ["garlic"],
+  "tomato": ["ketchup"],
+  "butter": ["oil"],
+  "kefir": ["milk"]
 }
