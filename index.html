@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ilovecook — Умный подбор рецептов</title>
-    <meta name="description" content="Готовь из того, что есть в холодильнике.">
+    <title>ilovecook — Умный холодильник</title>
+    <meta name="description" content="Готовь из того, что есть. Работает офлайн.">
+    <meta name="theme-color" content="#2ecc71">
+    
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+    
     <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍🍳</text></svg>">
 </head>
@@ -12,7 +17,12 @@
 
 <header class="app-header">
     <div class="logo">❤️ ilovecook</div>
-    <button id="toggle-sidebar" class="mobile-only" aria-label="Открыть ингредиенты">🧾 Продукты</button>
+    <div class="header-controls">
+        <button id="open-shopping-list" class="btn-icon relative" title="Список покупок">
+            🛒 <span id="shopping-badge" class="badge hidden">0</span>
+        </button>
+        <button id="toggle-sidebar" class="mobile-only" aria-label="Открыть ингредиенты">🧾 Продукты</button>
+    </div>
 </header>
 
 <div class="app-container">
@@ -21,35 +31,34 @@
             <h2>Твой холодильник</h2>
             <button id="close-sidebar" class="mobile-only">✕</button>
         </div>
-        
-        <input type="text" id="ingredient-search" placeholder="🔍 Что у нас есть?..." aria-label="Поиск ингредиентов">
-        
+        <input type="text" id="ingredient-search" placeholder="🔍 Найти продукт..." aria-label="Поиск ингредиентов">
         <div id="ingredients-list" class="ingredients-list">
             <div class="loader">Загрузка продуктов...</div>
         </div>
-
         <button id="clear-ingredients" class="btn-secondary">🗑 Сбросить всё</button>
     </aside>
 
     <main class="content">
         <section class="filters-bar">
-            <label class="chip">
-                <input type="checkbox" id="filter-veg"> 🥦 Вег
-            </label>
-            <label class="chip">
-                <input type="checkbox" id="filter-budget"> 💸 Эконом
-            </label>
-            <select id="filter-time" class="select-styled">
-                <option value="999">⏱ Любое время</option>
-                <option value="20">до 20 мин</option>
-                <option value="40">до 40 мин</option>
-                <option value="90">до 1.5 часов</option>
-            </select>
+            <div class="scroll-filters">
+                <button id="random-recipe-btn" class="chip accent">🎲 Мне повезет</button>
+                <label class="chip"><input type="checkbox" id="filter-veg"> 🥦 Вег</label>
+                <label class="chip"><input type="checkbox" id="filter-budget"> 💸 Эконом</label>
+                <select id="filter-time" class="select-styled">
+                    <option value="999">⏱ Любое время</option>
+                    <option value="20">до 20 мин</option>
+                    <option value="40">до 40 мин</option>
+                    <option value="90">до 1.5 часов</option>
+                </select>
+            </div>
             <button id="show-favorites" class="btn-icon" title="Избранное">❤️</button>
         </section>
 
         <div id="recipes-grid" class="recipes-grid">
-            <div class="placeholder-text">Отметь продукты слева, и я скажу, что приготовить!</div>
+            <div class="placeholder-text">
+                <h3>👋 Привет!</h3>
+                <p>Отметь продукты слева, и я скажу, что приготовить.</p>
+            </div>
         </div>
     </main>
 </div>
@@ -58,23 +67,56 @@
     <div class="modal-content">
         <button class="modal-close" id="close-modal">✕</button>
         <div class="modal-header">
-            <img id="modal-img" src="" alt="" class="modal-image" style="display: none;">
             <h2 id="modal-title">Название блюда</h2>
         </div>
         <div class="modal-body">
-            <h3>🛒 Ингредиенты</h3>
-            <ul id="modal-ingredients" class="recipe-ing-list"></ul>
+            <div class="modal-tabs">
+                <button class="tab-btn active" onclick="window.switchTab('ing')">Ингредиенты</button>
+                <button class="tab-btn" onclick="window.switchTab('steps')">Рецепт</button>
+            </div>
+            
+            <div id="tab-ing" class="tab-content active">
+                <ul id="modal-ingredients" class="recipe-ing-list"></ul>
+                <button id="add-missing-btn" class="btn-secondary mt-10">🛒 Добавить недостающее в список</button>
+            </div>
 
-            <h3>👩‍🍳 Пошаговый рецепт</h3>
-            <ol id="modal-steps" class="recipe-steps"></ol>
+            <div id="tab-steps" class="tab-content">
+                <ol id="modal-steps" class="recipe-steps"></ol>
+            </div>
         </div>
         <div class="modal-footer">
-            <button class="btn-primary" onclick="window.closeRecipeModal()">Супер, готовлю!</button>
+            <button class="btn-primary" onclick="window.closeRecipeModal()">Отлично!</button>
         </div>
     </div>
 </div>
 
+<div id="shopping-drawer" class="drawer">
+    <div class="drawer-header">
+        <h3>🛒 Список покупок</h3>
+        <button id="close-shopping" class="btn-icon">✕</button>
+    </div>
+    <div class="drawer-body">
+        <ul id="shopping-list-items" class="shopping-list"></ul>
+        <div id="shopping-empty" class="placeholder-small">Список пуст</div>
+    </div>
+    <div class="drawer-footer">
+        <button id="clear-shopping" class="btn-text">Очистить список</button>
+        <button id="share-shopping" class="btn-primary">📋 Скопировать</button>
+    </div>
+</div>
+<div id="drawer-overlay" class="drawer-overlay hidden"></div>
+
+<div id="toast" class="toast hidden">Сообщение</div>
+
 <script type="module" src="scripts/app.js"></script>
+<script>
+    // PWA Registration
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js')
+            .then(() => console.log('Service Worker Registered'))
+            .catch(console.error);
+    }
+</script>
 
 </body>
 </html>
