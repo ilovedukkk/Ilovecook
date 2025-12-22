@@ -1,23 +1,63 @@
 [
   {
     "id": "omelette",
-    "name": "Классический омлет",
+    "name": "Омлет",
     "time": 10,
     "budget": true,
     "vegetarian": true,
     "required": ["egg", "milk"],
-    "optional": ["cheese", "salt"],
-    "image": "https://images.unsplash.com/photo-1510693206972-df098062cb71?auto=format&fit=crop&w=600&q=80"
+    "optional": ["cheese", "salt", "butter"],
+    "image": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": "fried_eggs",
+    "name": "Яичница с колбасой",
+    "time": 7,
+    "budget": true,
+    "vegetarian": false,
+    "required": ["egg", "bacon"],
+    "optional": ["oil", "salt"],
+    "image": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": "pancakes",
+    "name": "Блины",
+    "time": 30,
+    "budget": true,
+    "vegetarian": true,
+    "required": ["flour", "egg", "milk"],
+    "optional": ["sugar", "oil", "butter"],
+    "image": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": "syrniki",
+    "name": "Сырники",
+    "time": 20,
+    "budget": false,
+    "vegetarian": true,
+    "required": ["cheese", "egg", "flour"],
+    "optional": ["sugar", "kefir"],
+    "image": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": "pasta_cheese",
+    "name": "Макароны с сыром",
+    "time": 15,
+    "budget": true,
+    "vegetarian": true,
+    "required": ["pasta", "cheese"],
+    "optional": ["butter", "salt"],
+    "image": "assets/images/placeholder.jpg"
   },
   {
     "id": "carbonara_fake",
-    "name": "Паста Карбонара (простая)",
+    "name": "Паста Карбонара (а-ля)",
     "time": 25,
     "budget": false,
     "vegetarian": false,
     "required": ["pasta", "egg", "bacon", "cheese"],
-    "optional": ["pepper"],
-    "image": "https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=600&q=80"
+    "optional": ["pepper", "garlic"],
+    "image": "assets/images/placeholder.jpg"
   },
   {
     "id": "fried_potatoes",
@@ -25,8 +65,88 @@
     "time": 40,
     "budget": true,
     "vegetarian": true,
-    "required": ["potato", "onion"],
-    "optional": ["salt", "bacon"],
-    "image": "https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=600&q=80"
+    "required": ["potato", "onion", "oil"],
+    "optional": ["salt", "garlic"],
+    "image": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": "mashed_potatoes",
+    "name": "Картофельное пюре",
+    "time": 30,
+    "budget": true,
+    "vegetarian": true,
+    "required": ["potato", "milk", "butter"],
+    "optional": ["salt"],
+    "image": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": "french_toast",
+    "name": "Сладкие гренки",
+    "time": 10,
+    "budget": true,
+    "vegetarian": true,
+    "required": ["bread", "egg", "milk"],
+    "optional": ["sugar", "butter"],
+    "image": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": "grilled_cheese",
+    "name": "Горячий бутерброд",
+    "time": 5,
+    "budget": true,
+    "vegetarian": true,
+    "required": ["bread", "cheese"],
+    "optional": ["butter", "bacon"],
+    "image": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": "greek_salad",
+    "name": "Греческий салат",
+    "time": 15,
+    "budget": false,
+    "vegetarian": true,
+    "required": ["tomato", "cucumber", "cheese", "onion"],
+    "optional": ["oil", "pepper"],
+    "image": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": "chicken_soup",
+    "name": "Легкий куриный суп",
+    "time": 45,
+    "budget": true,
+    "vegetarian": false,
+    "required": ["chicken", "potato", "carrot", "onion"],
+    "optional": ["pasta", "salt", "pepper"],
+    "image": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": "rice_chicken",
+    "name": "Рис с курицей",
+    "time": 35,
+    "budget": true,
+    "vegetarian": false,
+    "required": ["rice", "chicken", "onion", "carrot"],
+    "optional": ["oil", "garlic", "spices"],
+    "image": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": "oatmeal",
+    "name": "Овсяная каша",
+    "time": 10,
+    "budget": true,
+    "vegetarian": true,
+    "required": ["oats", "milk"],
+    "optional": ["sugar", "butter"],
+    "image": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": "draniki",
+    "name": "Драники",
+    "time": 30,
+    "budget": true,
+    "vegetarian": true,
+    "required": ["potato", "onion", "egg", "flour"],
+    "optional": ["oil", "kefir"],
+    "image": "assets/images/placeholder.jpg"
   }
 ]
