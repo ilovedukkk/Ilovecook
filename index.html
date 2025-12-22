@@ -4,12 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ilovecook — Умный холодильник</title>
-    <meta name="description" content="Готовь из того, что есть. Работает офлайн.">
     <meta name="theme-color" content="#2ecc71">
-    
     <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
-    
     <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍🍳</text></svg>">
 </head>
@@ -18,10 +14,12 @@
 <header class="app-header">
     <div class="logo">❤️ ilovecook</div>
     <div class="header-controls">
+        <button id="theme-toggle" class="btn-theme" title="Сменить тему">☀️</button>
+        
         <button id="open-shopping-list" class="btn-icon relative" title="Список покупок">
             🛒 <span id="shopping-badge" class="badge hidden">0</span>
         </button>
-        <button id="toggle-sidebar" class="mobile-only" aria-label="Открыть ингредиенты">🧾 Продукты</button>
+        <button id="toggle-sidebar" class="mobile-only" aria-label="Меню">🧾</button>
     </div>
 </header>
 
@@ -31,11 +29,11 @@
             <h2>Твой холодильник</h2>
             <button id="close-sidebar" class="mobile-only">✕</button>
         </div>
-        <input type="text" id="ingredient-search" placeholder="🔍 Найти продукт..." aria-label="Поиск ингредиентов">
+        <input type="text" id="ingredient-search" placeholder="🔍 Найти продукт...">
         <div id="ingredients-list" class="ingredients-list">
-            <div class="loader">Загрузка продуктов...</div>
+            <div class="loader">Загрузка...</div>
         </div>
-        <button id="clear-ingredients" class="btn-secondary">🗑 Сбросить всё</button>
+        <button id="clear-ingredients" class="btn-action mt-10" style="width:100%">🗑 Сбросить всё</button>
     </aside>
 
     <main class="content">
@@ -44,7 +42,7 @@
                 <button id="random-recipe-btn" class="chip accent">🎲 Мне повезет</button>
                 <label class="chip"><input type="checkbox" id="filter-veg"> 🥦 Вег</label>
                 <label class="chip"><input type="checkbox" id="filter-budget"> 💸 Эконом</label>
-                <select id="filter-time" class="select-styled">
+                <select id="filter-time" class="select-styled" style="background:var(--bg); color:var(--text); border:1px solid var(--border); padding:5px; border-radius:8px;">
                     <option value="999">⏱ Любое время</option>
                     <option value="20">до 20 мин</option>
                     <option value="40">до 40 мин</option>
@@ -55,11 +53,7 @@
         </section>
 
         <div id="recipes-grid" class="recipes-grid">
-            <div class="placeholder-text">
-                <h3>👋 Привет!</h3>
-                <p>Отметь продукты слева, и я скажу, что приготовить.</p>
             </div>
-        </div>
     </main>
 </div>
 
@@ -67,25 +61,23 @@
     <div class="modal-content">
         <button class="modal-close" id="close-modal">✕</button>
         <div class="modal-header">
-            <h2 id="modal-title">Название блюда</h2>
+            <h2 id="modal-title">...</h2>
         </div>
         <div class="modal-body">
             <div class="modal-tabs">
                 <button class="tab-btn active" onclick="window.switchTab('ing')">Ингредиенты</button>
                 <button class="tab-btn" onclick="window.switchTab('steps')">Рецепт</button>
             </div>
-            
             <div id="tab-ing" class="tab-content active">
                 <ul id="modal-ingredients" class="recipe-ing-list"></ul>
-                <button id="add-missing-btn" class="btn-secondary mt-10">🛒 Добавить недостающее в список</button>
+                <button id="add-missing-btn" class="btn-secondary mt-10" style="width:100%">🛒 В список покупок</button>
             </div>
-
             <div id="tab-steps" class="tab-content">
                 <ol id="modal-steps" class="recipe-steps"></ol>
             </div>
         </div>
         <div class="modal-footer">
-            <button class="btn-primary" onclick="window.closeRecipeModal()">Отлично!</button>
+            <button class="btn-primary" onclick="window.closeRecipeModal()">Готово</button>
         </div>
     </div>
 </div>
@@ -97,26 +89,17 @@
     </div>
     <div class="drawer-body">
         <ul id="shopping-list-items" class="shopping-list"></ul>
-        <div id="shopping-empty" class="placeholder-small">Список пуст</div>
+        <div id="shopping-empty" class="hidden" style="text-align:center; color:var(--text-sec); margin-top:20px;">Список пуст</div>
     </div>
     <div class="drawer-footer">
-        <button id="clear-shopping" class="btn-text">Очистить список</button>
-        <button id="share-shopping" class="btn-primary">📋 Скопировать</button>
+        <button id="clear-shopping" class="btn-action">Очистить</button>
+        <button id="share-shopping" class="btn-primary" style="flex:2">📋 Скопировать</button>
     </div>
 </div>
 <div id="drawer-overlay" class="drawer-overlay hidden"></div>
-
-<div id="toast" class="toast hidden">Сообщение</div>
+<div id="toast" class="toast hidden"></div>
 
 <script type="module" src="scripts/app.js"></script>
-<script>
-    // PWA Registration
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js')
-            .then(() => console.log('Service Worker Registered'))
-            .catch(console.error);
-    }
-</script>
 
 </body>
 </html>
