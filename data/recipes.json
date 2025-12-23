@@ -242,5 +242,241 @@
       { "text": "Добавить каперсы, маслины, выключить огонь. При подаче положить ломтик лимона и сметану.", "time": 2 }
     ],
     "source": { "name": "russianfood.com", "url": "https://www.russianfood.com/recipes/bytype/?fid=3" }
+  },
+  {
+    "id": "syrniki_classic",
+    "title": "Домашние сырники",
+    "category": "Завтраки",
+    "time_total": 30,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/F1C40F/333333?text=Syrniki",
+    "ingredients": [
+      { "id": "cottage_cheese", "name": "Творог (сухой, 5-9%)", "amount": "400 г" },
+      { "id": "egg", "name": "Яйцо", "amount": "1 шт" },
+      { "id": "sugar", "name": "Сахар", "amount": "2 ст.л." },
+      { "id": "flour", "name": "Мука", "amount": "3 ст.л." },
+      { "id": "oil", "name": "Масло для жарки", "amount": "2 ст.л." }
+    ],
+    "steps": [
+      { "text": "Размять творог вилкой. Если он влажный — отжать лишнюю сыворотку.", "time": 5 },
+      { "text": "Добавить яйцо, сахар и щепотку соли. Тщательно перемешать.", "time": 3 },
+      { "text": "Всыпать муку и замесить тесто. Оно должно быть мягким и немного липнуть к рукам.", "time": 2 },
+      { "text": "Сформировать колбаску на столе, присыпанном мукой, и нарезать на шайбочки.", "time": 5 },
+      { "text": "Сформировать красивые сырники (можно с помощью стакана).", "time": 5 },
+      { "text": "Жарить на среднем огне до золотистой корочки с двух сторон.", "time": 10 }
+    ],
+    "source": { "name": "gotovim-doma.ru", "url": "https://gotovim-doma.ru/recipe/view/syrniki" }
+  },
+  {
+    "id": "borscht_red",
+    "title": "Борщ классический",
+    "category": "Супы",
+    "time_total": 90,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/C0392B/FFFFFF?text=Borscht",
+    "ingredients": [
+      { "id": "beef", "name": "Говядина на кости", "amount": "500 г" },
+      { "id": "beet", "name": "Свёкла", "amount": "2 шт" },
+      { "id": "potato", "name": "Картофель", "amount": "3 шт" },
+      { "id": "cabbage", "name": "Капуста", "amount": "300 г" },
+      { "id": "carrot", "name": "Морковь", "amount": "1 шт" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "tomato_paste", "name": "Томатная паста", "amount": "1 ст.л." }
+    ],
+    "steps": [
+      { "text": "Залить мясо холодной водой, довести до кипения, снять пену и варить бульон.", "time": 60 },
+      { "text": "Нарезать картофель кубиками, капусту нашинковать тонкой соломкой.", "time": 10 },
+      { "text": "Сделать зажарку: обжарить лук и морковь, добавить тертую свеклу и пасту, тушить.", "time": 10 },
+      { "text": "Добавить в бульон картофель, варить 10 минут, затем добавить капусту.", "time": 15 },
+      { "text": "Выложить зажарку в суп, добавить лавровый лист и зелень. Дать покипеть 5 минут.", "time": 5 },
+      { "text": "Выключить огонь и дать борщу настояться под крышкой.", "time": 20 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/supy/borsch-klassicheskij" }
+  },
+  {
+    "id": "meat_french",
+    "title": "Мясо по-французски",
+    "category": "Вторые блюда",
+    "time_total": 60,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/E67E22/FFFFFF?text=Meat",
+    "ingredients": [
+      { "id": "pork", "name": "Свинина (корейка или шея)", "amount": "500 г" },
+      { "id": "onion", "name": "Лук репчатый", "amount": "2 шт" },
+      { "id": "cheese", "name": "Сыр твердый", "amount": "200 г" },
+      { "id": "mayo", "name": "Майонез", "amount": "100 г" },
+      { "id": "oil", "name": "Растительное масло", "amount": "1 ст.л." }
+    ],
+    "steps": [
+      { "text": "Нарезать мясо пластинами толщиной 1 см и хорошо отбить молотком.", "time": 15 },
+      { "text": "Лук нарезать кольцами, сыр натереть на крупной терке.", "time": 5 },
+      { "text": "Выложить мясо на смазанный противень, посолить и поперчить.", "time": 5 },
+      { "text": "Сверху выложить лук, смазать майонезом и обильно посыпать сыром.", "time": 5 },
+      { "text": "Запекать в духовке при 180°C до румяной сырной корочки.", "time": 30 }
+    ],
+    "source": { "name": "russianfood.com", "url": "https://www.russianfood.com/recipes/bytype/?fid=113" }
+  },
+  {
+    "id": "mimosa_salad",
+    "title": "Салат Мимоза",
+    "category": "Салаты",
+    "time_total": 40,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/F4D03F/333333?text=Mimosa",
+    "ingredients": [
+      { "id": "canned_fish", "name": "Рыбные консервы (сайра/горбуша)", "amount": "1 банка" },
+      { "id": "potato", "name": "Картофель отварной", "amount": "3 шт" },
+      { "id": "carrot", "name": "Морковь отварная", "amount": "2 шт" },
+      { "id": "egg", "name": "Яйцо вареное", "amount": "4 шт" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "mayo", "name": "Майонез", "amount": "150 г" }
+    ],
+    "steps": [
+      { "text": "Отварить овощи и яйца, остудить и почистить.", "time": 20 },
+      { "text": "Размять рыбу вилкой, удалив крупные кости.", "time": 5 },
+      { "text": "Мелко нарезать лук (можно ошпарить кипятком, чтобы не горчил).", "time": 3 },
+      { "text": "Натереть картофель, морковь и белки на терке. Желтки растереть отдельно.", "time": 10 },
+      { "text": "Выкладывать слоями, смазывая майонезом: рыба, лук, картофель, морковь, белки, желтки.", "time": 10 }
+    ],
+    "source": { "name": "povarenok.ru", "url": "https://www.povarenok.ru/recipes/show/18442/" }
+  },
+  {
+    "id": "chicken_cutlets",
+    "title": "Котлеты куриные нежные",
+    "category": "Вторые блюда",
+    "time_total": 45,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/D35400/FFFFFF?text=Cutlets",
+    "ingredients": [
+      { "id": "chicken_mince", "name": "Фарш куриный", "amount": "500 г" },
+      { "id": "bread_white", "name": "Белый хлеб (мякиш)", "amount": "100 г" },
+      { "id": "milk", "name": "Молоко", "amount": "100 мл" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "garlic", "name": "Чеснок", "amount": "1 зубчик" },
+      { "id": "bread_crumbs", "name": "Панировочные сухари", "amount": "50 г" }
+    ],
+    "steps": [
+      { "text": "Замочить хлеб в молоке на 5 минут, затем слегка отжать.", "time": 5 },
+      { "text": "Лук и чеснок измельчить в блендере или натереть на терке.", "time": 5 },
+      { "text": "Смешать фарш, хлеб, лук, чеснок, соль и перец. Хорошо вымешать руками.", "time": 5 },
+      { "text": "Влажными руками сформировать котлеты и обвалять их в сухарях.", "time": 10 },
+      { "text": "Жарить на разогретой сковороде по 5-7 минут с каждой стороны до готовности.", "time": 15 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/osnovnye-blyuda/kurinie-kotleti" }
+  },
+  {
+    "id": "brownie_choco",
+    "title": "Шоколадный Брауни",
+    "category": "Десерты",
+    "time_total": 40,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/5D4037/FFFFFF?text=Brownie",
+    "ingredients": [
+      { "id": "dark_chocolate", "name": "Темный шоколад", "amount": "200 г" },
+      { "id": "butter", "name": "Сливочное масло", "amount": "100 г" },
+      { "id": "sugar", "name": "Сахар", "amount": "150 г" },
+      { "id": "egg", "name": "Яйцо", "amount": "3 шт" },
+      { "id": "flour", "name": "Мука", "amount": "100 г" }
+    ],
+    "steps": [
+      { "text": "Растопить шоколад с маслом на водяной бане до однородности.", "time": 5 },
+      { "text": "Взбить яйца с сахаром миксером до побеления массы.", "time": 5 },
+      { "text": "Влить шоколадную смесь в яичную, аккуратно перемешать лопаткой.", "time": 2 },
+      { "text": "Всыпать муку и быстро замесить тесто (не вымешивать долго).", "time": 3 },
+      { "text": "Вылить в форму с пергаментом. Выпекать при 180°C (внутри должен остаться влажным).", "time": 25 }
+    ],
+    "source": { "name": "gotovim-doma.ru", "url": "https://gotovim-doma.ru/recipe/view/brauni" }
+  },
+  {
+    "id": "soup_chicken_noodle",
+    "title": "Куриная лапша",
+    "category": "Супы",
+    "time_total": 50,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/F1C40F/333333?text=Soup",
+    "ingredients": [
+      { "id": "chicken", "name": "Курица (части)", "amount": "400 г" },
+      { "id": "noodles", "name": "Лапша или вермишель", "amount": "100 г" },
+      { "id": "carrot", "name": "Морковь", "amount": "1 шт" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "water", "name": "Вода", "amount": "2 л" }
+    ],
+    "steps": [
+      { "text": "Сварить бульон из курицы, посолить. Вынуть мясо, отделить от костей.", "time": 30 },
+      { "text": "Морковь натереть, лук мелко нарезать.", "time": 5 },
+      { "text": "Положить овощи в кипящий бульон (можно предварительно обжарить для цвета).", "time": 10 },
+      { "text": "Вернуть куриное мясо, засыпать лапшу и варить до готовности лапши.", "time": 5 }
+    ],
+    "source": { "name": "russianfood.com", "url": "https://www.russianfood.com/recipes/bytype/?fid=68" }
+  },
+  {
+    "id": "vinaigrette",
+    "title": "Винегрет классический",
+    "category": "Салаты",
+    "time_total": 60,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/8E44AD/FFFFFF?text=Vinaigrette",
+    "ingredients": [
+      { "id": "beet", "name": "Свёкла", "amount": "2 шт" },
+      { "id": "carrot", "name": "Морковь", "amount": "2 шт" },
+      { "id": "potato", "name": "Картофель", "amount": "3 шт" },
+      { "id": "cucumber_pickled", "name": "Соленые огурцы", "amount": "3 шт" },
+      { "id": "peas_canned", "name": "Горошек консервированный", "amount": "150 г" },
+      { "id": "oil", "name": "Масло растительное", "amount": "3 ст.л." }
+    ],
+    "steps": [
+      { "text": "Отварить свеклу, морковь и картофель в мундире до готовности.", "time": 40 },
+      { "text": "Остудить и очистить овощи.", "time": 10 },
+      { "text": "Нарезать все овощи и соленые огурцы мелкими кубиками.", "time": 10 },
+      { "text": "Смешать овощи, добавить горошек, посолить и заправить маслом.", "time": 2 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/salaty/vinegret-klassicheskij" }
+  },
+  {
+    "id": "zapekanka_curd",
+    "title": "Творожная запеканка (как в садике)",
+    "category": "Выпечка",
+    "time_total": 50,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/F39C12/FFFFFF?text=Zapekanka",
+    "ingredients": [
+      { "id": "cottage_cheese", "name": "Творог", "amount": "500 г" },
+      { "id": "semolina", "name": "Манка", "amount": "3 ст.л." },
+      { "id": "egg", "name": "Яйцо", "amount": "3 шт" },
+      { "id": "sugar", "name": "Сахар", "amount": "3 ст.л." },
+      { "id": "sour_cream", "name": "Сметана", "amount": "2 ст.л." },
+      { "id": "raisins", "name": "Изюм", "amount": "50 г" }
+    ],
+    "steps": [
+      { "text": "Замочить изюм в горячей воде. Манку смешать со сметаной и оставить набухать.", "time": 15 },
+      { "text": "Творог, яйца и сахар взбить блендером до однородности.", "time": 5 },
+      { "text": "Соединить творожную массу с манкой и изюмом, перемешать.", "time": 2 },
+      { "text": "Смазать форму маслом, выложить массу. Выпекать при 180°C до румяности.", "time": 30 }
+    ],
+    "source": { "name": "povarenok.ru", "url": "https://www.povarenok.ru/recipes/show/38584/" }
+  },
+  {
+    "id": "pasta_bolognese",
+    "title": "Паста Болоньезе (домашняя)",
+    "category": "Вторые блюда",
+    "time_total": 35,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/C0392B/FFFFFF?text=Bolognese",
+    "ingredients": [
+      { "id": "minced_meat", "name": "Фарш (говядина/свинина)", "amount": "400 г" },
+      { "id": "spaghetti", "name": "Спагетти", "amount": "250 г" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "garlic", "name": "Чеснок", "amount": "2 зубчика" },
+      { "id": "tomato_sauce", "name": "Томатный соус или паста", "amount": "200 г" },
+      { "id": "oil", "name": "Масло для жарки", "amount": "2 ст.л." }
+    ],
+    "steps": [
+      { "text": "Мелко нарезать лук и чеснок. Обжарить на масле до мягкости.", "time": 5 },
+      { "text": "Добавить фарш, жарить, разбивая комочки, пока мясо не посветлеет.", "time": 10 },
+      { "text": "Добавить томатный соус, соль, специи. Тушить на слабом огне под крышкой.", "time": 15 },
+      { "text": "Параллельно отварить спагетти в подсоленной воде. Слить воду.", "time": 10 },
+      { "text": "Смешать спагетти с соусом или выложить соус сверху при подаче.", "time": 1 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/pasta-picca/pasta-boloneze" }
   }
 ]
