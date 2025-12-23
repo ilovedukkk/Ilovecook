@@ -503,7 +503,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- 10. PDF Export Logic ---
+   // --- 10. PDF Export Logic (ISPRRAVLENO) ---
     if (els.shopDownloadBtn) {
         els.shopDownloadBtn.addEventListener('click', () => {
             if (shoppingList.length === 0) {
@@ -511,38 +511,64 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // 1. Создаем красивый временный элемент для печати
+            // 1. Создаем элемент
             const element = document.createElement('div');
-            element.style.padding = '20px';
+            // Важно: задаем ширину, чтобы верстка была как на листе A4
+            element.style.width = '700px'; 
+            element.style.padding = '30px';
             element.style.fontFamily = 'Inter, sans-serif';
+            element.style.backgroundColor = 'white';
             
-            // Формируем HTML списка
+            // Делаем его невидимым для пользователя, но видимым для "камеры" скрипта
+            element.style.position = 'absolute';
+            element.style.left = '-9999px';
+            element.style.top = '0';
+            element.style.zIndex = '-1';
+
+            // Формируем контент
             const date = new Date().toLocaleDateString();
             const itemsHTML = shoppingList.map(item => 
-                `<li style="margin-bottom: 10px; font-size: 16px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
-                    ${item.done ? '✅' : '⬜'} ${item.text}
+                `<li style="margin-bottom: 12px; font-size: 18px; border-bottom: 1px solid #eee; padding-bottom: 5px; list-style: none;">
+                    <span style="display:inline-block; width:20px;">${item.done ? '☑' : '☐'}</span> ${item.text}
                  </li>`
             ).join('');
 
             element.innerHTML = `
-                <h1 style="color: #FF6B6B; margin-bottom: 10px;">Ilovecook</h1>
-                <h3 style="margin-bottom: 20px; color: #555;">Список покупок от ${date}</h3>
-                <ul style="list-style: none; padding: 0;">${itemsHTML}</ul>
-                <p style="margin-top: 30px; color: #888; font-size: 12px;">Сгенерировано на ilovecook</p>
+                <div style="text-align: center; margin-bottom: 30px;">
+                     <h1 style="color: #FF6B6B; margin: 0;">Ilovecook</h1>
+                     <p style="color: #666; margin: 5px 0;">Список покупок от ${date}</p>
+                </div>
+                <ul style="padding: 0;">${itemsHTML}</ul>
+                <div style="margin-top: 40px; text-align: center; font-size: 12px; color: #999;">
+                    Сгенерировано приложением Ilovecook
+                </div>
             `;
 
-            // 2. Настройки PDF
+            // 2. ВРЕМЕННО добавляем на страницу (вот это исправляет пустой PDF!)
+            document.body.appendChild(element);
+
+            // 3. Настройки PDF
             const opt = {
                 margin:       10,
-                filename:     'shopping-list.pdf',
+                filename:     `shopping-list-${date}.pdf`,
                 image:        { type: 'jpeg', quality: 0.98 },
-                html2canvas:  { scale: 2 }, // Улучшает качество текста
+                html2canvas:  { scale: 2, useCORS: true }, 
                 jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
             };
 
-            // 3. Генерируем и сохраняем
-            // Используем библиотеку, которую подключили в HTML
-            html2pdf().set(opt).from(element).save();
+            // 4. Генерируем, сохраняем и удаляем мусор
+            html2pdf()
+                .set(opt)
+                .from(element)
+                .save()
+                .then(() => {
+                    // Удаляем временный элемент после скачивания
+                    document.body.removeChild(element);
+                })
+                .catch(err => {
+                    console.error('Ошибка PDF:', err);
+                    document.body.removeChild(element); // Удаляем даже в случае ошибки
+                });
         });
     }
     
