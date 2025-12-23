@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         themeBtn: document.getElementById('theme-toggle'),
         modal: document.getElementById('recipe-modal'),
         modalBody: document.getElementById('modal-body'),
+        servingsSelect: document.getElementById('servings-select'),
         resultsTitle: document.getElementById('results-title'),
         timerToast: document.getElementById('timer-alert'),
         randomBtn: document.getElementById('random-btn'),
