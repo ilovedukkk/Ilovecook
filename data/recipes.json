@@ -1,146 +1,246 @@
 [
   {
-    "id": "borsch_classic",
-    "title": "Борщ классический",
-    "category": "Супы",
-    "time_total": 90,
-    "difficulty": "medium",
-    "image": "https://placehold.co/600x400/e74c3c/ffffff?text=Borsch",
-    "ingredients": [
-      { "id": "beef", "name": "Говядина на кости", "amount": "500 г" },
-      { "id": "beet", "name": "Свёкла", "amount": "2 шт" },
-      { "id": "potato", "name": "Картофель", "amount": "3 шт" },
-      { "id": "carrot", "name": "Морковь", "amount": "1 шт" },
-      { "id": "cabbage", "name": "Капуста", "amount": "300 г" }
-    ],
-    "steps": [
-      { "text": "Залить мясо водой, довести до кипения, снять пену. Варить бульон.", "time": 60 },
-      { "text": "Нарезать картофель кубиками, нашинковать капусту. Добавить в бульон.", "time": 15 },
-      { "text": "Сделать зажарку: лук, морковь и свёклу обжарить с томатной пастой.", "time": 10 },
-      { "text": "Соединить овощи с бульоном, добавить специи. Дать настояться.", "time": 5 }
-    ],
-    "source": { "name": "gotovim-doma.ru", "url": "https://gotovim-doma.ru/recipe/view/borsch" }
-  },
-  {
-    "id": "sirniki",
-    "title": "Пышные сырники",
+    "id": "oatmeal_apple",
+    "title": "Овсяная каша с карамелизированным яблоком",
     "category": "Завтраки",
     "time_total": 20,
     "difficulty": "easy",
-    "image": "https://placehold.co/600x400/f1c40f/333333?text=Sirniki",
+    "image": "https://placehold.co/600x400/F1C40F/333333?text=Oatmeal",
     "ingredients": [
-      { "id": "cottage_cheese", "name": "Творог", "amount": "400 г" },
-      { "id": "egg", "name": "Яйцо", "amount": "1 шт" },
-      { "id": "flour", "name": "Мука", "amount": "3 ст.л." },
-      { "id": "sugar", "name": "Сахар", "amount": "2 ст.л." }
+      { "id": "oats", "name": "Овсяные хлопья (долгого приготовления)", "amount": "100 г" },
+      { "id": "milk", "name": "Молоко", "amount": "300 мл" },
+      { "id": "apple", "name": "Яблоко", "amount": "1 шт" },
+      { "id": "butter", "name": "Сливочное масло", "amount": "20 г" },
+      { "id": "sugar", "name": "Сахар", "amount": "2 ч.л." },
+      { "id": "cinnamon", "name": "Корица", "amount": "по вкусу" }
     ],
     "steps": [
-      { "text": "Размять творог вилкой с сахаром и яйцом.", "time": 2 },
-      { "text": "Добавить муку, замесить мягкое тесто.", "time": 3 },
-      { "text": "Сформировать шайбочки, обвалять в муке.", "time": 5 },
-      { "text": "Жарить на среднем огне до золотистой корочки с каждой стороны.", "time": 10 }
+      { "text": "Нарезать яблоко небольшими кубиками.", "time": 3 },
+      { "text": "Разогреть сковороду, растопить половину масла и обжарить яблоки с сахаром до карамельного цвета.", "time": 5 },
+      { "text": "В сотейнике довести молоко до кипения, всыпать хлопья и щепотку соли. Убавить огонь.", "time": 5 },
+      { "text": "Варить кашу на медленном огне, периодически помешивая, до загустения.", "time": 10 },
+      { "text": "Снять с огня, добавить оставшееся масло, накрыть крышкой и дать постоять.", "time": 2 },
+      { "text": "Выложить кашу в тарелку, сверху украсить карамельными яблоками и посыпать корицей.", "time": 1 }
     ],
-    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/zavtraki/syrniki-klassicheskie" }
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/zavtraki" }
   },
   {
-    "id": "caesar",
+    "id": "shakshuka",
+    "title": "Шакшука с томатами и перцем",
+    "category": "Завтраки",
+    "time_total": 25,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/E74C3C/FFFFFF?text=Shakshuka",
+    "ingredients": [
+      { "id": "egg", "name": "Яйцо", "amount": "3 шт" },
+      { "id": "tomato", "name": "Помидоры", "amount": "3 шт" },
+      { "id": "pepper_bell", "name": "Болгарский перец", "amount": "1 шт" },
+      { "id": "onion", "name": "Лук репчатый", "amount": "1 шт" },
+      { "id": "garlic", "name": "Чеснок", "amount": "2 зубчика" },
+      { "id": "oil", "name": "Оливковое масло", "amount": "2 ст.л." }
+    ],
+    "steps": [
+      { "text": "Мелко нарезать лук и чеснок. Перец нарезать кубиками.", "time": 5 },
+      { "text": "Обжарить лук и чеснок на масле до прозрачности.", "time": 3 },
+      { "text": "Добавить перец, жарить еще 5 минут. В это время нарезать помидоры.", "time": 5 },
+      { "text": "Добавить помидоры и специи (зиры, паприку), тушить до загустения соуса.", "time": 7 },
+      { "text": "Сделать ложкой углубления в соусе и аккуратно разбить туда яйца.", "time": 1 },
+      { "text": "Готовить на медленном огне под крышкой, пока белок не схватится, а желток останется жидким.", "time": 5 }
+    ],
+    "source": { "name": "gotovim-doma.ru", "url": "https://gotovim-doma.ru/recipe/view/shakshuka" }
+  },
+  {
+    "id": "mushroom_soup",
+    "title": "Грибной крем-суп",
+    "category": "Супы",
+    "time_total": 40,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/95A5A6/FFFFFF?text=MushroomSoup",
+    "ingredients": [
+      { "id": "mushrooms", "name": "Шампиньоны", "amount": "400 г" },
+      { "id": "potato", "name": "Картофель", "amount": "3 шт" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "cream", "name": "Сливки 20%", "amount": "200 мл" },
+      { "id": "water", "name": "Вода или бульон", "amount": "600 мл" }
+    ],
+    "steps": [
+      { "text": "Нарезать картофель кубиками, поставить вариться в воде до готовности.", "time": 20 },
+      { "text": "Нарезать лук и грибы пластинками.", "time": 5 },
+      { "text": "Обжарить лук с грибами на сковороде до золотистого цвета.", "time": 10 },
+      { "text": "Добавить обжаренные грибы в кастрюлю к готовому картофелю.", "time": 2 },
+      { "text": "Измельчить суп погружным блендером до однородного пюре.", "time": 3 },
+      { "text": "Влить сливки, перемешать и прогреть на огне (не кипятить).", "time": 2 }
+    ],
+    "source": { "name": "povarenok.ru", "url": "https://www.povarenok.ru/recipes/category/6/" }
+  },
+  {
+    "id": "caesar_salad",
     "title": "Салат Цезарь с курицей",
     "category": "Салаты",
-    "time_total": 30,
+    "time_total": 35,
     "difficulty": "medium",
-    "image": "https://placehold.co/600x400/2ecc71/ffffff?text=Caesar",
+    "image": "https://placehold.co/600x400/2ECC71/FFFFFF?text=Caesar",
     "ingredients": [
-      { "id": "chicken_breast", "name": "Куриное филе", "amount": "200 г" },
-      { "id": "salad_iceberg", "name": "Салат Айсберг", "amount": "1 кочан" },
-      { "id": "tomato", "name": "Помидоры черри", "amount": "6 шт" },
-      { "id": "cheese", "name": "Пармезан", "amount": "50 г" },
-      { "id": "bread_white", "name": "Белый хлеб (для сухариков)", "amount": "100 г" }
+      { "id": "chicken_breast", "name": "Куриное филе", "amount": "300 г" },
+      { "id": "lettuce", "name": "Салат Романо или Айсберг", "amount": "1 кочан" },
+      { "id": "bread_white", "name": "Белый хлеб", "amount": "3 ломтика" },
+      { "id": "parmesan", "name": "Сыр Пармезан", "amount": "50 г" },
+      { "id": "cherry_tomato", "name": "Помидоры черри", "amount": "6 шт" },
+      { "id": "sauce_caesar", "name": "Соус Цезарь", "amount": "50 г" }
     ],
     "steps": [
-      { "text": "Нарезать хлеб кубиками, подсушить на сковороде.", "time": 10 },
-      { "text": "Куриное филе обжарить до готовности, нарезать ломтиками.", "time": 15 },
-      { "text": "Нарвать листья салата, выложить курицу, сухарики и помидоры.", "time": 5 }
+      { "text": "Нарезать хлеб кубиками, сбрызнуть маслом и подсушить в духовке или на сковороде.", "time": 10 },
+      { "text": "Куриное филе отбить, посолить, обжарить целиком по 4-5 минут с каждой стороны.", "time": 10 },
+      { "text": "Дать курице немного остыть и нарезать ломтиками.", "time": 5 },
+      { "text": "Листья салата нарвать руками в большую миску.", "time": 3 },
+      { "text": "Добавить соус и аккуратно перемешать листья.", "time": 2 },
+      { "text": "Выложить сверху курицу, сухарики, половинки черри и посыпать тертым пармезаном.", "time": 5 }
     ],
-    "source": { "name": "povarenok.ru", "url": "https://www.povarenok.ru/recipes/show/12345/" }
+    "source": { "name": "russianfood.com", "url": "https://www.russianfood.com/recipes/bytype/?fid=38" }
   },
   {
-    "id": "plov",
-    "title": "Плов с курицей",
+    "id": "beef_stroganoff",
+    "title": "Бефстроганов",
     "category": "Вторые блюда",
-    "time_total": 60,
+    "time_total": 45,
     "difficulty": "medium",
-    "image": "https://placehold.co/600x400/e67e22/ffffff?text=Plov",
+    "image": "https://placehold.co/600x400/8E44AD/FFFFFF?text=BeefStroganoff",
     "ingredients": [
-      { "id": "rice", "name": "Рис", "amount": "500 г" },
-      { "id": "chicken_breast", "name": "Курица", "amount": "500 г" },
-      { "id": "carrot", "name": "Морковь", "amount": "2 шт" },
-      { "id": "onion", "name": "Лук", "amount": "2 шт" },
-      { "id": "garlic", "name": "Чеснок", "amount": "1 головка" }
+      { "id": "beef", "name": "Говядина (вырезка)", "amount": "500 г" },
+      { "id": "onion", "name": "Лук репчатый", "amount": "2 шт" },
+      { "id": "sour_cream", "name": "Сметана", "amount": "200 г" },
+      { "id": "flour", "name": "Мука", "amount": "1 ст.л." },
+      { "id": "tomato_paste", "name": "Томатная паста", "amount": "1 ч.л." }
     ],
     "steps": [
-      { "text": "Нарезать лук полукольцами, морковь соломкой. Обжарить в казане.", "time": 10 },
-      { "text": "Добавить мясо, жарить до корочки.", "time": 10 },
-      { "text": "Засыпать промытый рис, залить водой, вставить чеснок. Тушить под крышкой.", "time": 40 }
+      { "text": "Нарезать мясо поперек волокон ломтиками толщиной 1 см, отбить, затем нарезать полосками.", "time": 10 },
+      { "text": "Нарезать лук полукольцами и обжарить до мягкости.", "time": 7 },
+      { "text": "На сильном огне обжарить мясо порциями (чтобы не тушилось) по 2-3 минуты до корочки.", "time": 10 },
+      { "text": "Вернуть все мясо и лук в сковороду, посыпать мукой, перемешать и жарить 1 минуту.", "time": 2 },
+      { "text": "Добавить сметану и томатную пасту, перемешать, влить немного воды если густо.", "time": 3 },
+      { "text": "Тушить на медленном огне под крышкой до мягкости мяса.", "time": 15 }
     ],
-    "source": { "name": "russianfood.com", "url": "https://www.russianfood.com/recipes/" }
+    "source": { "name": "gotovim-doma.ru", "url": "https://gotovim-doma.ru/recipe/view/befstroganov" }
   },
   {
-    "id": "charlotte",
+    "id": "pasta_carbonara",
+    "title": "Паста Карбонара (классика)",
+    "category": "Вторые блюда",
+    "time_total": 25,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/F39C12/FFFFFF?text=Carbonara",
+    "ingredients": [
+      { "id": "spaghetti", "name": "Спагетти", "amount": "200 г" },
+      { "id": "bacon", "name": "Бекон или грудинка", "amount": "100 г" },
+      { "id": "egg_yolk", "name": "Желтки яичные", "amount": "3 шт" },
+      { "id": "parmesan", "name": "Сыр Пармезан", "amount": "50 г" },
+      { "id": "black_pepper", "name": "Черный перец", "amount": "по вкусу" }
+    ],
+    "steps": [
+      { "text": "Поставить воду на спагетти, посолить. Нарезать бекон полосками.", "time": 5 },
+      { "text": "Обжарить бекон на медленном огне, чтобы вытопился жир.", "time": 7 },
+      { "text": "Смешать желтки с тертым сыром и большим количеством перца в миске.", "time": 3 },
+      { "text": "Сварить пасту до состояния al dente (минус 1 минута от инструкции).", "time": 8 },
+      { "text": "Переложить пасту к бекону (огонь выключить!), добавить немного воды от варки.", "time": 1 },
+      { "text": "Влить яичный соус в горячую пасту и энергично мешать, чтобы соус загустел, но яйца не свернулись.", "time": 2 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/pasta-picca/pasta-carbonara" }
+  },
+  {
+    "id": "charlotte_simple",
     "title": "Шарлотка с яблоками",
     "category": "Выпечка",
-    "time_total": 45,
+    "time_total": 55,
     "difficulty": "easy",
-    "image": "https://placehold.co/600x400/d35400/ffffff?text=Charlotte",
+    "image": "https://placehold.co/600x400/D35400/FFFFFF?text=Charlotte",
     "ingredients": [
-      { "id": "apple", "name": "Яблоки", "amount": "3 шт" },
+      { "id": "apple", "name": "Яблоки (кислые)", "amount": "4 шт" },
       { "id": "egg", "name": "Яйцо", "amount": "4 шт" },
-      { "id": "sugar", "name": "Сахар", "amount": "1 стакан" },
-      { "id": "flour", "name": "Мука", "amount": "1 стакан" }
+      { "id": "sugar", "name": "Сахар", "amount": "200 г" },
+      { "id": "flour", "name": "Мука", "amount": "160 г" },
+      { "id": "butter", "name": "Масло (для формы)", "amount": "5 г" }
     ],
     "steps": [
-      { "text": "Взбить яйца с сахаром в пышную пену (миксером).", "time": 7 },
-      { "text": "Аккуратно вмешать муку. Нарезать яблоки.", "time": 5 },
-      { "text": "Залить яблоки тестом и выпекать в духовке при 180°C.", "time": 35 }
+      { "text": "Включить духовку на 180°C. Нарезать яблоки дольками или кубиками.", "time": 10 },
+      { "text": "Взбивать яйца с сахаром миксером на высокой скорости до пышной светлой пены.", "time": 7 },
+      { "text": "Аккуратно вмешать муку лопаткой движениями снизу вверх.", "time": 3 },
+      { "text": "Смазать форму маслом, выложить яблоки, залить тестом.", "time": 5 },
+      { "text": "Выпекать в разогретой духовке. Не открывать дверцу первые 20 минут!", "time": 35 },
+      { "text": "Проверить готовность деревянной шпажкой (должна выходить сухой).", "time": 1 }
     ],
-    "source": { "name": "gotovim-doma.ru", "url": "https://gotovim-doma.ru/recipe/view/sharlotka" }
+    "source": { "name": "povarenok.ru", "url": "https://www.povarenok.ru/recipes/show/15980/" }
   },
   {
-    "id": "tiramisu",
-    "title": "Тирамису (ленивый)",
-    "category": "Десерты",
-    "time_total": 20,
-    "difficulty": "medium",
-    "image": "https://placehold.co/600x400/8e44ad/ffffff?text=Tiramisu",
-    "ingredients": [
-      { "id": "mascarpone", "name": "Маскарпоне (или мягкий творог)", "amount": "250 г" },
-      { "id": "cookies_savoiardi", "name": "Печенье Савоярди", "amount": "100 г" },
-      { "id": "coffee", "name": "Кофе эспрессо", "amount": "100 мл" },
-      { "id": "sugar_powder", "name": "Сахарная пудра", "amount": "2 ст.л." }
-    ],
-    "steps": [
-      { "text": "Сварить крепкий кофе и остудить.", "time": 10 },
-      { "text": "Взбить маскарпоне с пудрой.", "time": 5 },
-      { "text": "Обмакнуть печенье в кофе, выложить слоями с кремом. Убрать в холод.", "time": 5 }
-    ],
-    "source": { "name": "eda.ru", "url": "https://eda.ru/" }
-  },
-   {
-    "id": "omlet",
-    "title": "Омлет с овощами",
-    "category": "Завтраки",
-    "time_total": 10,
+    "id": "greek_salad",
+    "title": "Греческий салат",
+    "category": "Салаты",
+    "time_total": 15,
     "difficulty": "easy",
-    "image": "https://placehold.co/600x400/f39c12/ffffff?text=Omlet",
+    "image": "https://placehold.co/600x400/3498DB/FFFFFF?text=GreekSalad",
     "ingredients": [
-      { "id": "egg", "name": "Яйцо", "amount": "2 шт" },
-      { "id": "milk", "name": "Молоко", "amount": "50 мл" },
-      { "id": "tomato", "name": "Помидор", "amount": "1 шт" }
+      { "id": "cucumber", "name": "Огурец", "amount": "2 шт" },
+      { "id": "tomato", "name": "Помидор", "amount": "2 шт" },
+      { "id": "feta", "name": "Сыр Фета", "amount": "150 г" },
+      { "id": "olives", "name": "Маслины без косточки", "amount": "100 г" },
+      { "id": "onion_red", "name": "Красный лук", "amount": "0.5 шт" },
+      { "id": "oregano", "name": "Орегано", "amount": "1 ч.л." }
     ],
     "steps": [
-      { "text": "Взбить яйца с молоком.", "time": 2 },
-      { "text": "Нарезать помидор, обжарить 1 минуту.", "time": 1 },
-      { "text": "Залить омлетом и готовить под крышкой.", "time": 5 }
+      { "text": "Крупно нарезать помидоры и огурцы (кубиками 2-3 см).", "time": 5 },
+      { "text": "Лук нарезать тонкими полукольцами.", "time": 3 },
+      { "text": "Смешать овощи и маслины в миске, заправить оливковым маслом.", "time": 2 },
+      { "text": "Нарезать фету крупными кубиками.", "time": 2 },
+      { "text": "Выложить сыр сверху на салат (не перемешивать, чтобы не раскрошить), посыпать орегано.", "time": 1 }
     ],
-    "source": { "name": "povarenok.ru", "url": "https://povarenok.ru" }
+    "source": { "name": "gotovim-doma.ru", "url": "https://gotovim-doma.ru/recipe/view/grecheskiy-salat" }
+  },
+  {
+    "id": "chocolate_fondant",
+    "title": "Шоколадный фондан",
+    "category": "Десерты",
+    "time_total": 25,
+    "difficulty": "hard",
+    "image": "https://placehold.co/600x400/3E2723/FFFFFF?text=Fondant",
+    "ingredients": [
+      { "id": "dark_chocolate", "name": "Горький шоколад 70%", "amount": "100 г" },
+      { "id": "butter", "name": "Сливочное масло", "amount": "80 г" },
+      { "id": "egg", "name": "Яйцо", "amount": "2 шт" },
+      { "id": "sugar", "name": "Сахар", "amount": "50 г" },
+      { "id": "flour", "name": "Мука", "amount": "30 г" }
+    ],
+    "steps": [
+      { "text": "Растопить шоколад с маслом на водяной бане или в микроволновке импульсами.", "time": 5 },
+      { "text": "Взбить яйца с сахаром в пышную пену.", "time": 5 },
+      { "text": "Влить шоколадную смесь в яичную, аккуратно перемешать.", "time": 2 },
+      { "text": "Всыпать просеянную муку, перемешать до однородности.", "time": 2 },
+      { "text": "Смазать формочки маслом, присыпать какао. Разлить тесто.", "time": 3 },
+      { "text": "Выпекать при 200°C ровно 8-10 минут (центр должен дрожать). Подавать сразу!", "time": 10 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/vypechka-deserty/shokoladniy-fondan" }
+  },
+  {
+    "id": "solyanka_myasnaya",
+    "title": "Солянка сборная мясная",
+    "category": "Супы",
+    "time_total": 60,
+    "difficulty": "hard",
+    "image": "https://placehold.co/600x400/C0392B/FFFFFF?text=Solyanka",
+    "ingredients": [
+      { "id": "meat_various", "name": "Мясное ассорти (ветчина, колбаса, отварное мясо)", "amount": "400 г" },
+      { "id": "cucumber_pickled", "name": "Соленые огурцы", "amount": "3 шт" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "tomato_paste", "name": "Томатная паста", "amount": "2 ст.л." },
+      { "id": "capers", "name": "Каперсы (по желанию)", "amount": "1 ст.л." },
+      { "id": "lemon", "name": "Лимон", "amount": "0.5 шт" }
+    ],
+    "steps": [
+      { "text": "Сварить крепкий мясной бульон (или использовать воду и больше мясных деликатесов).", "time": 30 },
+      { "text": "Мелко нарезать лук, обжарить с томатной пастой.", "time": 7 },
+      { "text": "Нарезать огурцы соломкой, добавить к луку, влить половник бульона и потушить.", "time": 10 },
+      { "text": "Нарезать все мясные продукты соломкой или кубиками.", "time": 5 },
+      { "text": "В кипящий бульон положить зажарку и мясную нарезку. Варить 10 минут.", "time": 10 },
+      { "text": "Добавить каперсы, маслины, выключить огонь. При подаче положить ломтик лимона и сметану.", "time": 2 }
+    ],
+    "source": { "name": "russianfood.com", "url": "https://www.russianfood.com/recipes/bytype/?fid=3" }
   }
 ]
