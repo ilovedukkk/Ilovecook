@@ -503,7 +503,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-   // --- 10. PDF Export Logic (STABLE VERSION) ---
+// --- 10. PDF Export Logic (FIXED FOR BLANK PAGES) ---
     if (els.shopDownloadBtn) {
         els.shopDownloadBtn.addEventListener('click', () => {
             if (shoppingList.length === 0) {
@@ -511,31 +511,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Блокируем кнопку на время загрузки, чтобы не нажимали дважды
             const originalText = els.shopDownloadBtn.textContent;
             els.shopDownloadBtn.disabled = true;
             els.shopDownloadBtn.textContent = '⏳...';
 
-            // 1. Ищем или создаем контейнер (ОДИН РАЗ)
+            // 1. Ищем или создаем контейнер
             let element = document.getElementById('pdf-hidden-container');
             if (!element) {
                 element = document.createElement('div');
                 element.id = 'pdf-hidden-container';
-                // Стили для правильного отображения A4
-                element.style.width = '700px'; 
+                
+                // --- ГЛАВНОЕ ИСПРАВЛЕНИЕ СТИЛЕЙ ---
+                // Вместо того чтобы убирать элемент далеко влево (-9999px),
+                // мы оставляем его на экране, но кладем ПОД основной контент.
+                element.style.position = 'fixed';
+                element.style.top = '0';
+                element.style.left = '0';
+                element.style.width = '700px'; // Ширина как у A4
+                element.style.zIndex = '-9999'; // Прячем за всем остальным
+                element.style.visibility = 'visible'; // Обязательно visible для скриншота!
+                element.style.backgroundColor = '#ffffff'; // Белый фон обязателен
+                
                 element.style.padding = '30px';
                 element.style.fontFamily = 'Inter, sans-serif';
-                element.style.backgroundColor = 'white';
                 element.style.color = '#000';
-                // Прячем за границы экрана (но не display: none!)
-                element.style.position = 'absolute';
-                element.style.left = '-9999px';
-                element.style.top = '0';
-                element.style.zIndex = '-1000';
+                
                 document.body.appendChild(element);
             }
 
-            // 2. Наполняем контентом (перезаписываем старый)
+            // 2. Наполняем контентом
             const date = new Date().toLocaleDateString();
             const itemsHTML = shoppingList.map(item => 
                 `<li style="margin-bottom: 12px; font-size: 18px; border-bottom: 1px solid #eee; padding-bottom: 5px; list-style: none;">
@@ -564,7 +568,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 margin:       10,
                 filename:     `shopping-list-${date}.pdf`,
                 image:        { type: 'jpeg', quality: 0.98 },
-                html2canvas:  { scale: 2, useCORS: true }, 
+                // scrollY: 0 важен, чтобы скриншот начинался с начала элемента, а не с текущей прокрутки
+                html2canvas:  { scale: 2, useCORS: true, scrollY: 0 }, 
                 jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
             };
 
@@ -574,15 +579,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 .from(element)
                 .save()
                 .then(() => {
-                    // Возвращаем кнопку в исходное состояние
                     els.shopDownloadBtn.disabled = false;
                     els.shopDownloadBtn.textContent = originalText;
-                    // Очищаем контейнер, чтобы не занимал память (но сам div оставляем)
-                    element.innerHTML = ''; 
+                    element.innerHTML = ''; // Очищаем, но не удаляем контейнер
                 })
                 .catch(err => {
                     console.error('Ошибка PDF:', err);
-                    alert('Ошибка при создании PDF. Попробуйте обновить страницу.');
                     els.shopDownloadBtn.disabled = false;
                     els.shopDownloadBtn.textContent = originalText;
                 });
