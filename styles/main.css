@@ -116,3 +116,37 @@ body { font-family: 'Inter', sans-serif; background: var(--bg-body); color: var(
     color: var(--primary) !important; /* Подсветка цветом при вращении */
     border-color: var(--primary) !important;
 }
+
+/* Добавь это в конец файла CSS */
+
+.controls-wrapper {
+    margin-bottom: 20px;
+}
+
+.servings-filter {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-card);
+    padding: 10px 16px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    width: fit-content;
+}
+
+.servings-filter label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.servings-filter select {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 4px 8px;
+    background: var(--bg-body);
+    color: var(--text-main);
+    outline: none;
+    font-family: inherit;
+    cursor: pointer;
+}
