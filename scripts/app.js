@@ -1,335 +1,323 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- State ---
-    let allIngredients = [];
-    let allRecipes = [];
+    // --- State & DOM ---
+    let recipes = [];
+    let ingredients = [];
     let substitutes = {};
-    
     let selectedIngredients = new Set();
-    let favorites = JSON.parse(localStorage.getItem('ilovecook_favorites')) || [];
-    let shoppingList = JSON.parse(localStorage.getItem('ilovecook_shopping')) || [];
+    let activeTimer = null; // Для хранения ID интервала
 
-    // --- DOM Elements ---
-    const ingredientsListEl = document.getElementById('ingredients-list');
-    const ingredientSearch = document.getElementById('ingredient-search');
-    const recipesContainer = document.getElementById('recipes-container');
-    const selectedCountEl = document.getElementById('selected-count');
-    const modal = document.getElementById('recipe-modal');
-    const modalBody = document.getElementById('modal-body');
-    const shoppingModal = document.getElementById('shopping-modal');
-    const shoppingListItems = document.getElementById('shopping-list-items');
+    const els = {
+        grid: document.getElementById('recipes-container'),
+        ingList: document.getElementById('ingredients-list'),
+        search: document.getElementById('global-search'),
+        clearBtn: document.getElementById('clear-ingredients'),
+        filters: document.querySelectorAll('.filter-pill'),
+        themeBtn: document.getElementById('theme-toggle'),
+        modal: document.getElementById('recipe-modal'),
+        modalBody: document.getElementById('modal-body'),
+        resultsTitle: document.getElementById('results-title'),
+        timerToast: document.getElementById('timer-alert'),
+        timerCount: document.getElementById('timer-countdown'),
+        timerStep: document.getElementById('timer-step-text'),
+        stopTimerBtn: document.getElementById('stop-timer')
+    };
 
-    // --- Init ---
-    async function loadData() {
+    // --- 1. Init & Data Loading ---
+    async function init() {
         try {
-            const [ingRes, recRes, subRes] = await Promise.all([
-                fetch('data/ingredients.json'),
-                fetch('data/recipes.json'),
-                fetch('data/substitutes.json')
+            // В реальном проекте загружаем JSON файлы
+            // const r = await fetch('data/recipes.json'); recipes = await r.json();
+            // Здесь используем заглушки для демонстрации (данные из ответа выше)
+            
+            // Загружаем данные (имитация fetch)
+            const [recData, ingData, subData] = await Promise.all([
+                fetch('data/recipes.json').then(r => r.json()),
+                fetch('data/ingredients.json').then(r => r.json()),
+                fetch('data/substitutes.json').then(r => r.json())
             ]);
+            
+            recipes = recData;
+            ingredients = ingData;
+            substitutes = subData;
 
-            allIngredients = await ingRes.json();
-            allRecipes = await recRes.json();
-            substitutes = await subRes.json();
-
-            renderIngredients(allIngredients);
-            // Восстанавливаем выбранные ингредиенты из localStorage, если нужно (опционально)
-            // Но пока просто рендерим пустой список рецептов
-            updateRecipesList();
-        } catch (error) {
-            console.error('Ошибка загрузки данных:', error);
-            ingredientsListEl.innerHTML = '<div style="color:red">Ошибка загрузки данных. Проверьте консоль.</div>';
+            renderIngredients(ingredients);
+            renderRecipes(); // Показываем все по умолчанию
+            initTheme();
+        } catch (e) {
+            console.error("Ошибка инициализации:", e);
         }
     }
 
-    loadData();
+    // --- 2. Dark Mode Logic ---
+    function initTheme() {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
 
-    // --- Ingredients Logic ---
-    function renderIngredients(list) {
-        ingredientsListEl.innerHTML = '';
-        list.forEach(ing => {
-            const chip = document.createElement('div');
-            chip.className = `ingredient-chip ${selectedIngredients.has(ing.id) ? 'selected' : ''}`;
-            chip.textContent = ing.name;
-            chip.dataset.id = ing.id;
-            chip.onclick = () => toggleIngredient(ing.id);
-            ingredientsListEl.appendChild(chip);
+        els.themeBtn.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme');
+            const newTheme = current === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
         });
     }
 
-    function toggleIngredient(id) {
-        if (selectedIngredients.has(id)) {
-            selectedIngredients.delete(id);
-        } else {
-            selectedIngredients.add(id);
-        }
-        
-        // Обновляем UI чипов
-        const chip = document.querySelector(`.ingredient-chip[data-id="${id}"]`);
-        if(chip) chip.classList.toggle('selected');
-        
-        selectedCountEl.textContent = selectedIngredients.size;
-        updateRecipesList();
+    function updateThemeIcon(theme) {
+        els.themeBtn.querySelector('span').textContent = theme === 'light' ? 'dark_mode' : 'light_mode';
     }
 
-    ingredientSearch.addEventListener('input', (e) => {
-        const term = e.target.value.toLowerCase();
-        const filtered = allIngredients.filter(i => i.name.toLowerCase().includes(term));
-        renderIngredients(filtered);
-    });
+    // --- 3. Ingredients Logic ---
+    function renderIngredients(list) {
+        els.ingList.innerHTML = '';
+        list.forEach(ing => {
+            const el = document.createElement('div');
+            el.className = 'chip';
+            el.textContent = ing.name;
+            el.dataset.id = ing.id;
+            el.onclick = () => toggleIngredient(ing.id, el);
+            els.ingList.appendChild(el);
+        });
+    }
 
-    document.getElementById('clear-ingredients').addEventListener('click', () => {
+    function toggleIngredient(id, el) {
+        if (selectedIngredients.has(id)) {
+            selectedIngredients.delete(id);
+            el.classList.remove('selected');
+        } else {
+            selectedIngredients.add(id);
+            el.classList.add('selected');
+        }
+        
+        const hasSelection = selectedIngredients.size > 0;
+        els.clearBtn.classList.toggle('hidden', !hasSelection);
+        
+        // Пересчет рецептов
+        renderRecipes();
+    }
+
+    els.clearBtn.addEventListener('click', () => {
         selectedIngredients.clear();
-        selectedCountEl.textContent = 0;
-        document.querySelectorAll('.ingredient-chip').forEach(c => c.classList.remove('selected'));
-        updateRecipesList();
+        document.querySelectorAll('.chip.selected').forEach(el => el.classList.remove('selected'));
+        els.clearBtn.classList.add('hidden');
+        renderRecipes();
     });
 
-    // --- Recipe Matching Logic (Core) ---
+    // --- 4. Recipe Matching & Rendering ---
     function calculateMatch(recipe) {
-        let totalRequired = 0;
+        if (selectedIngredients.size === 0) return { percent: 0, missing: [] }; // Базовое состояние
+
+        let total = 0;
         let matched = 0;
-        let missing = [];
+        const missing = [];
 
-        recipe.ingredients.forEach(reqIng => {
-            if (!reqIng.required) return; // Игнорируем необязательные при расчете жесткого %
-
-            totalRequired++;
-            
-            // 1. Прямое совпадение
-            if (selectedIngredients.has(reqIng.id)) {
+        recipe.ingredients.forEach(ing => {
+            total++;
+            if (selectedIngredients.has(ing.id)) {
                 matched++;
-            } 
-            // 2. Проверка замен (Substitutes)
-            else if (checkSubstitute(reqIng.id)) {
-                matched += 0.8; // Замена дает не полный балл, а чуть меньше (опциональная логика)
+            } else if (checkSubstitute(ing.id)) {
+                matched += 0.8; // Замена дает неполный балл
             } else {
-                missing.push(reqIng.name);
+                missing.push(ing);
             }
         });
 
-        const percent = totalRequired === 0 ? 100 : Math.round((matched / totalRequired) * 100);
-        return { percent, missing };
+        return {
+            percent: Math.round((matched / total) * 100),
+            missing
+        };
     }
 
     function checkSubstitute(ingId) {
         if (!substitutes[ingId]) return false;
-        // Проверяем, есть ли у пользователя хоть одна альтернатива из списка замен
         return substitutes[ingId].some(subId => selectedIngredients.has(subId));
     }
 
-    // --- Rendering Recipes ---
-    function updateRecipesList() {
-        const catFilter = document.getElementById('filter-category').value;
-        const diffFilter = document.getElementById('filter-difficulty').value;
+    function renderRecipes() {
+        const activeCat = document.querySelector('.filter-pill.active').dataset.cat;
+        const searchTerm = els.search.value.toLowerCase();
+        const isSelectionMode = selectedIngredients.size > 0;
 
-        // Расчет и фильтрация
-        let processedRecipes = allRecipes.map(recipe => {
-            const matchData = calculateMatch(recipe);
-            return { ...recipe, ...matchData };
-        });
-
-        // Сортировка: сначала по проценту (убывание), потом по отсутствующим
-        processedRecipes.sort((a, b) => b.percent - a.percent);
-
-        // Фильтры
-        processedRecipes = processedRecipes.filter(r => {
-            if (catFilter !== 'all' && r.category !== catFilter) return false;
-            if (diffFilter !== 'all' && r.difficulty !== diffFilter) return false;
+        // Фильтрация и Расчет
+        let displayList = recipes.map(r => {
+            const matchData = calculateMatch(r);
+            return { ...r, ...matchData };
+        }).filter(r => {
+            // Фильтр категорий
+            if (activeCat !== 'all' && r.category !== activeCat) return false;
+            
+            // Текстовый поиск (по названию или ингредиентам внутри рецепта)
+            if (searchTerm) {
+                const inTitle = r.title.toLowerCase().includes(searchTerm);
+                const inIngs = r.ingredients.some(i => i.name.toLowerCase().includes(searchTerm));
+                if (!inTitle && !inIngs) return false;
+            }
             return true;
         });
 
-        // Рендер
-        recipesContainer.innerHTML = '';
+        // Сортировка
+        if (isSelectionMode) {
+            displayList.sort((a, b) => b.percent - a.percent);
+            els.resultsTitle.textContent = `Найденные рецепты (${displayList.length})`;
+        } else {
+            // Если ничего не выбрано, просто случайный порядок или по ID
+            els.resultsTitle.textContent = activeCat === 'all' ? 'Все рецепты' : activeCat;
+        }
+
+        // Рендер HTML
+        els.grid.innerHTML = '';
         
-        if (processedRecipes.length === 0 && selectedIngredients.size > 0) {
-            recipesContainer.innerHTML = '<div class="empty-state">Нет подходящих рецептов :(</div>';
+        if (displayList.length === 0) {
+            els.grid.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding: 40px; color: var(--text-muted)">Ничего не найдено :(</div>';
             return;
         }
 
-        if (selectedIngredients.size === 0) {
-            recipesContainer.innerHTML = '<div class="empty-state">Выберите ингредиенты, чтобы начать!</div>';
-            return; // Можно убрать return, если хотим показывать все рецепты сразу
-        }
-
-        processedRecipes.forEach(recipe => {
+        displayList.forEach(r => {
             const card = document.createElement('div');
             card.className = 'recipe-card';
-            card.onclick = () => openRecipeModal(recipe);
-            
-            let badgeClass = 'low';
-            if (recipe.percent >= 90) badgeClass = 'high';
-            else if (recipe.percent >= 50) badgeClass = 'medium';
+            card.onclick = () => openModal(r);
 
-            const missingText = recipe.missing.length > 0 
-                ? `Не хватает: ${recipe.missing.slice(0, 3).join(', ')}${recipe.missing.length > 3 ? '...' : ''}` 
-                : 'Все ингредиенты есть!';
+            // Бейджик совпадения
+            let badgeHTML = '';
+            if (isSelectionMode) {
+                const badgeClass = r.percent >= 80 ? 'high' : (r.percent >= 40 ? 'med' : 'low');
+                badgeHTML = `<div class="match-badge ${badgeClass}">${r.percent}%</div>`;
+            }
 
             card.innerHTML = `
-                <div class="card-image" style="background-image: url('${recipe.image}')">
-                    <div class="match-badge ${badgeClass}">${recipe.percent}%</div>
+                <div class="card-img" style="background-image: url('${r.image}')">
+                    ${badgeHTML}
                 </div>
-                <div class="card-content">
-                    <h3>${recipe.title}</h3>
+                <div class="card-body">
+                    <h3 class="card-title">${r.title}</h3>
                     <div class="card-meta">
-                        <span><span class="material-icons-round" style="font-size:14px">schedule</span> ${recipe.time} мин</span>
-                        <span><span class="material-icons-round" style="font-size:14px">bar_chart</span> ${recipe.difficulty}</span>
+                        <span class="meta-item"><span class="material-icons-round" style="font-size:16px">timer</span> ${r.time_total} мин</span>
+                        <span class="meta-item"><span class="material-icons-round" style="font-size:16px">bar_chart</span> ${r.difficulty}</span>
                     </div>
-                    <div class="missing-ingredients">${missingText}</div>
                 </div>
             `;
-            recipesContainer.appendChild(card);
+            els.grid.appendChild(card);
         });
     }
 
-    // --- Listeners for filters ---
-    document.getElementById('filter-category').addEventListener('change', updateRecipesList);
-    document.getElementById('filter-difficulty').addEventListener('change', updateRecipesList);
-    
-    document.getElementById('btn-random').addEventListener('click', () => {
-        if (allRecipes.length === 0) return;
-        const random = allRecipes[Math.floor(Math.random() * allRecipes.length)];
-        const matchData = calculateMatch(random);
-        openRecipeModal({ ...random, ...matchData });
-    });
-
-    // --- Modal Logic ---
-    function openRecipeModal(recipe) {
-        modal.classList.remove('hidden');
-        const isFav = favorites.includes(recipe.id);
+    // --- 5. Modal & Cooking Mode ---
+    function openModal(recipe) {
+        els.modal.classList.remove('hidden');
         
-        // Генерация списка ингредиентов с иконками статуса
-        const ingredientsHTML = recipe.ingredients.map(ing => {
-            let statusIcon = 'cancel'; // Крестик по умолчанию
-            let statusClass = 'status-miss';
-            let tooltip = '';
-            let btnAddShop = `<button onclick="addToShop('${ing.name}')" class="btn-text" style="font-size:0.7rem;">+ в список</button>`;
-
+        // Генерация списка ингредиентов
+        const ingsHTML = recipe.ingredients.map(ing => {
+            let statusClass = '';
+            let icon = 'radio_button_unchecked';
+            
             if (selectedIngredients.has(ing.id)) {
-                statusIcon = 'check_circle';
-                statusClass = 'status-has';
-                btnAddShop = '';
+                statusClass = 'has-ing';
+                icon = 'check_circle';
             } else if (checkSubstitute(ing.id)) {
-                statusIcon = 'autorenew';
-                statusClass = 'status-sub';
-                tooltip = 'title="Можно заменить доступным продуктом"';
+                statusClass = 'sub-ing';
+                icon = 'cached';
+            } else if (selectedIngredients.size > 0) {
+                statusClass = 'no-ing';
+                icon = 'cancel';
             }
 
             return `
-                <div class="ing-list-item">
-                    <div>
-                        <span class="material-icons-round status-icon ${statusClass}" ${tooltip}>${statusIcon}</span>
-                        ${ing.name} <span style="color:#888">(${ing.amount})</span>
-                    </div>
-                    ${btnAddShop}
+                <div style="display:flex; justify-content:space-between; padding: 6px 0; border-bottom: 1px solid var(--border)">
+                    <span class="${statusClass}" style="display:flex; align-items:center; gap:6px;">
+                        <span class="material-icons-round" style="font-size:16px">${icon}</span> ${ing.name}
+                    </span>
+                    <span style="color: var(--text-muted)">${ing.amount}</span>
                 </div>
             `;
         }).join('');
 
-        const stepsHTML = recipe.steps.map((step, idx) => `
-            <div class="step-item">
-                <div class="step-num">${idx + 1}</div>
-                <div class="step-text">${step}</div>
-            </div>
-        `).join('');
+        // Генерация шагов с таймерами
+        const stepsHTML = recipe.steps.map((step, idx) => {
+            const hasTimer = step.time > 0;
+            const timerBtn = hasTimer 
+                ? `<button class="btn-timer" onclick="startTimer(${step.time * 60}, 'Шаг ${idx+1}')">
+                     <span class="material-icons-round">play_arrow</span> ${step.time} мин
+                   </button>` 
+                : '';
 
-        modalBody.innerHTML = `
-            <img src="${recipe.image}" class="recipe-detail-img" alt="${recipe.title}">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-                <h2>${recipe.title}</h2>
-                <button onclick="toggleFavorite('${recipe.id}')" class="icon-btn">
-                    <span class="material-icons-round" style="color: ${isFav ? 'var(--primary)' : 'inherit'}">
-                        ${isFav ? 'favorite' : 'favorite_border'}
-                    </span>
-                </button>
+            return `
+                <div class="step-row">
+                    <div class="step-num">${idx + 1}</div>
+                    <div class="step-content">
+                        <div class="step-text">${step.text}</div>
+                        ${timerBtn}
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        els.modalBody.innerHTML = `
+            <img src="${recipe.image}" style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:16px;">
+            <h2 style="margin-bottom:8px">${recipe.title}</h2>
+            <div style="margin-bottom:20px; color:var(--text-muted)">
+                Источник: <a href="${recipe.source.url}" target="_blank" style="color:var(--primary)">${recipe.source.name}</a>
             </div>
-            
-            <h3 style="margin-bottom:10px">Ингредиенты</h3>
-            <div style="margin-bottom:20px">${ingredientsHTML}</div>
-            
-            <h3 style="margin-bottom:10px">Приготовление</h3>
+
+            <h3 style="margin-bottom:12px">Ингредиенты</h3>
+            <div style="margin-bottom:24px">${ingsHTML}</div>
+
+            <h3 style="margin-bottom:12px">Приготовление</h3>
             <div>${stepsHTML}</div>
-
-            <a href="${recipe.source.url}" target="_blank" class="source-link">
-                Источник рецепта: ${recipe.source.name}
-            </a>
         `;
     }
 
-    // Глобальные функции для inline onclick в HTML (так проще для Vanilla JS)
-    window.toggleFavorite = (id) => {
-        if (favorites.includes(id)) {
-            favorites = favorites.filter(fid => fid !== id);
-        } else {
-            favorites.push(id);
-        }
-        localStorage.setItem('ilovecook_favorites', JSON.stringify(favorites));
-        // Перерисовываем модалку (грубый метод, но работает)
-        const currentRecipe = allRecipes.find(r => r.id === id);
-        if(currentRecipe) openRecipeModal(calculateMatch(currentRecipe) ? {...currentRecipe, ...calculateMatch(currentRecipe)} : currentRecipe);
+    // --- 6. Timer Logic ---
+    window.startTimer = (seconds, label) => {
+        if (activeTimer) clearInterval(activeTimer);
+        
+        els.timerToast.classList.remove('hidden');
+        els.timerStep.textContent = label;
+        
+        let remaining = seconds;
+        updateTimerDisplay(remaining);
+
+        activeTimer = setInterval(() => {
+            remaining--;
+            updateTimerDisplay(remaining);
+            
+            if (remaining <= 0) {
+                clearInterval(activeTimer);
+                alert(`⏰ Таймер для "${label}" завершен!`);
+                els.timerToast.classList.add('hidden');
+            }
+        }, 1000);
     };
 
-    window.addToShop = (name) => {
-        if (!shoppingList.includes(name)) {
-            shoppingList.push(name);
-            localStorage.setItem('ilovecook_shopping', JSON.stringify(shoppingList));
-            alert(`${name} добавлен в список покупок`);
-        }
-    };
-
-    // --- Modal Closing ---
-    document.querySelectorAll('.close-modal').forEach(btn => {
-        btn.onclick = () => {
-            modal.classList.add('hidden');
-            shoppingModal.classList.add('hidden');
-        };
-    });
-    
-    // Закрытие по клику вне контента
-    window.onclick = (e) => {
-        if (e.target === modal) modal.classList.add('hidden');
-        if (e.target === shoppingModal) shoppingModal.classList.add('hidden');
-    };
-
-    // --- Shopping List Logic ---
-    document.getElementById('btn-shopping-list').addEventListener('click', () => {
-        shoppingModal.classList.remove('hidden');
-        renderShoppingList();
-    });
-
-    function renderShoppingList() {
-        shoppingListItems.innerHTML = '';
-        if (shoppingList.length === 0) {
-            shoppingListItems.innerHTML = '<li style="padding:10px; color:#888; text-align:center;">Список пуст</li>';
-            return;
-        }
-        shoppingList.forEach((item, idx) => {
-            const li = document.createElement('li');
-            li.className = 'shop-item';
-            li.innerHTML = `
-                <span>${item}</span>
-                <button onclick="removeFromShop(${idx})"><span class="material-icons-round">delete</span></button>
-            `;
-            shoppingListItems.appendChild(li);
-        });
+    function updateTimerDisplay(sec) {
+        const m = Math.floor(sec / 60).toString().padStart(2, '0');
+        const s = (sec % 60).toString().padStart(2, '0');
+        els.timerCount.textContent = `${m}:${s}`;
     }
 
-    window.removeFromShop = (idx) => {
-        shoppingList.splice(idx, 1);
-        localStorage.setItem('ilovecook_shopping', JSON.stringify(shoppingList));
-        renderShoppingList();
-    };
+    els.stopTimerBtn.addEventListener('click', () => {
+        clearInterval(activeTimer);
+        els.timerToast.classList.add('hidden');
+    });
 
-    document.getElementById('clear-shopping-list').addEventListener('click', () => {
-        shoppingList = [];
-        localStorage.setItem('ilovecook_shopping', JSON.stringify(shoppingList));
-        renderShoppingList();
+    // --- 7. Event Listeners ---
+    els.filters.forEach(btn => {
+        btn.addEventListener('click', () => {
+            els.filters.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderRecipes();
+        });
+    });
+
+    els.search.addEventListener('input', renderRecipes);
+
+    document.querySelectorAll('.close-modal').forEach(b => {
+        b.addEventListener('click', () => els.modal.classList.add('hidden'));
     });
     
-    // Favorites Button in Header
-    document.getElementById('btn-favorites').addEventListener('click', () => {
-        // Показать только избранные. Для простоты - фильтруем текущий список.
-        // В реальном проекте лучше сделать отдельную вкладку.
-        // Здесь мы просто алерт, так как ТЗ ограничено структурой.
-        alert('Фильтр по избранному не реализован в UI, но данные сохраняются: ' + favorites.length + ' рецептов.');
+    // Закрытие по клику вне модалки
+    els.modal.addEventListener('click', (e) => {
+        if(e.target === els.modal) els.modal.classList.add('hidden');
     });
+
+    // Запуск
+    init();
 });
