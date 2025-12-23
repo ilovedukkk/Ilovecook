@@ -1,8 +1,10 @@
 {
-  "milk": ["water", "kefir"],
-  "bacon": ["chicken", "sausage"],
-  "onion": ["garlic"],
-  "tomato": ["ketchup"],
-  "butter": ["oil"],
-  "kefir": ["milk"]
+  "sour_cream": ["greek_yogurt", "mayo", "kefir"],
+  "milk": ["water", "plant_milk", "cream"],
+  "mayo": ["sour_cream", "greek_yogurt"],
+  "lemon_juice": ["vinegar", "citric_acid"],
+  "chicken_breast": ["turkey", "pork_lean"],
+  "beef": ["pork", "lamb"],
+  "tomato": ["tomato_paste", "ketchup"],
+  "butter": ["margarine", "oil"]
 }
