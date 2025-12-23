@@ -501,8 +501,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    let shoppingList = JSON.parse(localStorage.getItem('ilovecook_shopping')) || [];
     // Запуск
     init();
-    updateShopUI();
 });
