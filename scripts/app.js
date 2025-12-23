@@ -503,7 +503,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-   // --- 10. PDF Export Logic (ISPRRAVLENO) ---
+   // --- 10. PDF Export Logic (STABLE VERSION) ---
     if (els.shopDownloadBtn) {
         els.shopDownloadBtn.addEventListener('click', () => {
             if (shoppingList.length === 0) {
@@ -511,41 +511,53 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // 1. Создаем элемент
-            const element = document.createElement('div');
-            // Важно: задаем ширину, чтобы верстка была как на листе A4
-            element.style.width = '700px'; 
-            element.style.padding = '30px';
-            element.style.fontFamily = 'Inter, sans-serif';
-            element.style.backgroundColor = 'white';
-            
-            // Делаем его невидимым для пользователя, но видимым для "камеры" скрипта
-            element.style.position = 'absolute';
-            element.style.left = '-9999px';
-            element.style.top = '0';
-            element.style.zIndex = '-1';
+            // Блокируем кнопку на время загрузки, чтобы не нажимали дважды
+            const originalText = els.shopDownloadBtn.textContent;
+            els.shopDownloadBtn.disabled = true;
+            els.shopDownloadBtn.textContent = '⏳...';
 
-            // Формируем контент
+            // 1. Ищем или создаем контейнер (ОДИН РАЗ)
+            let element = document.getElementById('pdf-hidden-container');
+            if (!element) {
+                element = document.createElement('div');
+                element.id = 'pdf-hidden-container';
+                // Стили для правильного отображения A4
+                element.style.width = '700px'; 
+                element.style.padding = '30px';
+                element.style.fontFamily = 'Inter, sans-serif';
+                element.style.backgroundColor = 'white';
+                element.style.color = '#000';
+                // Прячем за границы экрана (но не display: none!)
+                element.style.position = 'absolute';
+                element.style.left = '-9999px';
+                element.style.top = '0';
+                element.style.zIndex = '-1000';
+                document.body.appendChild(element);
+            }
+
+            // 2. Наполняем контентом (перезаписываем старый)
             const date = new Date().toLocaleDateString();
             const itemsHTML = shoppingList.map(item => 
                 `<li style="margin-bottom: 12px; font-size: 18px; border-bottom: 1px solid #eee; padding-bottom: 5px; list-style: none;">
-                    <span style="display:inline-block; width:20px;">${item.done ? '☑' : '☐'}</span> ${item.text}
+                    <span style="display:inline-block; width:20px; color: ${item.done ? 'green' : 'black'};">
+                        ${item.done ? '☑' : '☐'}
+                    </span> 
+                    <span style="${item.done ? 'text-decoration: line-through; color: #777;' : ''}">
+                        ${item.text}
+                    </span>
                  </li>`
             ).join('');
 
             element.innerHTML = `
                 <div style="text-align: center; margin-bottom: 30px;">
-                     <h1 style="color: #FF6B6B; margin: 0;">Ilovecook</h1>
-                     <p style="color: #666; margin: 5px 0;">Список покупок от ${date}</p>
+                     <h1 style="color: #FF6B6B; margin: 0; font-size: 32px;">Ilovecook</h1>
+                     <p style="color: #666; margin: 5px 0; font-size: 14px;">Список покупок от ${date}</p>
                 </div>
-                <ul style="padding: 0;">${itemsHTML}</ul>
-                <div style="margin-top: 40px; text-align: center; font-size: 12px; color: #999;">
+                <ul style="padding: 0; margin: 0;">${itemsHTML}</ul>
+                <div style="margin-top: 40px; text-align: center; font-size: 12px; color: #999; border-top: 1px solid #eee; padding-top: 10px;">
                     Сгенерировано приложением Ilovecook
                 </div>
             `;
-
-            // 2. ВРЕМЕННО добавляем на страницу (вот это исправляет пустой PDF!)
-            document.body.appendChild(element);
 
             // 3. Настройки PDF
             const opt = {
@@ -556,18 +568,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
             };
 
-            // 4. Генерируем, сохраняем и удаляем мусор
+            // 4. Генерируем
             html2pdf()
                 .set(opt)
                 .from(element)
                 .save()
                 .then(() => {
-                    // Удаляем временный элемент после скачивания
-                    document.body.removeChild(element);
+                    // Возвращаем кнопку в исходное состояние
+                    els.shopDownloadBtn.disabled = false;
+                    els.shopDownloadBtn.textContent = originalText;
+                    // Очищаем контейнер, чтобы не занимал память (но сам div оставляем)
+                    element.innerHTML = ''; 
                 })
                 .catch(err => {
                     console.error('Ошибка PDF:', err);
-                    document.body.removeChild(element); // Удаляем даже в случае ошибки
+                    alert('Ошибка при создании PDF. Попробуйте обновить страницу.');
+                    els.shopDownloadBtn.disabled = false;
+                    els.shopDownloadBtn.textContent = originalText;
                 });
         });
     }
