@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modal: document.getElementById('recipe-modal'),
         modalBody: document.getElementById('modal-body'),
         shopBtn: document.getElementById('shop-btn'),
+        shopDownloadBtn: document.getElementById('download-shop'),
         shopCount: document.getElementById('shop-count'),
         shopModal: document.getElementById('shopping-modal'),
         shopList: document.getElementById('shopping-list-items'),
@@ -502,6 +503,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // --- 10. PDF Export Logic ---
+    if (els.shopDownloadBtn) {
+        els.shopDownloadBtn.addEventListener('click', () => {
+            if (shoppingList.length === 0) {
+                alert('Список покупок пуст!');
+                return;
+            }
+
+            // 1. Создаем красивый временный элемент для печати
+            const element = document.createElement('div');
+            element.style.padding = '20px';
+            element.style.fontFamily = 'Inter, sans-serif';
+            
+            // Формируем HTML списка
+            const date = new Date().toLocaleDateString();
+            const itemsHTML = shoppingList.map(item => 
+                `<li style="margin-bottom: 10px; font-size: 16px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
+                    ${item.done ? '✅' : '⬜'} ${item.text}
+                 </li>`
+            ).join('');
+
+            element.innerHTML = `
+                <h1 style="color: #FF6B6B; margin-bottom: 10px;">Ilovecook</h1>
+                <h3 style="margin-bottom: 20px; color: #555;">Список покупок от ${date}</h3>
+                <ul style="list-style: none; padding: 0;">${itemsHTML}</ul>
+                <p style="margin-top: 30px; color: #888; font-size: 12px;">Сгенерировано на ilovecook</p>
+            `;
+
+            // 2. Настройки PDF
+            const opt = {
+                margin:       10,
+                filename:     'shopping-list.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2 }, // Улучшает качество текста
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            // 3. Генерируем и сохраняем
+            // Используем библиотеку, которую подключили в HTML
+            html2pdf().set(opt).from(element).save();
+        });
+    }
+    
     // Запуск
     init();
     updateShopUI();
