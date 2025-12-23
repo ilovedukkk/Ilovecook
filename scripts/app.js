@@ -138,35 +138,46 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderRecipes() {
         const activeCat = document.querySelector('.filter-pill.active').dataset.cat;
         const searchTerm = els.search.value.toLowerCase();
+        const servingsVal = els.servingsSelect.value; // Получаем значение фильтра порций
         const isSelectionMode = selectedIngredients.size > 0;
 
-        // Фильтрация и Расчет
+        // Фильтрация
         let displayList = recipes.map(r => {
             const matchData = calculateMatch(r);
             return { ...r, ...matchData };
         }).filter(r => {
-            // Фильтр категорий
+            // 1. Фильтр категорий
             if (activeCat !== 'all' && r.category !== activeCat) return false;
             
-            // Текстовый поиск (по названию или ингредиентам внутри рецепта)
+            // 2. Текстовый поиск
             if (searchTerm) {
                 const inTitle = r.title.toLowerCase().includes(searchTerm);
                 const inIngs = r.ingredients.some(i => i.name.toLowerCase().includes(searchTerm));
                 if (!inTitle && !inIngs) return false;
             }
+
+            // 3. Фильтр порций (НОВОЕ)
+            if (servingsVal !== 'any') {
+                // Если в JSON нет поля servings, считаем по умолчанию 4
+                const s = r.servings || 4; 
+                
+                if (servingsVal === '1' && s > 2) return false; // Ищем маленькие, а рецепт большой
+                if (servingsVal === '3' && (s < 3 || s > 4)) return false;
+                if (servingsVal === '5' && s < 5) return false;
+            }
+
             return true;
         });
 
-        // Сортировка
+        // Сортировка (без изменений)
         if (isSelectionMode) {
             displayList.sort((a, b) => b.percent - a.percent);
             els.resultsTitle.textContent = `Найденные рецепты (${displayList.length})`;
         } else {
-            // Если ничего не выбрано, просто случайный порядок или по ID
             els.resultsTitle.textContent = activeCat === 'all' ? 'Все рецепты' : activeCat;
         }
 
-        // Рендер HTML
+        // Рендер (без изменений)
         els.grid.innerHTML = '';
         
         if (displayList.length === 0) {
@@ -179,12 +190,14 @@ document.addEventListener('DOMContentLoaded', () => {
             card.className = 'recipe-card';
             card.onclick = () => openModal(r);
 
-            // Бейджик совпадения
             let badgeHTML = '';
             if (isSelectionMode) {
                 const badgeClass = r.percent >= 80 ? 'high' : (r.percent >= 40 ? 'med' : 'low');
                 badgeHTML = `<div class="match-badge ${badgeClass}">${r.percent}%</div>`;
             }
+            
+            // Добавим отображение порций в карточку
+            const servingsText = r.servings ? `${r.servings} порц.` : '';
 
             card.innerHTML = `
                 <div class="card-img" style="background-image: url('${r.image}')">
@@ -194,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h3 class="card-title">${r.title}</h3>
                     <div class="card-meta">
                         <span class="meta-item"><span class="material-icons-round" style="font-size:16px">timer</span> ${r.time_total} мин</span>
-                        <span class="meta-item"><span class="material-icons-round" style="font-size:16px">bar_chart</span> ${r.difficulty}</span>
+                        <span class="meta-item"><span class="material-icons-round" style="font-size:16px">restaurant</span> ${servingsText}</span>
                     </div>
                 </div>
             `;
@@ -347,6 +360,10 @@ document.addEventListener('DOMContentLoaded', () => {
             openModal({ ...randomRecipe, ...matchData });
         }, 300);
     });
+
+    // Слушаем изменение выпадающего списка
+    els.servingsSelect.addEventListener('change', renderRecipes);
+
     // Запуск
     init();
 });
