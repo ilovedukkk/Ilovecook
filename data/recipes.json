@@ -478,5 +478,243 @@
       { "text": "Смешать спагетти с соусом или выложить соус сверху при подаче.", "time": 1 }
     ],
     "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/pasta-picca/pasta-boloneze" }
+  },
+  {
+    "id": "pea_soup_smoked",
+    "title": "Гороховый суп с копченостями",
+    "category": "Супы",
+    "time_total": 90,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/D35400/FFFFFF?text=PeaSoup",
+    "ingredients": [
+      { "id": "split_peas", "name": "Горох колотый", "amount": "200 г" },
+      { "id": "smoked_ribs", "name": "Копченые ребрышки", "amount": "300 г" },
+      { "id": "potato", "name": "Картофель", "amount": "3 шт" },
+      { "id": "carrot", "name": "Морковь", "amount": "1 шт" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "greens", "name": "Зелень", "amount": "пучок" }
+    ],
+    "steps": [
+      { "text": "Горох хорошо промыть и замочить в холодной воде на 1 час (лучше на ночь).", "time": 60 },
+      { "text": "Ребрышки залить водой, довести до кипения и варить 30 минут.", "time": 30 },
+      { "text": "Добавить разбухший горох к ребрам, варить до мягкости гороха (около 30-40 мин).", "time": 30 },
+      { "text": "Нарезать картофель кубиками, добавить в суп.", "time": 2 },
+      { "text": "Сделать зажарку из лука и моркови, добавить в суп. Варить до готовности картофеля.", "time": 15 },
+      { "text": "Достать ребра, срезать мясо и вернуть в суп. Посыпать зеленью.", "time": 5 }
+    ],
+    "source": { "name": "povarenok.ru", "url": "https://www.povarenok.ru/recipes/show/60635/" }
+  },
+  {
+    "id": "crepes_thin",
+    "title": "Тонкие блинчики на молоке",
+    "category": "Завтраки",
+    "time_total": 40,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/F1C40F/333333?text=Crepes",
+    "ingredients": [
+      { "id": "milk", "name": "Молоко", "amount": "500 мл" },
+      { "id": "egg", "name": "Яйцо", "amount": "3 шт" },
+      { "id": "flour", "name": "Мука", "amount": "200 г" },
+      { "id": "sugar", "name": "Сахар", "amount": "1 ст.л." },
+      { "id": "oil", "name": "Растительное масло", "amount": "2 ст.л." }
+    ],
+    "steps": [
+      { "text": "Взбить яйца с сахаром и щепоткой соли венчиком.", "time": 3 },
+      { "text": "Влить половину молока, перемешать. Всыпать всю муку, размешать до гладкости.", "time": 3 },
+      { "text": "Влить оставшееся молоко и масло. Тесто должно быть жидким, как сливки.", "time": 2 },
+      { "text": "Хорошо разогреть сковороду. Смазать маслом только перед первым блином.", "time": 2 },
+      { "text": "Наливать тесто тонким слоем, жарить по 1-2 минуты с каждой стороны.", "time": 30 }
+    ],
+    "source": { "name": "gotovim-doma.ru", "url": "https://gotovim-doma.ru/recipe/view/bliny" }
+  },
+  {
+    "id": "crab_salad",
+    "title": "Салат с крабовыми палочками",
+    "category": "Салаты",
+    "time_total": 20,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/E91E63/FFFFFF?text=CrabSalad",
+    "ingredients": [
+      { "id": "crab_sticks", "name": "Крабовые палочки", "amount": "200 г" },
+      { "id": "corn_canned", "name": "Кукуруза консервированная", "amount": "1 банка" },
+      { "id": "egg", "name": "Яйцо вареное", "amount": "4 шт" },
+      { "id": "cucumber", "name": "Огурец свежий", "amount": "1 шт" },
+      { "id": "mayo", "name": "Майонез", "amount": "3 ст.л." },
+      { "id": "rice", "name": "Рис (отварной)", "amount": "50 г" }
+    ],
+    "steps": [
+      { "text": "Отварить яйца и рис (если используете). Остудить.", "time": 15 },
+      { "text": "Нарезать крабовые палочки, яйца и огурец мелкими кубиками.", "time": 10 },
+      { "text": "Слить жидкость с кукурузы.", "time": 1 },
+      { "text": "Смешать все ингредиенты в салатнике, заправить майонезом перед подачей.", "time": 2 }
+    ],
+    "source": { "name": "russianfood.com", "url": "https://www.russianfood.com/recipes/bytype/?fid=33" }
+  },
+  {
+    "id": "goulash_beef",
+    "title": "Гуляш из говядины с подливой",
+    "category": "Вторые блюда",
+    "time_total": 70,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/795548/FFFFFF?text=Goulash",
+    "ingredients": [
+      { "id": "beef", "name": "Говядина", "amount": "500 г" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "carrot", "name": "Морковь", "amount": "1 шт" },
+      { "id": "tomato_paste", "name": "Томатная паста", "amount": "1 ст.л." },
+      { "id": "flour", "name": "Мука", "amount": "1 ст.л." },
+      { "id": "water", "name": "Вода", "amount": "500 мл" }
+    ],
+    "steps": [
+      { "text": "Нарезать мясо кубиками 2-3 см. Обжарить на сильном огне до корочки.", "time": 10 },
+      { "text": "Добавить нарезанный лук и морковь, жарить еще 5 минут.", "time": 5 },
+      { "text": "Посыпать мукой, перемешать. Добавить томатную пасту, прогреть 1 минуту.", "time": 2 },
+      { "text": "Влить горячую воду (чтобы покрыла мясо), посолить, добавить лавровый лист.", "time": 2 },
+      { "text": "Тушить под крышкой на слабом огне до мягкости мяса (зависит от говядины).", "time": 50 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/osnovnye-blyuda/guljash-iz-govjadini-s-podlivkoj" }
+  },
+  {
+    "id": "dranniki",
+    "title": "Драники (Картофельные оладьи)",
+    "category": "Вторые блюда",
+    "time_total": 40,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/F39C12/FFFFFF?text=Dranniki",
+    "ingredients": [
+      { "id": "potato", "name": "Картофель", "amount": "500 г" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "egg", "name": "Яйцо", "amount": "1 шт" },
+      { "id": "flour", "name": "Мука", "amount": "2 ст.л." },
+      { "id": "oil", "name": "Масло для жарки", "amount": "50 мл" }
+    ],
+    "steps": [
+      { "text": "Картофель и лук очистить.", "time": 5 },
+      { "text": "Натереть картофель и лук на мелкой терке (или в комбайне).", "time": 10 },
+      { "text": "Если жидкости слишком много, слить лишний сок.", "time": 2 },
+      { "text": "Добавить яйцо, муку, соль и перец. Быстро перемешать (чтобы картофель не потемнел).", "time": 3 },
+      { "text": "Выкладывать ложкой на разогретую сковороду, жарить до румяной корочки с двух сторон.", "time": 20 }
+    ],
+    "source": { "name": "gotovim-doma.ru", "url": "https://gotovim-doma.ru/recipe/view/draniki" }
+  },
+  {
+    "id": "stuffed_peppers",
+    "title": "Фаршированные перцы",
+    "category": "Вторые блюда",
+    "time_total": 60,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/E74C3C/FFFFFF?text=Peppers",
+    "ingredients": [
+      { "id": "pepper_bell", "name": "Перец болгарский", "amount": "6 шт" },
+      { "id": "minced_meat", "name": "Фарш мясной", "amount": "400 г" },
+      { "id": "rice", "name": "Рис (сырой)", "amount": "100 г" },
+      { "id": "carrot", "name": "Морковь", "amount": "1 шт" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "tomato_paste", "name": "Томатная паста", "amount": "2 ст.л." }
+    ],
+    "steps": [
+      { "text": "Рис отварить до полуготовности (10 мин).", "time": 10 },
+      { "text": "Перцы очистить от семян. Лук и морковь обжарить.", "time": 10 },
+      { "text": "Смешать фарш, рис и половину зажарки. Посолить.", "time": 5 },
+      { "text": "Начинить перцы фаршем, поставить в кастрюлю вертикально.", "time": 5 },
+      { "text": "Смешать оставшуюся зажарку с томатной пастой и водой, залить перцы.", "time": 5 },
+      { "text": "Тушить под крышкой на среднем огне.", "time": 30 }
+    ],
+    "source": { "name": "povarenok.ru", "url": "https://www.povarenok.ru/recipes/show/55555/" }
+  },
+  {
+    "id": "cabbage_pie_lazy",
+    "title": "Заливной пирог с капустой",
+    "category": "Выпечка",
+    "time_total": 50,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/F1C40F/FFFFFF?text=Pie",
+    "ingredients": [
+      { "id": "cabbage", "name": "Капуста", "amount": "400 г" },
+      { "id": "kefir", "name": "Кефир", "amount": "250 мл" },
+      { "id": "egg", "name": "Яйцо", "amount": "2 шт" },
+      { "id": "flour", "name": "Мука", "amount": "150 г" },
+      { "id": "butter", "name": "Сливочное масло", "amount": "50 г" },
+      { "id": "baking_soda", "name": "Сода", "amount": "0.5 ч.л." }
+    ],
+    "steps": [
+      { "text": "Капусту мелко нашинковать, посолить и помять руками. Выложить в форму.", "time": 10 },
+      { "text": "Растопить сливочное масло и полить капусту.", "time": 2 },
+      { "text": "Смешать кефир, яйца, соль, соду и муку в жидкое тесто (как на оладьи).", "time": 5 },
+      { "text": "Залить капусту тестом, разровнять.", "time": 2 },
+      { "text": "Выпекать в духовке при 180°C до золотистого цвета.", "time": 35 }
+    ],
+    "source": { "name": "russianfood.com", "url": "https://www.russianfood.com/recipes/bytype/?fid=39" }
+  },
+  {
+    "id": "rassolnik",
+    "title": "Рассольник с перловкой",
+    "category": "Супы",
+    "time_total": 60,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/4CAF50/FFFFFF?text=Rassolnik",
+    "ingredients": [
+      { "id": "beef", "name": "Говядина или почки", "amount": "300 г" },
+      { "id": "cucumber_pickled", "name": "Соленые огурцы", "amount": "3 шт" },
+      { "id": "barley", "name": "Перловка", "amount": "0.5 стакана" },
+      { "id": "potato", "name": "Картофель", "amount": "3 шт" },
+      { "id": "carrot", "name": "Морковь", "amount": "1 шт" },
+      { "id": "pickle_brine", "name": "Рассол огуречный", "amount": "100 мл" }
+    ],
+    "steps": [
+      { "text": "Перловку заранее замочить. Поставить варить мясо и перловку вместе (около 40 мин).", "time": 40 },
+      { "text": "Нарезать картофель кубиками, добавить в суп.", "time": 10 },
+      { "text": "Огурцы натереть или мелко нарезать, припустить на сковороде с ложкой воды.", "time": 5 },
+      { "text": "Сделать зажарку из лука и моркови.", "time": 5 },
+      { "text": "Добавить в суп огурцы, зажарку и рассол. Варить еще 10 минут.", "time": 10 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/supy/rassolnik" }
+  },
+  {
+    "id": "makaroni_flotski",
+    "title": "Макароны по-флотски",
+    "category": "Вторые блюда",
+    "time_total": 30,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/8D6E63/FFFFFF?text=Pasta",
+    "ingredients": [
+      { "id": "minced_meat", "name": "Фарш мясной", "amount": "400 г" },
+      { "id": "pasta", "name": "Макароны (трубочки)", "amount": "300 г" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "butter", "name": "Сливочное масло", "amount": "30 г" },
+      { "id": "oil", "name": "Растительное масло", "amount": "1 ст.л." }
+    ],
+    "steps": [
+      { "text": "Поставить вариться макароны согласно инструкции.", "time": 10 },
+      { "text": "Лук мелко нарезать, обжарить до золотистости.", "time": 5 },
+      { "text": "Добавить фарш к луку, жарить, разбивая комки, до готовности (около 10-15 мин).", "time": 15 },
+      { "text": "Слить воду с макарон, добавить их в сковороду к фаршу.", "time": 1 },
+      { "text": "Добавить кусочек сливочного масла, перемешать и прогреть 2 минуты.", "time": 2 }
+    ],
+    "source": { "name": "gotovim-doma.ru", "url": "https://gotovim-doma.ru/recipe/view/makarony-po-flotski" }
+  },
+  {
+    "id": "banana_bread",
+    "title": "Банановый кекс (Брэд)",
+    "category": "Выпечка",
+    "time_total": 60,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/795548/FFFFFF?text=BananaBread",
+    "ingredients": [
+      { "id": "banana", "name": "Бананы (спелые)", "amount": "3 шт" },
+      { "id": "butter", "name": "Сливочное масло (растопленное)", "amount": "100 г" },
+      { "id": "sugar", "name": "Сахар", "amount": "100 г" },
+      { "id": "egg", "name": "Яйцо", "amount": "2 шт" },
+      { "id": "flour", "name": "Мука", "amount": "200 г" },
+      { "id": "baking_powder", "name": "Разрыхлитель", "amount": "1 ч.л." }
+    ],
+    "steps": [
+      { "text": "Бананы размять вилкой в пюре.", "time": 5 },
+      { "text": "Добавить растопленное масло, сахар и яйца. Перемешать.", "time": 3 },
+      { "text": "Всыпать муку с разрыхлителем, перемешать до увлажнения муки (не взбивать!).", "time": 2 },
+      { "text": "Выложить в прямоугольную форму для кекса (смазанную маслом).", "time": 2 },
+      { "text": "Выпекать при 180°C около 50-60 минут (проверять шпажкой).", "time": 50 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/vypechka-deserty/bananovyj-keks" }
   }
 ]
