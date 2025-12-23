@@ -101,7 +101,11 @@
         </div>
         <button id="stop-timer" class="icon-btn-small"><span class="material-icons-round">stop</span></button>
     </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
+<script src="scripts/app.js"></script> </body>
+    
     <script src="scripts/app.js"></script>
     
     <div id="shopping-modal" class="modal hidden">
@@ -109,6 +113,8 @@
         <button class="close-modal"><span class="material-icons-round">close</span></button>
         <div class="shop-header">
             <h2>🛒 Купить</h2>
+            <div style="display: flex; gap: 10px;">
+        <button id="download-shop" class="btn-text" title="Скачать PDF">📄 PDF</button>
             <button id="clear-shop" class="btn-text">Очистить</button>
         </div>
         
