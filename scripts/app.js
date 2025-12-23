@@ -503,7 +503,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-// --- 10. PDF Export Logic (FIXED FOR BLANK PAGES) ---
+// --- 10. PDF Export Logic (FINAL FIX) ---
     if (els.shopDownloadBtn) {
         els.shopDownloadBtn.addEventListener('click', () => {
             if (shoppingList.length === 0) {
@@ -515,79 +515,73 @@ document.addEventListener('DOMContentLoaded', () => {
             els.shopDownloadBtn.disabled = true;
             els.shopDownloadBtn.textContent = '⏳...';
 
-            // 1. Ищем или создаем контейнер
-            let element = document.getElementById('pdf-hidden-container');
-            if (!element) {
-                element = document.createElement('div');
-                element.id = 'pdf-hidden-container';
-                
-                // --- ГЛАВНОЕ ИСПРАВЛЕНИЕ СТИЛЕЙ ---
-                // Вместо того чтобы убирать элемент далеко влево (-9999px),
-                // мы оставляем его на экране, но кладем ПОД основной контент.
-                element.style.position = 'fixed';
-                element.style.top = '0';
-                element.style.left = '0';
-                element.style.width = '700px'; // Ширина как у A4
-                element.style.zIndex = '-9999'; // Прячем за всем остальным
-                element.style.visibility = 'visible'; // Обязательно visible для скриншота!
-                element.style.backgroundColor = '#ffffff'; // Белый фон обязателен
-                
-                element.style.padding = '30px';
-                element.style.fontFamily = 'Inter, sans-serif';
-                element.style.color = '#000';
-                
-                document.body.appendChild(element);
-            }
+            // 1. Создаем контейнер С НУЛЯ (самый надежный способ)
+            // Удаляем старый, если он вдруг остался
+            const oldContainer = document.getElementById('pdf-hidden-container');
+            if (oldContainer) oldContainer.remove();
 
-            // 2. Наполняем контентом
+            const element = document.createElement('div');
+            element.id = 'pdf-hidden-container';
+            
+            // Настройки стилей для гарантированной отрисовки
+            element.style.position = 'absolute';
+            element.style.left = '-9999px'; // Убираем с глаз долой
+            element.style.top = '0';
+            element.style.width = '600px'; // Фиксированная ширина
+            element.style.background = '#ffffff';
+            element.style.color = '#000000';
+            element.style.padding = '40px';
+            element.style.fontFamily = 'Arial, sans-serif'; // Простой шрифт, чтобы не было ошибок
+            element.style.zIndex = '-1';
+
+            // Формируем контент (максимально простой HTML)
             const date = new Date().toLocaleDateString();
             const itemsHTML = shoppingList.map(item => 
-                `<li style="margin-bottom: 12px; font-size: 18px; border-bottom: 1px solid #eee; padding-bottom: 5px; list-style: none;">
-                    <span style="display:inline-block; width:20px; color: ${item.done ? 'green' : 'black'};">
-                        ${item.done ? '☑' : '☐'}
-                    </span> 
-                    <span style="${item.done ? 'text-decoration: line-through; color: #777;' : ''}">
-                        ${item.text}
-                    </span>
-                 </li>`
+                // Используем простые символы вместо спецсимволов, чтобы избежать ошибок кодировки
+                `<div style="margin-bottom: 10px; font-size: 16px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">
+                    <span style="font-weight: bold;">${item.done ? '[x]' : '[ ]'}</span> 
+                    <span style="${item.done ? 'text-decoration: line-through; color: #777;' : ''}">${item.text}</span>
+                 </div>`
             ).join('');
 
             element.innerHTML = `
-                <div style="text-align: center; margin-bottom: 30px;">
-                     <h1 style="color: #FF6B6B; margin: 0; font-size: 32px;">Ilovecook</h1>
-                     <p style="color: #666; margin: 5px 0; font-size: 14px;">Список покупок от ${date}</p>
-                </div>
-                <ul style="padding: 0; margin: 0;">${itemsHTML}</ul>
-                <div style="margin-top: 40px; text-align: center; font-size: 12px; color: #999; border-top: 1px solid #eee; padding-top: 10px;">
-                    Сгенерировано приложением Ilovecook
-                </div>
+                <h1 style="color: #ff6b6b; margin: 0 0 10px 0;">Ilovecook</h1>
+                <p style="color: #555; margin: 0 0 20px 0;">Список покупок от ${date}</p>
+                <div style="margin-top: 20px;">${itemsHTML}</div>
+                <p style="margin-top: 30px; font-size: 12px; color: #999;">Сгенерировано приложением Ilovecook</p>
             `;
 
-            // 3. Настройки PDF
-            const opt = {
-                margin:       10,
-                filename:     `shopping-list-${date}.pdf`,
-                image:        { type: 'jpeg', quality: 0.98 },
-                // scrollY: 0 важен, чтобы скриншот начинался с начала элемента, а не с текущей прокрутки
-                html2canvas:  { scale: 2, useCORS: true, scrollY: 0 }, 
-                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            };
+            // 2. Добавляем на страницу
+            document.body.appendChild(element);
 
-            // 4. Генерируем
-            html2pdf()
-                .set(opt)
-                .from(element)
-                .save()
-                .then(() => {
-                    els.shopDownloadBtn.disabled = false;
-                    els.shopDownloadBtn.textContent = originalText;
-                    element.innerHTML = ''; // Очищаем, но не удаляем контейнер
-                })
-                .catch(err => {
-                    console.error('Ошибка PDF:', err);
-                    els.shopDownloadBtn.disabled = false;
-                    els.shopDownloadBtn.textContent = originalText;
-                });
+            // 3. ЗАДЕРЖКА (Ключевой момент!)
+            // Даем браузеру 500мс, чтобы он осознал, что у элемента есть высота
+            setTimeout(() => {
+                const opt = {
+                    margin:       15,
+                    filename:     `shopping-list-${date}.pdf`,
+                    image:        { type: 'jpeg', quality: 0.98 },
+                    html2canvas:  { scale: 2, logging: true, useCORS: true },
+                    jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                };
+
+                html2pdf()
+                    .set(opt)
+                    .from(element)
+                    .save()
+                    .then(() => {
+                        document.body.removeChild(element); // Удаляем после скачивания
+                        els.shopDownloadBtn.disabled = false;
+                        els.shopDownloadBtn.textContent = originalText;
+                    })
+                    .catch(err => {
+                        console.error('PDF Error:', err);
+                        alert('Ошибка создания PDF. Попробуйте отключить расширения браузера.');
+                        els.shopDownloadBtn.disabled = false;
+                        els.shopDownloadBtn.textContent = originalText;
+                        if(document.body.contains(element)) document.body.removeChild(element);
+                    });
+            }, 500); // Ждем полсекунды перед снимком
         });
     }
     
