@@ -48,14 +48,29 @@
                 </div>
         </section>
 
-        <section class="filters-scroll">
-            <button class="filter-pill active" data-cat="all">Все</button>
-            <button class="filter-pill" data-cat="Супы">Супы</button>
-            <button class="filter-pill" data-cat="Вторые блюда">Вторые блюда</button>
-            <button class="filter-pill" data-cat="Завтраки">Завтраки</button>
-            <button class="filter-pill" data-cat="Салаты">Салаты</button>
-            <button class="filter-pill" data-cat="Выпечка">Выпечка</button>
-            <button class="filter-pill" data-cat="Десерты">Десерты</button>
+        <section class="controls-wrapper">
+            
+            <div class="filters-scroll">
+                <button class="filter-pill active" data-cat="all">Все</button>
+                <button class="filter-pill" data-cat="Завтраки">Завтраки</button>
+                <button class="filter-pill" data-cat="Обеды">Обеды</button>
+                <button class="filter-pill" data-cat="Супы">Супы</button>
+                <button class="filter-pill" data-cat="Вторые блюда">Вторые блюда</button>
+                <button class="filter-pill" data-cat="Салаты">Салаты</button>
+                <button class="filter-pill" data-cat="Выпечка">Выпечка</button>
+                <button class="filter-pill" data-cat="Десерты">Десерты</button>
+            </div>
+
+            <div class="servings-filter">
+                <label for="servings-select">Порций:</label>
+                <select id="servings-select">
+                    <option value="any">Любое</option>
+                    <option value="1">1-2</option>
+                    <option value="3">3-4</option>
+                    <option value="5">5+</option>
+                </select>
+            </div>
+
         </section>
 
         <h3 id="results-title">Все рецепты (100+)</h3>
