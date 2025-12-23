@@ -340,13 +340,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     els.search.addEventListener('input', renderRecipes);
 
-    document.querySelectorAll('.close-modal').forEach(b => {
-        b.addEventListener('click', () => els.modal.classList.add('hidden'));
+    // --- Обновленная логика закрытия окон ---
+
+    // 1. Закрытие по кнопке "Крестик" (работает для всех окон)
+    document.querySelectorAll('.close-modal').forEach(btn => {
+        btn.addEventListener('click', () => {
+            els.modal.classList.add('hidden');     // Закрыть рецепт
+            els.shopModal.classList.add('hidden'); // Закрыть список покупок
+        });
     });
     
-    // Закрытие по клику вне модалки
-    els.modal.addEventListener('click', (e) => {
-        if(e.target === els.modal) els.modal.classList.add('hidden');
+    // 2. Закрытие по клику на темный фон (Overlay)
+    window.addEventListener('click', (e) => {
+        if (e.target === els.modal) {
+            els.modal.classList.add('hidden');
+        }
+        if (e.target === els.shopModal) {
+            els.shopModal.classList.add('hidden');
+        }
+    });
+
+    // 3. Закрытие по кнопке ESC (для удобства)
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            els.modal.classList.add('hidden');
+            els.shopModal.classList.add('hidden');
+        }
     });
 
     // --- 8. Random Recipe Logic ---
