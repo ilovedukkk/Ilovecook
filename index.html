@@ -24,6 +24,11 @@
                     <span class="material-icons-round search-icon">search</span>
                     <input type="text" id="global-search" placeholder="Поиск рецепта...">
                 </div>
+                
+     <button id="shop-btn" class="icon-btn" title="Список покупок" style="position: relative;">
+        <span class="material-icons-round">shopping_cart</span>
+        <span id="shop-count" class="badge hidden">0</span>
+    </button>
 
                 <button id="random-btn" class="icon-btn" title="Мне повезёт!">
                     <span class="material-icons-round">casino</span>
@@ -98,5 +103,23 @@
     </div>
 
     <script src="scripts/app.js"></script>
+    
+    <div id="shopping-modal" class="modal hidden">
+    <div class="modal-content small">
+        <button class="close-modal"><span class="material-icons-round">close</span></button>
+        <div class="shop-header">
+            <h2>🛒 Купить</h2>
+            <button id="clear-shop" class="btn-text">Очистить</button>
+        </div>
+        
+        <div class="add-custom-item">
+            <input type="text" id="shop-input" placeholder="Добавить вручную...">
+            <button id="shop-add-btn" class="icon-btn-small"><span class="material-icons-round">add</span></button>
+        </div>
+
+        <ul id="shopping-list-items" class="shop-list">
+            </ul>
+    </div>
+</div>
 </body>
 </html>
