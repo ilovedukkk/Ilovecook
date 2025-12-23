@@ -256,3 +256,85 @@ body { font-family: 'Inter', sans-serif; background: var(--bg-body); color: var(
     color: #00b894;
     border-color: #00b894;
 }
+
+/* --- МОБИЛЬНАЯ ОПТИМИЗАЦИЯ (Вставь в конец файла) --- */
+
+/* Класс для кнопок действий в корзине */
+.shop-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Медиа-запрос для телефонов */
+@media (max-width: 600px) {
+    
+    /* 1. Исправляем шапку корзины */
+    .shop-header {
+        flex-direction: column; /* Элементы друг под другом */
+        align-items: flex-start; /* Выравнивание по левому краю */
+        gap: 10px;
+    }
+
+    .shop-header h2 {
+        font-size: 1.5rem; /* Чуть уменьшаем заголовок */
+        margin-bottom: 5px;
+        width: 100%;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 10px;
+    }
+
+    .shop-actions {
+        width: 100%;
+        justify-content: space-between; /* Кнопки по краям */
+    }
+
+    .shop-actions .btn-text {
+        font-size: 1rem; /* Кнопки крупнее, чтобы удобнее нажимать */
+        padding: 8px 12px;
+        background: var(--bg-body); /* Фон для кнопок, чтобы выделялись */
+        border-radius: 8px;
+    }
+
+    /* 2. Поле ввода продукта */
+    .add-custom-item {
+        flex-direction: column; /* Поле ввода и кнопка "+" друг под другом */
+    }
+
+    .add-custom-item input {
+        width: 100%;
+        padding: 12px; /* Поле выше для пальцев */
+        font-size: 1rem;
+    }
+
+    .add-custom-item .icon-btn-small {
+        width: 100%; /* Кнопка "+" на всю ширину */
+        background: var(--primary);
+        color: white;
+        padding: 10px;
+        border-radius: 8px;
+        margin-top: 5px;
+    }
+    
+    .add-custom-item .icon-btn-small:hover {
+        background: var(--primary-hover);
+    }
+
+    /* 3. Список покупок */
+    .shop-list {
+        max-height: 55vh; /* Чуть меньше высота списка, чтобы влезал на экран */
+    }
+
+    .shop-item {
+        padding: 12px 0; /* Больше отступы между товарами */
+    }
+    
+    .shop-checkbox {
+        width: 24px; /* Чекбокс крупнее */
+        height: 24px;
+    }
+    
+    .shop-item span {
+        font-size: 1.1rem; /* Текст товара крупнее */
+        margin-left: 15px;
+    }
+}
