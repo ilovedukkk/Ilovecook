@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modalBody: document.getElementById('modal-body'),
         resultsTitle: document.getElementById('results-title'),
         timerToast: document.getElementById('timer-alert'),
+        randomBtn: document.getElementById('random-btn'),
         timerCount: document.getElementById('timer-countdown'),
         timerStep: document.getElementById('timer-step-text'),
         stopTimerBtn: document.getElementById('stop-timer')
@@ -318,6 +319,33 @@ document.addEventListener('DOMContentLoaded', () => {
         if(e.target === els.modal) els.modal.classList.add('hidden');
     });
 
+    // --- 8. Random Recipe Logic ---
+    els.randomBtn.addEventListener('click', () => {
+        if (recipes.length === 0) return;
+
+        // 1. Добавляем класс анимации
+        const icon = els.randomBtn.querySelector('span');
+        icon.classList.add('rolling');
+
+        // Убираем класс после анимации (чтобы можно было нажать снова)
+        setTimeout(() => {
+            icon.classList.remove('rolling');
+        }, 600);
+
+        // 2. Выбираем случайный рецепт
+        const randomIndex = Math.floor(Math.random() * recipes.length);
+        const randomRecipe = recipes[randomIndex];
+
+        // 3. Открываем его!
+        // Важно: мы также рассчитываем совпадения ингредиентов для него, 
+        // даже если это случайный выбор
+        const matchData = calculateMatch(randomRecipe);
+        
+        // Небольшая задержка, чтобы пользователь успел увидеть анимацию кубика
+        setTimeout(() => {
+            openModal({ ...randomRecipe, ...matchData });
+        }, 300);
+    });
     // Запуск
     init();
 });
