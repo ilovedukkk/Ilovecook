@@ -1,96 +1,80 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ilovecook | Умный поиск рецептов</title>
-    <meta name="description" content="Подбор рецептов по ингредиентам. Готовь из того, что есть дома!">
+    <title>Ilovecook | Умные рецепты</title>
+    <meta name="description" content="Подбор рецептов. Таймеры, темная тема, 100+ блюд.">
     <link rel="stylesheet" href="styles/main.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header class="app-header">
         <div class="container header-content">
             <div class="logo">
-                <span class="material-icons-round">restaurant_menu</span>
+                <span class="material-icons-round">restaurant</span>
                 <h1>Ilovecook</h1>
             </div>
-            <nav>
-                <button id="btn-favorites" class="icon-btn" title="Избранное">
-                    <span class="material-icons-round">favorite</span>
+            
+            <div class="header-actions">
+                <div class="search-wrap">
+                    <span class="material-icons-round search-icon">search</span>
+                    <input type="text" id="global-search" placeholder="Поиск рецепта или продукта...">
+                </div>
+
+                <button id="theme-toggle" class="icon-btn" title="Переключить тему">
+                    <span class="material-icons-round">dark_mode</span>
                 </button>
-                <button id="btn-shopping-list" class="icon-btn" title="Список покупок">
-                    <span class="material-icons-round">shopping_cart</span>
-                </button>
-            </nav>
+            </div>
         </div>
     </header>
 
     <main class="container">
         
         <section class="ingredients-panel">
-            <h2>Что есть в холодильнике?</h2>
-            <div class="search-bar">
-                <span class="material-icons-round">search</span>
-                <input type="text" id="ingredient-search" placeholder="Найти продукт (например: молоко)...">
+            <div class="panel-header">
+                <h2>🍏 Мои продукты</h2>
+                <button id="clear-ingredients" class="btn-text hidden">Сбросить</button>
             </div>
             
             <div id="ingredients-list" class="tags-container">
-                <div class="loading">Загрузка продуктов...</div>
-            </div>
-            
-            <div class="selected-summary">
-                <span>Выбрано: <strong id="selected-count">0</strong></span>
-                <button id="clear-ingredients" class="btn-text">Очистить всё</button>
-            </div>
+                </div>
         </section>
 
-        <hr class="divider">
+        <section class="filters-scroll">
+            <button class="filter-pill active" data-cat="all">Все</button>
+            <button class="filter-pill" data-cat="Супы">Супы</button>
+            <button class="filter-pill" data-cat="Вторые блюда">Вторые блюда</button>
+            <button class="filter-pill" data-cat="Завтраки">Завтраки</button>
+            <button class="filter-pill" data-cat="Салаты">Салаты</button>
+            <button class="filter-pill" data-cat="Выпечка">Выпечка</button>
+            <button class="filter-pill" data-cat="Десерты">Десерты</button>
+        </section>
 
-        <section class="controls-panel">
-            <div class="filters">
-                <select id="filter-category">
-                    <option value="all">Все категории</option>
-                    <option value="Супы">Супы</option>
-                    <option value="Салаты">Салаты</option>
-                    <option value="Выпечка">Выпечка</option>
-                </select>
-                <select id="filter-difficulty">
-                    <option value="all">Сложность</option>
-                    <option value="easy">Просто</option>
-                    <option value="medium">Средне</option>
-                    <option value="hard">Сложно</option>
-                </select>
+        <h3 id="results-title">Все рецепты (100+)</h3>
+        <div id="recipes-container" class="recipes-grid">
             </div>
-            <button id="btn-random" class="btn-secondary">
-                <span class="material-icons-round">casino</span> Случайный
-            </button>
-        </section>
-
-        <section id="recipes-container" class="recipes-grid">
-            <div class="empty-state">Выберите ингредиенты, чтобы увидеть рецепты</div>
-        </section>
 
     </main>
 
     <div id="recipe-modal" class="modal hidden">
         <div class="modal-content">
             <button class="close-modal"><span class="material-icons-round">close</span></button>
+            
             <div id="modal-body">
                 </div>
         </div>
     </div>
 
-    <div id="shopping-modal" class="modal hidden">
-        <div class="modal-content small">
-            <button class="close-modal"><span class="material-icons-round">close</span></button>
-            <h2>🛒 Список покупок</h2>
-            <ul id="shopping-list-items"></ul>
-            <button id="clear-shopping-list" class="btn-primary full-width">Очистить список</button>
+    <div id="timer-alert" class="timer-toast hidden">
+        <span class="material-icons-round">timer</span>
+        <div class="timer-info">
+            <span id="timer-step-text">Шаг 1</span>
+            <strong id="timer-countdown">00:00</strong>
         </div>
+        <button id="stop-timer" class="icon-btn-small"><span class="material-icons-round">stop</span></button>
     </div>
 
     <script src="scripts/app.js"></script>
