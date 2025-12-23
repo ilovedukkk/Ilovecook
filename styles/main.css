@@ -150,3 +150,109 @@ body { font-family: 'Inter', sans-serif; background: var(--bg-body); color: var(
     font-family: inherit;
     cursor: pointer;
 }
+
+/* Бейджик счетчика */
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--primary);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--bg-card);
+}
+
+/* Модалка списка покупок */
+.shop-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.add-custom-item {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+.add-custom-item input {
+    flex-grow: 1;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg-body);
+    color: var(--text-main);
+}
+
+.shop-list {
+    list-style: none;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.shop-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    animation: fadeIn 0.2s;
+}
+
+.shop-item span {
+    flex-grow: 1;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.shop-item.done span {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+.shop-checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+.btn-delete {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 4px;
+}
+.btn-delete:hover { color: #ff4757; }
+
+/* Кнопка добавления в модалке рецепта */
+.btn-add-shop {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 4px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: auto;
+}
+.btn-add-shop:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+.btn-add-shop.added {
+    background: #e6fffa; /* Светло-зеленый */
+    color: #00b894;
+    border-color: #00b894;
+}
