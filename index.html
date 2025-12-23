@@ -3,103 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ilovecook — Умный холодильник</title>
-    <meta name="theme-color" content="#2ecc71">
-    <link rel="manifest" href="manifest.json">
+    <title>Ilovecook | Умный поиск рецептов</title>
+    <meta name="description" content="Подбор рецептов по ингредиентам. Готовь из того, что есть дома!">
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍🍳</text></svg>">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header class="app-header">
-    <div class="logo">❤️ ilovecook</div>
-    <div class="header-controls">
-        <button id="theme-toggle" class="btn-theme" title="Сменить тему">☀️</button>
-        
-        <button id="open-shopping-list" class="btn-icon relative" title="Список покупок">
-            🛒 <span id="shopping-badge" class="badge hidden">0</span>
-        </button>
-        <button id="toggle-sidebar" class="mobile-only" aria-label="Меню">🧾</button>
-    </div>
-</header>
-
-<div class="app-container">
-    <aside class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <h2>Твой холодильник</h2>
-            <button id="close-sidebar" class="mobile-only">✕</button>
-        </div>
-        <input type="text" id="ingredient-search" placeholder="🔍 Найти продукт...">
-        <div id="ingredients-list" class="ingredients-list">
-            <div class="loader">Загрузка...</div>
-        </div>
-        <button id="clear-ingredients" class="btn-action mt-10" style="width:100%">🗑 Сбросить всё</button>
-    </aside>
-
-    <main class="content">
-        <section class="filters-bar">
-            <div class="scroll-filters">
-                <button id="random-recipe-btn" class="chip accent">🎲 Мне повезет</button>
-                <label class="chip"><input type="checkbox" id="filter-veg"> 🥦 Вег</label>
-                <label class="chip"><input type="checkbox" id="filter-budget"> 💸 Эконом</label>
-                <select id="filter-time" class="select-styled" style="background:var(--bg); color:var(--text); border:1px solid var(--border); padding:5px; border-radius:8px;">
-                    <option value="999">⏱ Любое время</option>
-                    <option value="20">до 20 мин</option>
-                    <option value="40">до 40 мин</option>
-                    <option value="90">до 1.5 часов</option>
-                </select>
+    <header class="app-header">
+        <div class="container header-content">
+            <div class="logo">
+                <span class="material-icons-round">restaurant_menu</span>
+                <h1>Ilovecook</h1>
             </div>
-            <button id="show-favorites" class="btn-icon" title="Избранное">❤️</button>
+            <nav>
+                <button id="btn-favorites" class="icon-btn" title="Избранное">
+                    <span class="material-icons-round">favorite</span>
+                </button>
+                <button id="btn-shopping-list" class="icon-btn" title="Список покупок">
+                    <span class="material-icons-round">shopping_cart</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="ingredients-panel">
+            <h2>Что есть в холодильнике?</h2>
+            <div class="search-bar">
+                <span class="material-icons-round">search</span>
+                <input type="text" id="ingredient-search" placeholder="Найти продукт (например: молоко)...">
+            </div>
+            
+            <div id="ingredients-list" class="tags-container">
+                <div class="loading">Загрузка продуктов...</div>
+            </div>
+            
+            <div class="selected-summary">
+                <span>Выбрано: <strong id="selected-count">0</strong></span>
+                <button id="clear-ingredients" class="btn-text">Очистить всё</button>
+            </div>
         </section>
 
-        <div id="recipes-grid" class="recipes-grid">
+        <hr class="divider">
+
+        <section class="controls-panel">
+            <div class="filters">
+                <select id="filter-category">
+                    <option value="all">Все категории</option>
+                    <option value="Супы">Супы</option>
+                    <option value="Салаты">Салаты</option>
+                    <option value="Выпечка">Выпечка</option>
+                </select>
+                <select id="filter-difficulty">
+                    <option value="all">Сложность</option>
+                    <option value="easy">Просто</option>
+                    <option value="medium">Средне</option>
+                    <option value="hard">Сложно</option>
+                </select>
             </div>
+            <button id="btn-random" class="btn-secondary">
+                <span class="material-icons-round">casino</span> Случайный
+            </button>
+        </section>
+
+        <section id="recipes-container" class="recipes-grid">
+            <div class="empty-state">Выберите ингредиенты, чтобы увидеть рецепты</div>
+        </section>
+
     </main>
-</div>
 
-<div id="recipe-modal" class="modal-overlay hidden">
-    <div class="modal-content">
-        <button class="modal-close" id="close-modal">✕</button>
-        <div class="modal-header">
-            <h2 id="modal-title">...</h2>
-        </div>
-        <div class="modal-body">
-            <div class="modal-tabs">
-                <button class="tab-btn active" onclick="window.switchTab('ing')">Ингредиенты</button>
-                <button class="tab-btn" onclick="window.switchTab('steps')">Рецепт</button>
-            </div>
-            <div id="tab-ing" class="tab-content active">
-                <ul id="modal-ingredients" class="recipe-ing-list"></ul>
-                <button id="add-missing-btn" class="btn-secondary mt-10" style="width:100%">🛒 В список покупок</button>
-            </div>
-            <div id="tab-steps" class="tab-content">
-                <ol id="modal-steps" class="recipe-steps"></ol>
-            </div>
-        </div>
-        <div class="modal-footer">
-            <button class="btn-primary" onclick="window.closeRecipeModal()">Готово</button>
+    <div id="recipe-modal" class="modal hidden">
+        <div class="modal-content">
+            <button class="close-modal"><span class="material-icons-round">close</span></button>
+            <div id="modal-body">
+                </div>
         </div>
     </div>
-</div>
 
-<div id="shopping-drawer" class="drawer">
-    <div class="drawer-header">
-        <h3>🛒 Список покупок</h3>
-        <button id="close-shopping" class="btn-icon">✕</button>
+    <div id="shopping-modal" class="modal hidden">
+        <div class="modal-content small">
+            <button class="close-modal"><span class="material-icons-round">close</span></button>
+            <h2>🛒 Список покупок</h2>
+            <ul id="shopping-list-items"></ul>
+            <button id="clear-shopping-list" class="btn-primary full-width">Очистить список</button>
+        </div>
     </div>
-    <div class="drawer-body">
-        <ul id="shopping-list-items" class="shopping-list"></ul>
-        <div id="shopping-empty" class="hidden" style="text-align:center; color:var(--text-sec); margin-top:20px;">Список пуст</div>
-    </div>
-    <div class="drawer-footer">
-        <button id="clear-shopping" class="btn-action">Очистить</button>
-        <button id="share-shopping" class="btn-primary" style="flex:2">📋 Скопировать</button>
-    </div>
-</div>
-<div id="drawer-overlay" class="drawer-overlay hidden"></div>
-<div id="toast" class="toast hidden"></div>
 
-<script type="module" src="scripts/app.js"></script>
-
+    <script src="scripts/app.js"></script>
 </body>
 </html>
