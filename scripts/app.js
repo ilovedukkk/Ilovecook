@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- State & DOM ---
     let recipes = [];
+    let shoppingList = JSON.parse(localStorage.getItem('ilovecook_shopping')) || [];
     let ingredients = [];
     let substitutes = {};
     let selectedIngredients = new Set();
@@ -503,4 +504,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Запуск
     init();
+    updateShopUI();
 });
