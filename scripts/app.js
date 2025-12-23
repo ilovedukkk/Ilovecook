@@ -15,6 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
         themeBtn: document.getElementById('theme-toggle'),
         modal: document.getElementById('recipe-modal'),
         modalBody: document.getElementById('modal-body'),
+        shopBtn: document.getElementById('shop-btn'),
+        shopCount: document.getElementById('shop-count'),
+        shopModal: document.getElementById('shopping-modal'),
+        shopList: document.getElementById('shopping-list-items'),
+        shopInput: document.getElementById('shop-input'),
+        shopAddBtn: document.getElementById('shop-add-btn'),
+        shopClearBtn: document.getElementById('clear-shop'),
         servingsSelect: document.getElementById('servings-select'),
         resultsTitle: document.getElementById('results-title'),
         timerToast: document.getElementById('timer-alert'),
@@ -220,27 +227,36 @@ document.addEventListener('DOMContentLoaded', () => {
         els.modal.classList.remove('hidden');
         
         // Генерация списка ингредиентов
-        const ingsHTML = recipe.ingredients.map(ing => {
+       const ingsHTML = recipe.ingredients.map(ing => {
             let statusClass = '';
             let icon = 'radio_button_unchecked';
-            
+            let actionBtn = ''; // Кнопка действия
+
+            // Логика статусов (есть / замена / нет)
             if (selectedIngredients.has(ing.id)) {
                 statusClass = 'has-ing';
                 icon = 'check_circle';
             } else if (checkSubstitute(ing.id)) {
                 statusClass = 'sub-ing';
                 icon = 'cached';
-            } else if (selectedIngredients.size > 0) {
-                statusClass = 'no-ing';
-                icon = 'cancel';
+                // Даже если есть замена, можно захотеть купить оригинал
+                actionBtn = getShopBtnHTML(ing.name); 
+            } else {
+                if (selectedIngredients.size > 0) {
+                    statusClass = 'no-ing';
+                    icon = 'cancel';
+                }
+                // Если продукта нет - предлагаем купить
+                actionBtn = getShopBtnHTML(ing.name);
             }
 
             return `
-                <div style="display:flex; justify-content:space-between; padding: 6px 0; border-bottom: 1px solid var(--border)">
-                    <span class="${statusClass}" style="display:flex; align-items:center; gap:6px;">
-                        <span class="material-icons-round" style="font-size:16px">${icon}</span> ${ing.name}
+                <div style="display:flex; align-items:center; padding: 8px 0; border-bottom: 1px solid var(--border)">
+                    <span class="${statusClass}" style="display:flex; align-items:center; gap:6px; flex-grow:1">
+                        <span class="material-icons-round" style="font-size:18px">${icon}</span> 
+                        ${ing.name} <span style="color: var(--text-muted); font-size:0.9em">(${ing.amount})</span>
                     </span>
-                    <span style="color: var(--text-muted)">${ing.amount}</span>
+                    ${actionBtn}
                 </div>
             `;
         }).join('');
@@ -363,7 +379,111 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Слушаем изменение выпадающего списка
     els.servingsSelect.addEventListener('change', renderRecipes);
+   
+    // --- 9. Shopping List Logic ---
+    
+    // Вспомогательная функция для генерации кнопки
+    function getShopBtnHTML(name) {
+        const isInList = shoppingList.some(item => item.text === name);
+        if (isInList) {
+            return `<button class="btn-add-shop added" onclick="removeFromCart('${name}', this)">
+                <span class="material-icons-round" style="font-size:14px">check</span> В списке
+            </button>`;
+        } else {
+            return `<button class="btn-add-shop" onclick="addToCart('${name}', this)">
+                <span class="material-icons-round" style="font-size:14px">add</span> Купить
+            </button>`;
+        }
+    }
 
+    // Глобальные функции (чтобы работали из HTML строки)
+    window.addToCart = (name, btn) => {
+        if (!shoppingList.some(i => i.text === name)) {
+            shoppingList.push({ text: name, done: false });
+            saveShop();
+            if(btn) {
+                btn.className = 'btn-add-shop added';
+                btn.innerHTML = '<span class="material-icons-round" style="font-size:14px">check</span> В списке';
+                btn.onclick = () => window.removeFromCart(name, btn);
+            }
+        }
+    };
+
+    window.removeFromCart = (name, btn) => {
+        shoppingList = shoppingList.filter(i => i.text !== name);
+        saveShop();
+        if(btn) {
+            btn.className = 'btn-add-shop';
+            btn.innerHTML = '<span class="material-icons-round" style="font-size:14px">add</span> Купить';
+            btn.onclick = () => window.addToCart(name, btn);
+        }
+        renderShopList(); // Если мы удаляем из модалки списка
+    };
+
+    function saveShop() {
+        localStorage.setItem('ilovecook_shopping', JSON.stringify(shoppingList));
+        updateShopUI();
+    }
+
+    function updateShopUI() {
+        // Обновляем бейджик
+        const count = shoppingList.filter(i => !i.done).length;
+        els.shopCount.textContent = count;
+        els.shopCount.classList.toggle('hidden', count === 0);
+        renderShopList();
+    }
+
+    function renderShopList() {
+        if (!els.shopList) return;
+        els.shopList.innerHTML = '';
+        
+        shoppingList.forEach((item, idx) => {
+            const li = document.createElement('li');
+            li.className = `shop-item ${item.done ? 'done' : ''}`;
+            li.innerHTML = `
+                <input type="checkbox" class="shop-checkbox" ${item.done ? 'checked' : ''} onchange="toggleDone(${idx})">
+                <span onclick="toggleDone(${idx})">${item.text}</span>
+                <button class="btn-delete" onclick="deleteShopItem(${idx})">
+                    <span class="material-icons-round">delete</span>
+                </button>
+            `;
+            els.shopList.appendChild(li);
+        });
+    }
+
+    window.toggleDone = (idx) => {
+        shoppingList[idx].done = !shoppingList[idx].done;
+        saveShop();
+    };
+
+    window.deleteShopItem = (idx) => {
+        shoppingList.splice(idx, 1);
+        saveShop();
+    };
+
+    // Слушатели событий списка
+    els.shopBtn.addEventListener('click', () => els.shopModal.classList.remove('hidden'));
+    
+    // Добавление вручную
+    const addCustom = () => {
+        const val = els.shopInput.value.trim();
+        if(val) {
+            window.addToCart(val);
+            els.shopInput.value = '';
+        }
+    };
+    els.shopAddBtn.addEventListener('click', addCustom);
+    els.shopInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') addCustom() });
+
+    els.shopClearBtn.addEventListener('click', () => {
+        if(confirm('Очистить весь список?')) {
+            shoppingList = [];
+            saveShop();
+        }
+    });
+
+    let shoppingList = JSON.parse(localStorage.getItem('ilovecook_shopping')) || [];
     // Запуск
     init();
+    updateShopUI();
 });
