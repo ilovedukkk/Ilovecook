@@ -1,167 +1,87 @@
 [
   {
-    "id": "borscht",
-    "name": "Домашний Борщ",
+    "id": "borsch_classic",
+    "title": "Борщ классический",
+    "category": "Супы",
     "time": 90,
-    "budget": true,
-    "vegetarian": false,
-    "required": ["beetroot", "cabbage", "potato", "carrot", "onion"],
-    "optional": ["beef", "tomato_paste", "garlic", "sour_cream", "greens"],
-    "image": "https://images.unsplash.com/photo-1574484284008-81dcec18930c?auto=format&fit=crop&w=600&q=80",
-    "instructions": ["Сварите бульон.", "Сделайте зажарку из овощей.", "Варите до готовности."]
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/e74c3c/ffffff?text=Borsch",
+    "ingredients": [
+      { "id": "beet", "name": "Свёкла", "amount": "2 шт", "required": true },
+      { "id": "potato", "name": "Картофель", "amount": "3 шт", "required": true },
+      { "id": "carrot", "name": "Морковь", "amount": "1 шт", "required": true },
+      { "id": "onion", "name": "Лук", "amount": "1 шт", "required": true },
+      { "id": "beef", "name": "Говядина на кости", "amount": "500 г", "required": true },
+      { "id": "cabbage", "name": "Капуста", "amount": "300 г", "required": true },
+      { "id": "tomato", "name": "Помидор / Томатная паста", "amount": "2 ст.л.", "required": true },
+      { "id": "garlic", "name": "Чеснок", "amount": "2 зубчика", "required": false },
+      { "id": "sour_cream", "name": "Сметана", "amount": "по вкусу", "required": false }
+    ],
+    "steps": [
+      "Сварить бульон из говядины (около 1.5 часов).",
+      "Нарезать картофель кубиками, нашинковать капусту.",
+      "Сделать зажарку: обжарить лук и морковь.",
+      "Свёклу натереть или нарезать соломкой, тушить с томатом отдельно.",
+      "В бульон добавить картофель и капусту.",
+      "Через 15 минут добавить зажарку и свёклу.",
+      "Варить еще 5-10 минут, добавить чеснок и зелень. Дать настояться."
+    ],
+    "source": {
+      "name": "gotovim-doma.ru",
+      "url": "https://gotovim-doma.ru/recipe/view/borsch"
+    }
   },
   {
-    "id": "pasta_bolognese",
-    "name": "Паста Болоньезе",
-    "time": 40,
-    "budget": true,
-    "vegetarian": false,
-    "required": ["pasta", "minced_meat", "tomato_paste", "onion"],
-    "optional": ["garlic", "carrot", "cheese", "oil"],
-    "image": "https://images.unsplash.com/photo-1626844131082-256783844137?auto=format&fit=crop&w=600&q=80",
-    "instructions": ["Обжарьте фарш с овощами.", "Добавьте томатную пасту.", "Смешайте с пастой."]
-  },
-  {
-    "id": "olivier",
-    "name": "Салат Оливье",
-    "time": 50,
-    "budget": true,
-    "vegetarian": false,
-    "required": ["potato", "carrot", "egg", "bacon", "cucumber", "mayo"],
-    "optional": ["onion", "greens", "salt"],
-    "image": "https://images.unsplash.com/photo-1641978250081-304724a6a58d?auto=format&fit=crop&w=600&q=80",
-    "instructions": ["Отварите овощи.", "Нарежьте кубиками.", "Заправьте майонезом."]
-  },
-  {
-    "id": "buckwheat_merchants",
-    "name": "Гречка по-купечески",
-    "time": 35,
-    "budget": true,
-    "vegetarian": false,
-    "required": ["buckwheat", "minced_meat", "onion", "carrot"],
-    "optional": ["tomato_paste", "garlic", "oil"],
-    "image": "https://images.unsplash.com/photo-1564834724105-918b73d1b9e0?auto=format&fit=crop&w=600&q=80",
-    "instructions": ["Обжарьте мясо с овощами.", "Добавьте гречку.", "Тушите до готовности."]
-  },
-  {
-    "id": "syrniki_pro",
-    "name": "Идеальные Сырники",
-    "time": 25,
-    "budget": true,
-    "vegetarian": true,
-    "required": ["cheese", "egg", "flour"],
-    "optional": ["sugar", "sour_cream", "oil"],
-    "image": "https://images.unsplash.com/photo-1571550069352-2542488c039b?auto=format&fit=crop&w=600&q=80",
-    "instructions": ["Смешайте творог, яйца и муку.", "Сформируйте шайбы.", "Жарьте до корочки."]
-  },
-  {
-    "id": "shakshuka",
-    "name": "Шакшука",
-    "time": 20,
-    "budget": true,
-    "vegetarian": true,
-    "required": ["egg", "tomato", "onion", "pepper"],
-    "optional": ["garlic", "oil", "bread"],
-    "image": "https://images.unsplash.com/photo-1590412200988-a436970781fa?auto=format&fit=crop&w=600&q=80",
-    "instructions": ["Тушите овощи в соусе.", "Вбейте яйца.", "Готовьте до схватывания белка."]
-  },
-  {
-    "id": "draniki",
-    "name": "Драники",
-    "time": 30,
-    "budget": true,
-    "vegetarian": true,
-    "required": ["potato", "onion", "egg", "flour"],
-    "optional": ["sour_cream", "oil", "salt"],
-    "image": "https://plus.unsplash.com/premium_photo-1695218386616-e414f5e7f1ba?auto=format&fit=crop&w=600&q=80",
-    "instructions": ["Натрите картофель.", "Смешайте с яйцом.", "Жарьте как оладьи."]
-  },
-  {
-    "id": "french_crepes",
-    "name": "Тонкие блинчики",
-    "time": 40,
-    "budget": true,
-    "vegetarian": true,
-    "required": ["flour", "milk", "egg"],
-    "optional": ["sugar", "butter", "oil"],
-    "image": "https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=600&q=80",
-    "instructions": ["Сделайте жидкое тесто.", "Жарьте на раскаленной сковороде."]
-  },
-  {
-    "id": "fried_rice_egg",
-    "name": "Жареный рис с яйцом",
-    "time": 15,
-    "budget": true,
-    "vegetarian": true,
-    "required": ["rice", "egg", "onion", "oil"],
-    "optional": ["carrot", "garlic", "greens", "bacon"],
-    "image": "https://images.unsplash.com/photo-1536304993881-ff6c9eefa2a6?auto=format&fit=crop&w=600&q=80",
-    "instructions": ["Обжарьте яйца.", "Добавьте рис и овощи.", "Жарьте 5 минут."]
-  },
-  {
-    "id": "mashed_potatoes_cutlet",
-    "name": "Пюре с котлетой",
-    "time": 50,
-    "budget": false,
-    "vegetarian": false,
-    "required": ["potato", "minced_meat", "onion", "milk", "butter"],
-    "optional": ["bread", "egg", "flour", "oil"],
-    "image": "https://images.unsplash.com/photo-1616428733246-81525941910e?auto=format&fit=crop&w=600&q=80",
-    "instructions": ["Сделайте котлеты.", "Сварите пюре с молоком."]
-  },
-  {
-    "id": "simple_salad",
-    "name": "Витаминный салат",
-    "time": 10,
-    "budget": true,
-    "vegetarian": true,
-    "required": ["cabbage", "carrot", "oil"],
-    "optional": ["cucumber", "onion", "sugar", "salt"],
-    "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80",
-    "instructions": ["Нашинкуйте капусту.", "Натрите морковь.", "Заправьте маслом."]
-  },
-  {
-    "id": "omelette",
-    "name": "Омлет",
-    "time": 10,
-    "budget": true,
-    "vegetarian": true,
-    "required": ["egg", "milk"],
-    "optional": ["cheese", "salt", "butter"],
-    "image": "https://images.unsplash.com/photo-1510693206972-df098062cb71?auto=format&fit=crop&w=600&q=80",
-    "instructions": ["Взбейте яйца с молоком.", "Жарьте под крышкой."]
-  },
-  {
-    "id": "fried_eggs",
-    "name": "Яичница с беконом",
-    "time": 7,
-    "budget": true,
-    "vegetarian": false,
-    "required": ["egg", "bacon"],
-    "optional": ["oil", "salt"],
-    "image": "https://images.unsplash.com/photo-1608039755401-742074f0548d?auto=format&fit=crop&w=600&q=80",
-    "instructions": ["Обжарьте бекон.", "Разбейте яйца."]
-  },
-  {
-    "id": "chicken_soup",
-    "name": "Куриный суп",
+    "id": "olivie",
+    "title": "Салат Оливье",
+    "category": "Салаты",
     "time": 45,
-    "budget": true,
-    "vegetarian": false,
-    "required": ["chicken", "potato", "carrot", "onion"],
-    "optional": ["pasta", "salt", "pepper"],
-    "image": "https://images.unsplash.com/photo-1547592166-23acbe3a624b?auto=format&fit=crop&w=600&q=80",
-    "instructions": ["Сварите курицу.", "Добавьте овощи.", "Варите до мягкости."]
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/2ecc71/ffffff?text=Olivie",
+    "ingredients": [
+      { "id": "potato", "name": "Картофель", "amount": "4 шт", "required": true },
+      { "id": "carrot", "name": "Морковь", "amount": "1 шт", "required": true },
+      { "id": "egg", "name": "Яйцо", "amount": "4 шт", "required": true },
+      { "id": "cucumber", "name": "Огурец (соленый или свежий)", "amount": "3 шт", "required": true },
+      { "id": "chicken_breast", "name": "Куриное филе (или колбаса)", "amount": "300 г", "required": true },
+      { "id": "mayo", "name": "Майонез", "amount": "100 г", "required": true }
+    ],
+    "steps": [
+      "Отварить картофель, морковь и яйца.",
+      "Остудить и очистить овощи и яйца.",
+      "Нарезать все ингредиенты мелкими кубиками.",
+      "Смешать в большой миске.",
+      "Заправить майонезом, посолить по вкусу."
+    ],
+    "source": {
+      "name": "gotovim-doma.ru",
+      "url": "https://gotovim-doma.ru/recipe/view/olivie"
+    }
   },
   {
-    "id": "greek_salad",
-    "name": "Греческий салат",
-    "time": 15,
-    "budget": false,
-    "vegetarian": true,
-    "required": ["tomato", "cucumber", "cheese", "onion"],
-    "optional": ["oil", "pepper"],
-    "image": "https://images.unsplash.com/photo-1529312266912-b33cf6227e24?auto=format&fit=crop&w=600&q=80",
-    "instructions": ["Нарежьте овощи крупно.", "Добавьте фету и оливки."]
+    "id": "pancakes",
+    "title": "Тонкие блины",
+    "category": "Выпечка",
+    "time": 30,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/f1c40f/333333?text=Pancakes",
+    "ingredients": [
+      { "id": "milk", "name": "Молоко", "amount": "500 мл", "required": true },
+      { "id": "egg", "name": "Яйцо", "amount": "3 шт", "required": true },
+      { "id": "flour", "name": "Мука", "amount": "200 г", "required": true },
+      { "id": "oil", "name": "Растительное масло", "amount": "2 ст.л.", "required": true },
+      { "id": "sugar", "name": "Сахар", "amount": "1 ст.л.", "required": false }
+    ],
+    "steps": [
+      "Взбить яйца с сахаром и солью.",
+      "Влить молоко, перемешать.",
+      "Постепенно всыпать муку, постоянно помешивая венчиком, чтобы не было комочков.",
+      "Добавить масло в тесто.",
+      "Разогреть сковороду и жарить блины с двух сторон до золотистого цвета."
+    ],
+    "source": {
+      "name": "gotovim-doma.ru",
+      "url": "https://gotovim-doma.ru/recipe/view/bliny"
+    }
   }
 ]
