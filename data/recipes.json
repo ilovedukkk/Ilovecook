@@ -3,85 +3,144 @@
     "id": "borsch_classic",
     "title": "Борщ классический",
     "category": "Супы",
-    "time": 90,
+    "time_total": 90,
     "difficulty": "medium",
     "image": "https://placehold.co/600x400/e74c3c/ffffff?text=Borsch",
     "ingredients": [
-      { "id": "beet", "name": "Свёкла", "amount": "2 шт", "required": true },
-      { "id": "potato", "name": "Картофель", "amount": "3 шт", "required": true },
-      { "id": "carrot", "name": "Морковь", "amount": "1 шт", "required": true },
-      { "id": "onion", "name": "Лук", "amount": "1 шт", "required": true },
-      { "id": "beef", "name": "Говядина на кости", "amount": "500 г", "required": true },
-      { "id": "cabbage", "name": "Капуста", "amount": "300 г", "required": true },
-      { "id": "tomato", "name": "Помидор / Томатная паста", "amount": "2 ст.л.", "required": true },
-      { "id": "garlic", "name": "Чеснок", "amount": "2 зубчика", "required": false },
-      { "id": "sour_cream", "name": "Сметана", "amount": "по вкусу", "required": false }
+      { "id": "beef", "name": "Говядина на кости", "amount": "500 г" },
+      { "id": "beet", "name": "Свёкла", "amount": "2 шт" },
+      { "id": "potato", "name": "Картофель", "amount": "3 шт" },
+      { "id": "carrot", "name": "Морковь", "amount": "1 шт" },
+      { "id": "cabbage", "name": "Капуста", "amount": "300 г" }
     ],
     "steps": [
-      "Сварить бульон из говядины (около 1.5 часов).",
-      "Нарезать картофель кубиками, нашинковать капусту.",
-      "Сделать зажарку: обжарить лук и морковь.",
-      "Свёклу натереть или нарезать соломкой, тушить с томатом отдельно.",
-      "В бульон добавить картофель и капусту.",
-      "Через 15 минут добавить зажарку и свёклу.",
-      "Варить еще 5-10 минут, добавить чеснок и зелень. Дать настояться."
+      { "text": "Залить мясо водой, довести до кипения, снять пену. Варить бульон.", "time": 60 },
+      { "text": "Нарезать картофель кубиками, нашинковать капусту. Добавить в бульон.", "time": 15 },
+      { "text": "Сделать зажарку: лук, морковь и свёклу обжарить с томатной пастой.", "time": 10 },
+      { "text": "Соединить овощи с бульоном, добавить специи. Дать настояться.", "time": 5 }
     ],
-    "source": {
-      "name": "gotovim-doma.ru",
-      "url": "https://gotovim-doma.ru/recipe/view/borsch"
-    }
+    "source": { "name": "gotovim-doma.ru", "url": "https://gotovim-doma.ru/recipe/view/borsch" }
   },
   {
-    "id": "olivie",
-    "title": "Салат Оливье",
-    "category": "Салаты",
-    "time": 45,
+    "id": "sirniki",
+    "title": "Пышные сырники",
+    "category": "Завтраки",
+    "time_total": 20,
     "difficulty": "easy",
-    "image": "https://placehold.co/600x400/2ecc71/ffffff?text=Olivie",
+    "image": "https://placehold.co/600x400/f1c40f/333333?text=Sirniki",
     "ingredients": [
-      { "id": "potato", "name": "Картофель", "amount": "4 шт", "required": true },
-      { "id": "carrot", "name": "Морковь", "amount": "1 шт", "required": true },
-      { "id": "egg", "name": "Яйцо", "amount": "4 шт", "required": true },
-      { "id": "cucumber", "name": "Огурец (соленый или свежий)", "amount": "3 шт", "required": true },
-      { "id": "chicken_breast", "name": "Куриное филе (или колбаса)", "amount": "300 г", "required": true },
-      { "id": "mayo", "name": "Майонез", "amount": "100 г", "required": true }
+      { "id": "cottage_cheese", "name": "Творог", "amount": "400 г" },
+      { "id": "egg", "name": "Яйцо", "amount": "1 шт" },
+      { "id": "flour", "name": "Мука", "amount": "3 ст.л." },
+      { "id": "sugar", "name": "Сахар", "amount": "2 ст.л." }
     ],
     "steps": [
-      "Отварить картофель, морковь и яйца.",
-      "Остудить и очистить овощи и яйца.",
-      "Нарезать все ингредиенты мелкими кубиками.",
-      "Смешать в большой миске.",
-      "Заправить майонезом, посолить по вкусу."
+      { "text": "Размять творог вилкой с сахаром и яйцом.", "time": 2 },
+      { "text": "Добавить муку, замесить мягкое тесто.", "time": 3 },
+      { "text": "Сформировать шайбочки, обвалять в муке.", "time": 5 },
+      { "text": "Жарить на среднем огне до золотистой корочки с каждой стороны.", "time": 10 }
     ],
-    "source": {
-      "name": "gotovim-doma.ru",
-      "url": "https://gotovim-doma.ru/recipe/view/olivie"
-    }
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/zavtraki/syrniki-klassicheskie" }
   },
   {
-    "id": "pancakes",
-    "title": "Тонкие блины",
-    "category": "Выпечка",
-    "time": 30,
+    "id": "caesar",
+    "title": "Салат Цезарь с курицей",
+    "category": "Салаты",
+    "time_total": 30,
     "difficulty": "medium",
-    "image": "https://placehold.co/600x400/f1c40f/333333?text=Pancakes",
+    "image": "https://placehold.co/600x400/2ecc71/ffffff?text=Caesar",
     "ingredients": [
-      { "id": "milk", "name": "Молоко", "amount": "500 мл", "required": true },
-      { "id": "egg", "name": "Яйцо", "amount": "3 шт", "required": true },
-      { "id": "flour", "name": "Мука", "amount": "200 г", "required": true },
-      { "id": "oil", "name": "Растительное масло", "amount": "2 ст.л.", "required": true },
-      { "id": "sugar", "name": "Сахар", "amount": "1 ст.л.", "required": false }
+      { "id": "chicken_breast", "name": "Куриное филе", "amount": "200 г" },
+      { "id": "salad_iceberg", "name": "Салат Айсберг", "amount": "1 кочан" },
+      { "id": "tomato", "name": "Помидоры черри", "amount": "6 шт" },
+      { "id": "cheese", "name": "Пармезан", "amount": "50 г" },
+      { "id": "bread_white", "name": "Белый хлеб (для сухариков)", "amount": "100 г" }
     ],
     "steps": [
-      "Взбить яйца с сахаром и солью.",
-      "Влить молоко, перемешать.",
-      "Постепенно всыпать муку, постоянно помешивая венчиком, чтобы не было комочков.",
-      "Добавить масло в тесто.",
-      "Разогреть сковороду и жарить блины с двух сторон до золотистого цвета."
+      { "text": "Нарезать хлеб кубиками, подсушить на сковороде.", "time": 10 },
+      { "text": "Куриное филе обжарить до готовности, нарезать ломтиками.", "time": 15 },
+      { "text": "Нарвать листья салата, выложить курицу, сухарики и помидоры.", "time": 5 }
     ],
-    "source": {
-      "name": "gotovim-doma.ru",
-      "url": "https://gotovim-doma.ru/recipe/view/bliny"
-    }
+    "source": { "name": "povarenok.ru", "url": "https://www.povarenok.ru/recipes/show/12345/" }
+  },
+  {
+    "id": "plov",
+    "title": "Плов с курицей",
+    "category": "Вторые блюда",
+    "time_total": 60,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/e67e22/ffffff?text=Plov",
+    "ingredients": [
+      { "id": "rice", "name": "Рис", "amount": "500 г" },
+      { "id": "chicken_breast", "name": "Курица", "amount": "500 г" },
+      { "id": "carrot", "name": "Морковь", "amount": "2 шт" },
+      { "id": "onion", "name": "Лук", "amount": "2 шт" },
+      { "id": "garlic", "name": "Чеснок", "amount": "1 головка" }
+    ],
+    "steps": [
+      { "text": "Нарезать лук полукольцами, морковь соломкой. Обжарить в казане.", "time": 10 },
+      { "text": "Добавить мясо, жарить до корочки.", "time": 10 },
+      { "text": "Засыпать промытый рис, залить водой, вставить чеснок. Тушить под крышкой.", "time": 40 }
+    ],
+    "source": { "name": "russianfood.com", "url": "https://www.russianfood.com/recipes/" }
+  },
+  {
+    "id": "charlotte",
+    "title": "Шарлотка с яблоками",
+    "category": "Выпечка",
+    "time_total": 45,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/d35400/ffffff?text=Charlotte",
+    "ingredients": [
+      { "id": "apple", "name": "Яблоки", "amount": "3 шт" },
+      { "id": "egg", "name": "Яйцо", "amount": "4 шт" },
+      { "id": "sugar", "name": "Сахар", "amount": "1 стакан" },
+      { "id": "flour", "name": "Мука", "amount": "1 стакан" }
+    ],
+    "steps": [
+      { "text": "Взбить яйца с сахаром в пышную пену (миксером).", "time": 7 },
+      { "text": "Аккуратно вмешать муку. Нарезать яблоки.", "time": 5 },
+      { "text": "Залить яблоки тестом и выпекать в духовке при 180°C.", "time": 35 }
+    ],
+    "source": { "name": "gotovim-doma.ru", "url": "https://gotovim-doma.ru/recipe/view/sharlotka" }
+  },
+  {
+    "id": "tiramisu",
+    "title": "Тирамису (ленивый)",
+    "category": "Десерты",
+    "time_total": 20,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/8e44ad/ffffff?text=Tiramisu",
+    "ingredients": [
+      { "id": "mascarpone", "name": "Маскарпоне (или мягкий творог)", "amount": "250 г" },
+      { "id": "cookies_savoiardi", "name": "Печенье Савоярди", "amount": "100 г" },
+      { "id": "coffee", "name": "Кофе эспрессо", "amount": "100 мл" },
+      { "id": "sugar_powder", "name": "Сахарная пудра", "amount": "2 ст.л." }
+    ],
+    "steps": [
+      { "text": "Сварить крепкий кофе и остудить.", "time": 10 },
+      { "text": "Взбить маскарпоне с пудрой.", "time": 5 },
+      { "text": "Обмакнуть печенье в кофе, выложить слоями с кремом. Убрать в холод.", "time": 5 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/" }
+  },
+   {
+    "id": "omlet",
+    "title": "Омлет с овощами",
+    "category": "Завтраки",
+    "time_total": 10,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/f39c12/ffffff?text=Omlet",
+    "ingredients": [
+      { "id": "egg", "name": "Яйцо", "amount": "2 шт" },
+      { "id": "milk", "name": "Молоко", "amount": "50 мл" },
+      { "id": "tomato", "name": "Помидор", "amount": "1 шт" }
+    ],
+    "steps": [
+      { "text": "Взбить яйца с молоком.", "time": 2 },
+      { "text": "Нарезать помидор, обжарить 1 минуту.", "time": 1 },
+      { "text": "Залить омлетом и готовить под крышкой.", "time": 5 }
+    ],
+    "source": { "name": "povarenok.ru", "url": "https://povarenok.ru" }
   }
 ]
