@@ -1702,5 +1702,236 @@
       { "text": "Посыпать крошкой. Убрать в холод на пару часов.", "time": 5 }
     ],
     "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/vypechka-deserty/tort-napoleon" }
+  },
+  {
+    "id": "zucchini_fritters",
+    "title": "Оладьи из кабачков",
+    "category": "Вторые блюда",
+    "servings": 3,
+    "time_total": 30,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/8BC34A/FFFFFF?text=Zucchini",
+    "ingredients": [
+      { "id": "zucchini", "name": "Кабачок", "amount": "2 шт" },
+      { "id": "egg", "name": "Яйцо", "amount": "2 шт" },
+      { "id": "flour", "name": "Мука", "amount": "4 ст.л." },
+      { "id": "garlic", "name": "Чеснок", "amount": "2 зубчика" },
+      { "id": "oil", "name": "Масло для жарки", "amount": "50 мл" }
+    ],
+    "steps": [
+      { "text": "Кабачки натереть на крупной терке, посолить и оставить на 10 минут.", "time": 10 },
+      { "text": "Хорошо отжать кабачки от выделившегося сока.", "time": 3 },
+      { "text": "Добавить яйца, муку и измельченный чеснок. Перемешать.", "time": 2 },
+      { "text": "Жарить на разогретом масле, выкладывая ложкой, до золотистой корочки.", "time": 15 }
+    ],
+    "source": { "name": "gotovim-doma.ru", "url": "https://gotovim-doma.ru/recipe/view/oladi-iz-kabachkov" }
+  },
+  {
+    "id": "mac_and_cheese",
+    "title": "Макароны с сыром (Mac&Cheese)",
+    "category": "Вторые блюда",
+    "servings": 2,
+    "time_total": 20,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/F1C40F/333333?text=MacCheese",
+    "ingredients": [
+      { "id": "pasta", "name": "Макароны", "amount": "200 г" },
+      { "id": "cheese", "name": "Сыр твердый", "amount": "150 г" },
+      { "id": "milk", "name": "Молоко", "amount": "100 мл" },
+      { "id": "butter", "name": "Масло сливочное", "amount": "20 г" },
+      { "id": "flour", "name": "Мука", "amount": "1 ч.л." }
+    ],
+    "steps": [
+      { "text": "Отварить макароны до готовности.", "time": 10 },
+      { "text": "В сотейнике растопить масло, добавить муку и быстро перемешать.", "time": 2 },
+      { "text": "Влить молоко, помешивая, варить до загустения соуса.", "time": 3 },
+      { "text": "Добавить тертый сыр в соус, мешать, пока не расплавится. Смешать с макаронами.", "time": 5 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/pasta-picca/makaroni-s-sirom" }
+  },
+  {
+    "id": "stewed_cabbage_sausage",
+    "title": "Тушеная капуста с колбасой",
+    "category": "Вторые блюда",
+    "servings": 4,
+    "time_total": 40,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/D35400/FFFFFF?text=Cabbage",
+    "ingredients": [
+      { "id": "cabbage", "name": "Капуста", "amount": "500 г" },
+      { "id": "sausage", "name": "Колбаса/Сосиски", "amount": "200 г" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "carrot", "name": "Морковь", "amount": "1 шт" },
+      { "id": "tomato_paste", "name": "Томатная паста", "amount": "2 ст.л." },
+      { "id": "oil", "name": "Масло растительное", "amount": "2 ст.л." }
+    ],
+    "steps": [
+      { "text": "Капусту нашинковать, лук и колбасу нарезать кубиками, морковь натереть.", "time": 10 },
+      { "text": "Обжарить лук, морковь и колбасу на масле.", "time": 5 },
+      { "text": "Добавить капусту, жарить, помешивая, 5 минут.", "time": 5 },
+      { "text": "Добавить томатную пасту, полстакана воды, соль. Тушить под крышкой до мягкости.", "time": 20 }
+    ],
+    "source": { "name": "russianfood.com", "url": "https://www.russianfood.com/recipes/bytype/?fid=116" }
+  },
+  {
+    "id": "hot_sandwiches",
+    "title": "Горячие бутерброды",
+    "category": "Завтраки",
+    "servings": 2,
+    "time_total": 15,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/E74C3C/FFFFFF?text=Sandwich",
+    "ingredients": [
+      { "id": "bread_white", "name": "Хлеб/Батон", "amount": "4 ломтика" },
+      { "id": "sausage", "name": "Колбаса", "amount": "100 г" },
+      { "id": "cheese", "name": "Сыр", "amount": "50 г" },
+      { "id": "tomato", "name": "Помидор", "amount": "1 шт" },
+      { "id": "mayo", "name": "Майонез", "amount": "1 ст.л." }
+    ],
+    "steps": [
+      { "text": "Колбасу и помидор нарезать мелкими кубиками, сыр натереть.", "time": 5 },
+      { "text": "Смешать начинку с майонезом.", "time": 2 },
+      { "text": "Выложить массу на ломтики хлеба.", "time": 3 },
+      { "text": "Запекать в духовке (200°C) или микроволновке до расплавления сыра.", "time": 5 }
+    ],
+    "source": { "name": "povarenok.ru", "url": "https://www.povarenok.ru/recipes/show/13579/" }
+  },
+  {
+    "id": "pumpkin_rice_porridge",
+    "title": "Рисовая каша с тыквой",
+    "category": "Завтраки",
+    "servings": 3,
+    "time_total": 40,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/F39C12/FFFFFF?text=PumpkinPorridge",
+    "ingredients": [
+      { "id": "pumpkin", "name": "Тыква", "amount": "300 г" },
+      { "id": "rice", "name": "Рис", "amount": "0.5 стакана" },
+      { "id": "milk", "name": "Молоко", "amount": "1.5 стакана" },
+      { "id": "sugar", "name": "Сахар", "amount": "1 ст.л." },
+      { "id": "butter", "name": "Сливочное масло", "amount": "20 г" }
+    ],
+    "steps": [
+      { "text": "Тыкву очистить и нарезать мелкими кубиками.", "time": 5 },
+      { "text": "Залить тыкву водой (чтобы покрыла), варить 10 минут до мягкости.", "time": 10 },
+      { "text": "Всыпать промытый рис, варить до впитывания воды.", "time": 10 },
+      { "text": "Влить молоко, добавить сахар, варить на слабом огне до готовности риса.", "time": 15 }
+    ],
+    "source": { "name": "gotovim-doma.ru", "url": "https://gotovim-doma.ru/recipe/view/kasha-risovaya-s-tykvoy" }
+  },
+  {
+    "id": "fish_baked_lemon",
+    "title": "Рыба запеченная с лимоном",
+    "category": "Вторые блюда",
+    "servings": 2,
+    "time_total": 35,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/3498DB/FFFFFF?text=BakedFish",
+    "ingredients": [
+      { "id": "fish_fillet", "name": "Филе рыбы", "amount": "400 г" },
+      { "id": "lemon", "name": "Лимон", "amount": "0.5 шт" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "oil", "name": "Масло растительное", "amount": "1 ст.л." },
+      { "id": "greens", "name": "Зелень", "amount": "по вкусу" }
+    ],
+    "steps": [
+      { "text": "Рыбу посолить, поперчить. Лук нарезать кольцами.", "time": 5 },
+      { "text": "На фольгу выложить лук, сверху рыбу.", "time": 2 },
+      { "text": "Полить маслом, выложить кружочки лимона.", "time": 3 },
+      { "text": "Завернуть фольгу и запекать при 200°C 20-25 минут.", "time": 25 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/osnovnye-blyuda/ryba-zapechennaja-v-folge" }
+  },
+  {
+    "id": "fried_rice_egg",
+    "title": "Жареный рис с яйцом",
+    "category": "Вторые блюда",
+    "servings": 2,
+    "time_total": 15,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/F1C40F/FFFFFF?text=FriedRice",
+    "ingredients": [
+      { "id": "rice", "name": "Рис (готовый)", "amount": "300 г" },
+      { "id": "egg", "name": "Яйцо", "amount": "2 шт" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "soy_sauce", "name": "Соевый соус", "amount": "2 ст.л." },
+      { "id": "oil", "name": "Масло растительное", "amount": "2 ст.л." }
+    ],
+    "steps": [
+      { "text": "Лук мелко нарезать и обжарить на сковороде.", "time": 5 },
+      { "text": "Добавить рис, прогреть пару минут.", "time": 3 },
+      { "text": "Сдвинуть рис в сторону, разбить яйца, перемешивая их лопаткой (скрамбл).", "time": 3 },
+      { "text": "Смешать рис с яйцом, влить соевый соус, жарить еще минуту.", "time": 2 }
+    ],
+    "source": { "name": "povarenok.ru", "url": "https://www.povarenok.ru/recipes/show/123/" }
+  },
+  {
+    "id": "summer_salad",
+    "title": "Салат Летний",
+    "category": "Салаты",
+    "servings": 2,
+    "time_total": 10,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/2ECC71/FFFFFF?text=Salad",
+    "ingredients": [
+      { "id": "tomato", "name": "Помидор", "amount": "2 шт" },
+      { "id": "cucumber", "name": "Огурец", "amount": "2 шт" },
+      { "id": "pepper_bell", "name": "Болгарский перец", "amount": "1 шт" },
+      { "id": "onion_red", "name": "Лук красный", "amount": "0.5 шт" },
+      { "id": "oil", "name": "Масло растительное", "amount": "2 ст.л." },
+      { "id": "greens", "name": "Зелень", "amount": "пучок" }
+    ],
+    "steps": [
+      { "text": "Все овощи крупно нарезать.", "time": 5 },
+      { "text": "Лук нарезать полукольцами.", "time": 2 },
+      { "text": "Смешать, посолить, заправить маслом и посыпать зеленью.", "time": 3 }
+    ],
+    "source": { "name": "russianfood.com", "url": "https://www.russianfood.com/recipes/bytype/?fid=33" }
+  },
+  {
+    "id": "banana_pancakes",
+    "title": "Банановые панкейки",
+    "category": "Завтраки",
+    "servings": 2,
+    "time_total": 20,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/F1C40F/FFFFFF?text=Pancakes",
+    "ingredients": [
+      { "id": "banana", "name": "Банан", "amount": "1 шт" },
+      { "id": "egg", "name": "Яйцо", "amount": "1 шт" },
+      { "id": "flour", "name": "Мука", "amount": "2 ст.л." },
+      { "id": "sugar", "name": "Сахар", "amount": "1 ч.л." },
+      { "id": "oil", "name": "Масло для жарки", "amount": "1 ст.л." }
+    ],
+    "steps": [
+      { "text": "Банан размять вилкой в пюре.", "time": 3 },
+      { "text": "Добавить яйцо и сахар, перемешать.", "time": 2 },
+      { "text": "Всыпать муку, замесить тесто (как густая сметана).", "time": 2 },
+      { "text": "Жарить оладьи на сковороде с двух сторон до румяности.", "time": 13 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/zavtraki/bananovie-pankejki" }
+  },
+  {
+    "id": "pork_chops",
+    "title": "Отбивные из свинины",
+    "category": "Вторые блюда",
+    "servings": 4,
+    "time_total": 40,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/D35400/FFFFFF?text=PorkChops",
+    "ingredients": [
+      { "id": "pork", "name": "Свинина (корейка)", "amount": "500 г" },
+      { "id": "egg", "name": "Яйцо", "amount": "2 шт" },
+      { "id": "flour", "name": "Мука", "amount": "3 ст.л." },
+      { "id": "oil", "name": "Масло для жарки", "amount": "50 мл" },
+      { "id": "garlic", "name": "Чеснок", "amount": "2 зубчика" }
+    ],
+    "steps": [
+      { "text": "Мясо нарезать ломтиками 1-1.5 см, хорошо отбить молотком.", "time": 15 },
+      { "text": "Посолить, поперчить, натереть измельченным чесноком.", "time": 5 },
+      { "text": "Обвалять в муке, затем в яйце.", "time": 5 },
+      { "text": "Жарить на среднем огне по 4-5 минут с каждой стороны.", "time": 15 }
+    ],
+    "source": { "name": "gotovim-doma.ru", "url": "https://gotovim-doma.ru/recipe/view/otbivnye-iz-svininy" }
   }
 ]
