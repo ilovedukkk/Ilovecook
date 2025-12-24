@@ -745,5 +745,962 @@
       { "text": "Выпекать при 180°C около 50-60 минут (проверять шпажкой).", "time": 50 }
     ],
     "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/vypechka-deserty/bananovyj-keks" }
+  },
+  {
+    "id": "pumpkin_soup",
+    "title": "Тыквенный суп-пюре",
+    "category": "Супы",
+    "servings": 4,
+    "time_total": 40,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/E67E22/FFFFFF?text=PumpkinSoup",
+    "ingredients": [
+      { "id": "pumpkin", "name": "Тыква", "amount": "500 г" },
+      { "id": "potato", "name": "Картофель", "amount": "2 шт" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "cream", "name": "Сливки 10-20%", "amount": "200 мл" },
+      { "id": "butter", "name": "Сливочное масло", "amount": "30 г" },
+      { "id": "garlic", "name": "Чеснок", "amount": "1 зубчик" }
+    ],
+    "steps": [
+      { "text": "Очистить тыкву и картофель, нарезать кубиками.", "time": 10 },
+      { "text": "Лук и чеснок измельчить, обжарить на сливочном масле прямо в кастрюле.", "time": 5 },
+      { "text": "Добавить тыкву и картофель, залить водой (чтобы только покрыла овощи).", "time": 2 },
+      { "text": "Варить до мягкости овощей (около 15-20 минут).", "time": 20 },
+      { "text": "Слить часть воды, пюрировать блендером. Влить сливки, прогреть, но не кипятить.", "time": 3 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/supy/tykvennyj-sup-pjure" }
+  },
+  {
+    "id": "olivier_salad",
+    "title": "Салат Оливье (Советский)",
+    "category": "Салаты",
+    "servings": 6,
+    "time_total": 50,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/27AE60/FFFFFF?text=Olivier",
+    "ingredients": [
+      { "id": "potato", "name": "Картофель", "amount": "3 шт" },
+      { "id": "carrot", "name": "Морковь", "amount": "1 шт" },
+      { "id": "egg", "name": "Яйцо", "amount": "4 шт" },
+      { "id": "sausage", "name": "Колбаса вареная", "amount": "300 г" },
+      { "id": "cucumber_pickled", "name": "Соленые огурцы", "amount": "3 шт" },
+      { "id": "peas_canned", "name": "Горошек", "amount": "1 банка" },
+      { "id": "mayo", "name": "Майонез", "amount": "150 г" }
+    ],
+    "steps": [
+      { "text": "Отварить картофель, морковь и яйца. Остудить.", "time": 30 },
+      { "text": "Нарезать все ингредиенты (овощи, яйца, колбасу, огурцы) мелкими кубиками.", "time": 15 },
+      { "text": "Смешать в большой миске, добавить горошек (без жидкости).", "time": 2 },
+      { "text": "Заправить майонезом, посолить по вкусу.", "time": 3 }
+    ],
+    "source": { "name": "russianfood.com", "url": "https://www.russianfood.com/recipes/bytype/?fid=34" }
+  },
+  {
+    "id": "pilaf_chicken",
+    "title": "Плов с курицей",
+    "category": "Вторые блюда",
+    "servings": 5,
+    "time_total": 60,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/F39C12/FFFFFF?text=Pilaf",
+    "ingredients": [
+      { "id": "rice", "name": "Рис", "amount": "400 г" },
+      { "id": "chicken", "name": "Курица (филе или бедра)", "amount": "500 г" },
+      { "id": "carrot", "name": "Морковь", "amount": "2 шт" },
+      { "id": "onion", "name": "Лук", "amount": "2 шт" },
+      { "id": "garlic", "name": "Чеснок", "amount": "1 головка" },
+      { "id": "oil", "name": "Масло растительное", "amount": "100 мл" }
+    ],
+    "steps": [
+      { "text": "Нарезать лук полукольцами, морковь — крупной соломкой. Курицу — кусочками.", "time": 10 },
+      { "text": "В казане или глубокой сковороде раскалить масло. Обжарить лук до золотистости.", "time": 5 },
+      { "text": "Добавить курицу, жарить до корочки. Затем морковь, жарить до мягкости.", "time": 10 },
+      { "text": "Всыпать промытый рис, разровнять. Залить кипятком на 1.5 см выше риса.", "time": 5 },
+      { "text": "Вставить в рис целую головку чеснока. Тушить под крышкой на слабом огне до впитывания воды.", "time": 30 }
+    ],
+    "source": { "name": "gotovim-doma.ru", "url": "https://gotovim-doma.ru/recipe/view/plov-s-kuritsey" }
+  },
+  {
+    "id": "buckwheat_merchant",
+    "title": "Гречка по-купечески",
+    "category": "Вторые блюда",
+    "servings": 4,
+    "time_total": 40,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/795548/FFFFFF?text=Grechka",
+    "ingredients": [
+      { "id": "buckwheat", "name": "Гречка", "amount": "1.5 стакана" },
+      { "id": "minced_meat", "name": "Фарш мясной", "amount": "400 г" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "carrot", "name": "Морковь", "amount": "1 шт" },
+      { "id": "tomato_paste", "name": "Томатная паста", "amount": "1 ст.л." },
+      { "id": "oil", "name": "Масло для жарки", "amount": "2 ст.л." }
+    ],
+    "steps": [
+      { "text": "Лук нарезать кубиками, морковь натереть. Обжарить на масле 5 минут.", "time": 5 },
+      { "text": "Добавить фарш, жарить, разбивая комочки, пока мясо не побелеет.", "time": 10 },
+      { "text": "Добавить томатную пасту, промытую гречку и залить кипятком (1:2).", "time": 5 },
+      { "text": "Посолить, накрыть крышкой и томить на медленном огне до готовности гречки.", "time": 20 }
+    ],
+    "source": { "name": "povarenok.ru", "url": "https://www.povarenok.ru/recipes/show/62766/" }
+  },
+  {
+    "id": "pizza_homemade",
+    "title": "Домашняя пицца",
+    "category": "Выпечка",
+    "servings": 4,
+    "time_total": 45,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/E74C3C/FFFFFF?text=Pizza",
+    "ingredients": [
+      { "id": "flour", "name": "Мука", "amount": "300 г" },
+      { "id": "yeast", "name": "Дрожжи сухие", "amount": "1 ч.л." },
+      { "id": "water", "name": "Вода теплая", "amount": "150 мл" },
+      { "id": "oil", "name": "Оливковое масло", "amount": "2 ст.л." },
+      { "id": "tomato_sauce", "name": "Томатный соус", "amount": "100 г" },
+      { "id": "cheese", "name": "Сыр", "amount": "150 г" },
+      { "id": "sausage", "name": "Колбаса/Ветчина", "amount": "100 г" }
+    ],
+    "steps": [
+      { "text": "Смешать муку, дрожжи, соль, воду и масло. Замесить эластичное тесто.", "time": 10 },
+      { "text": "Оставить тесто в тепле на 20-30 минут.", "time": 20 },
+      { "text": "Раскатать тесто в круг. Смазать соусом.", "time": 5 },
+      { "text": "Выложить начинку и посыпать сыром. Выпекать при 200°C 10-12 минут.", "time": 10 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/vypechka-deserty/picca" }
+  },
+  {
+    "id": "omelet_cheese",
+    "title": "Омлет с помидорами и сыром",
+    "category": "Завтраки",
+    "servings": 2,
+    "time_total": 15,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/F1C40F/333333?text=Omelet",
+    "ingredients": [
+      { "id": "egg", "name": "Яйцо", "amount": "4 шт" },
+      { "id": "milk", "name": "Молоко", "amount": "100 мл" },
+      { "id": "tomato", "name": "Помидор", "amount": "1 шт" },
+      { "id": "cheese", "name": "Сыр", "amount": "50 г" },
+      { "id": "butter", "name": "Масло сливочное", "amount": "10 г" }
+    ],
+    "steps": [
+      { "text": "Помидор нарезать кубиками, сыр натереть.", "time": 3 },
+      { "text": "Яйца взбить с молоком и щепоткой соли.", "time": 2 },
+      { "text": "На сковороде обжарить помидоры 1-2 минуты.", "time": 2 },
+      { "text": "Залить яйцами, посыпать сыром. Готовить под крышкой на медленном огне.", "time": 8 }
+    ],
+    "source": { "name": "gotovim-doma.ru", "url": "https://gotovim-doma.ru/recipe/view/omlet" }
+  },
+  {
+    "id": "tuna_salad",
+    "title": "Салат с тунцом и яйцом",
+    "category": "Салаты",
+    "servings": 2,
+    "time_total": 15,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/3498DB/FFFFFF?text=TunaSalad",
+    "ingredients": [
+      { "id": "canned_fish", "name": "Тунец консервированный", "amount": "1 банка" },
+      { "id": "egg", "name": "Яйцо вареное", "amount": "2 шт" },
+      { "id": "cucumber", "name": "Огурец", "amount": "1 шт" },
+      { "id": "lettuce", "name": "Листья салата", "amount": "пучок" },
+      { "id": "onion_red", "name": "Лук красный", "amount": "0.5 шт" },
+      { "id": "olive_oil", "name": "Оливковое масло", "amount": "2 ст.л." }
+    ],
+    "steps": [
+      { "text": "Листья салата порвать руками. Огурец и яйца нарезать ломтиками.", "time": 5 },
+      { "text": "Лук нарезать тонкими полукольцами.", "time": 3 },
+      { "text": "Выложить на тарелку салат, овощи, кусочки тунца и яйца.", "time": 5 },
+      { "text": "Полить маслом и лимонным соком (если есть).", "time": 2 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/salaty/salat-s-tuncom" }
+  },
+  {
+    "id": "khachapuri_lazy",
+    "title": "Ленивые хачапури на сковороде",
+    "category": "Выпечка",
+    "servings": 2,
+    "time_total": 20,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/F39C12/FFFFFF?text=Khachapuri",
+    "ingredients": [
+      { "id": "cheese", "name": "Сыр (любой твердый)", "amount": "150 г" },
+      { "id": "egg", "name": "Яйцо", "amount": "1 шт" },
+      { "id": "flour", "name": "Мука", "amount": "2 ст.л." },
+      { "id": "sour_cream", "name": "Сметана", "amount": "150 г" },
+      { "id": "oil", "name": "Масло растительное", "amount": "1 ст.л." }
+    ],
+    "steps": [
+      { "text": "Сыр натереть на терке.", "time": 5 },
+      { "text": "Смешать сыр, яйцо, сметану и муку до однородной массы.", "time": 3 },
+      { "text": "Выложить массу на разогретую сковороду, разровнять.", "time": 2 },
+      { "text": "Жарить под крышкой по 5-7 минут с каждой стороны до золотистой корочки.", "time": 10 }
+    ],
+    "source": { "name": "povarenok.ru", "url": "https://www.povarenok.ru/recipes/show/123456/" }
+  },
+  {
+    "id": "zharkoe_pots",
+    "title": "Жаркое по-домашнему",
+    "category": "Вторые блюда",
+    "servings": 4,
+    "time_total": 60,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/8E44AD/FFFFFF?text=Zharkoe",
+    "ingredients": [
+      { "id": "pork", "name": "Свинина", "amount": "500 г" },
+      { "id": "potato", "name": "Картофель", "amount": "6 шт" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "carrot", "name": "Морковь", "amount": "1 шт" },
+      { "id": "tomato_paste", "name": "Томатная паста", "amount": "1 ст.л." },
+      { "id": "garlic", "name": "Чеснок", "amount": "2 зубчика" }
+    ],
+    "steps": [
+      { "text": "Мясо нарезать кубиками, обжарить на сильном огне до корочки.", "time": 10 },
+      { "text": "Добавить лук и морковь, жарить еще 5 минут.", "time": 5 },
+      { "text": "Добавить картофель (крупными кусками) и томатную пасту.", "time": 5 },
+      { "text": "Залить водой (почти до верха), посолить, добавить специи.", "time": 2 },
+      { "text": "Тушить под крышкой 40 минут до мягкости картофеля.", "time": 40 }
+    ],
+    "source": { "name": "russianfood.com", "url": "https://www.russianfood.com/recipes/bytype/?fid=113" }
+  },
+  {
+    "id": "cheesecake_nobake",
+    "title": "Чизкейк без выпечки",
+    "category": "Десерты",
+    "servings": 6,
+    "time_total": 40,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/ECF0F1/333333?text=Cheesecake",
+    "ingredients": [
+      { "id": "bread_white", "name": "Песочное печенье", "amount": "300 г" },
+      { "id": "butter", "name": "Сливочное масло", "amount": "100 г" },
+      { "id": "cheese_cream", "name": "Творожный сыр", "amount": "400 г" },
+      { "id": "cream", "name": "Сливки 33%", "amount": "200 мл" },
+      { "id": "sugar_powder", "name": "Сахарная пудра", "amount": "150 г" }
+    ],
+    "steps": [
+      { "text": "Печенье измельчить в крошку, смешать с растопленным маслом.", "time": 10 },
+      { "text": "Утрамбовать основу в форму и убрать в холодильник.", "time": 5 },
+      { "text": "Взбить холодные сливки с пудрой до пиков.", "time": 5 },
+      { "text": "Аккуратно вмешать творожный сыр в сливки.", "time": 5 },
+      { "text": "Выложить крем на основу. Убрать в холод минимум на 2 часа (лучше на ночь).", "time": 15 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/vypechka-deserty/chizkejk-bez-vipechki" }
+  },
+  {
+    "id": "shchi_fresh",
+    "title": "Щи из свежей капусты",
+    "category": "Супы",
+    "servings": 6,
+    "time_total": 90,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/8BC34A/FFFFFF?text=Shchi",
+    "ingredients": [
+      { "id": "beef", "name": "Говядина на кости", "amount": "500 г" },
+      { "id": "cabbage", "name": "Капуста белокочанная", "amount": "400 г" },
+      { "id": "potato", "name": "Картофель", "amount": "3 шт" },
+      { "id": "carrot", "name": "Морковь", "amount": "1 шт" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "tomato", "name": "Помидор", "amount": "1 шт" }
+    ],
+    "steps": [
+      { "text": "Сварить бульон из говядины (около 1 часа), мясо вынуть и нарезать, вернуть в бульон.", "time": 60 },
+      { "text": "Нашинковать капусту, нарезать картофель брусочками.", "time": 10 },
+      { "text": "Запустить капусту в кипящий бульон. Через 5-10 минут добавить картофель.", "time": 10 },
+      { "text": "Сделать зажарку: лук кубиками и тертую морковь обжарить, добавить нарезанный помидор.", "time": 10 },
+      { "text": "Выложить зажарку в суп, посолить, варить до мягкости овощей.", "time": 10 }
+    ],
+    "source": { "name": "russianfood.com", "url": "https://www.russianfood.com/recipes/bytype/?fid=4" }
+  },
+  {
+    "id": "fried_potatoes_mushrooms",
+    "title": "Жареная картошка с грибами",
+    "category": "Вторые блюда",
+    "servings": 3,
+    "time_total": 40,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/795548/FFFFFF?text=Potatoes",
+    "ingredients": [
+      { "id": "potato", "name": "Картофель", "amount": "600 г" },
+      { "id": "mushrooms", "name": "Шампиньоны", "amount": "300 г" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "oil", "name": "Масло растительное", "amount": "50 мл" },
+      { "id": "greens", "name": "Зелень", "amount": "пучок" }
+    ],
+    "steps": [
+      { "text": "Картофель очистить и нарезать брусочками или ломтиками.", "time": 10 },
+      { "text": "Грибы нарезать пластинками, лук — полукольцами.", "time": 5 },
+      { "text": "На сильном огне обжарить картофель до румяной корочки (около 10 мин), иногда помешивая.", "time": 10 },
+      { "text": "Добавить грибы и лук, убавить огонь до среднего. Жарить до готовности.", "time": 15 },
+      { "text": "В конце посолить и посыпать зеленью.", "time": 2 }
+    ],
+    "source": { "name": "gotovim-doma.ru", "url": "https://gotovim-doma.ru/recipe/view/zhaenaya-kartoshka" }
+  },
+  {
+    "id": "rice_porridge_milk",
+    "title": "Рисовая каша на молоке",
+    "category": "Завтраки",
+    "servings": 3,
+    "time_total": 30,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/ECF0F1/333333?text=Porridge",
+    "ingredients": [
+      { "id": "rice", "name": "Рис круглозерный", "amount": "1 стакан" },
+      { "id": "milk", "name": "Молоко", "amount": "2 стакана" },
+      { "id": "water", "name": "Вода", "amount": "1 стакан" },
+      { "id": "sugar", "name": "Сахар", "amount": "1 ст.л." },
+      { "id": "butter", "name": "Сливочное масло", "amount": "20 г" }
+    ],
+    "steps": [
+      { "text": "Рис хорошо промыть. Залить водой, довести до кипения и варить, пока вода не впитается.", "time": 10 },
+      { "text": "Влить молоко, добавить сахар и соль. Довести до кипения.", "time": 5 },
+      { "text": "Варить на слабом огне, часто помешивая, 15 минут до загустения.", "time": 15 },
+      { "text": "Снять с огня, добавить масло, накрыть крышкой и дать постоять.", "time": 5 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/zavtraki/risovaja-kasha" }
+  },
+  {
+    "id": "meatballs_tomato",
+    "title": "Тефтели в томатном соусе",
+    "category": "Вторые блюда",
+    "servings": 4,
+    "time_total": 50,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/C0392B/FFFFFF?text=Meatballs",
+    "ingredients": [
+      { "id": "minced_meat", "name": "Фарш мясной", "amount": "500 г" },
+      { "id": "rice", "name": "Рис (сырой)", "amount": "0.5 стакана" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "carrot", "name": "Морковь", "amount": "1 шт" },
+      { "id": "tomato_paste", "name": "Томатная паста", "amount": "2 ст.л." },
+      { "id": "flour", "name": "Мука", "amount": "1 ст.л." }
+    ],
+    "steps": [
+      { "text": "Рис отварить до полуготовности. Смешать с фаршем и мелко нарезанной половиной лука.", "time": 15 },
+      { "text": "Сформировать шарики, обвалять в муке и быстро обжарить на сковороде.", "time": 10 },
+      { "text": "Для соуса: обжарить вторую половину лука и тертую морковь.", "time": 5 },
+      { "text": "Добавить томатную пасту, стакан воды, соль и специи. Довести до кипения.", "time": 5 },
+      { "text": "Выложить тефтели в соус и тушить под крышкой 15-20 минут.", "time": 20 }
+    ],
+    "source": { "name": "povarenok.ru", "url": "https://www.povarenok.ru/recipes/show/65432/" }
+  },
+  {
+    "id": "vegetable_stew",
+    "title": "Овощное рагу",
+    "category": "Вторые блюда",
+    "servings": 4,
+    "time_total": 45,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/27AE60/FFFFFF?text=Stew",
+    "ingredients": [
+      { "id": "zucchini", "name": "Кабачок", "amount": "1 шт" },
+      { "id": "potato", "name": "Картофель", "amount": "3 шт" },
+      { "id": "cabbage", "name": "Капуста", "amount": "200 г" },
+      { "id": "carrot", "name": "Морковь", "amount": "1 шт" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "tomato_paste", "name": "Томатная паста", "amount": "1 ст.л." }
+    ],
+    "steps": [
+      { "text": "Все овощи нарезать средними кубиками, капусту нашинковать.", "time": 15 },
+      { "text": "В глубокой сковороде обжарить лук и морковь.", "time": 5 },
+      { "text": "Добавить картофель и капусту, влить немного воды, тушить 10 минут.", "time": 10 },
+      { "text": "Добавить кабачок, томатную пасту, соль и специи.", "time": 2 },
+      { "text": "Тушить под крышкой до мягкости всех овощей (около 15 минут).", "time": 15 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/osnovnye-blyuda/ovoschnoe-ragu" }
+  },
+  {
+    "id": "fish_batter",
+    "title": "Рыба в кляре",
+    "category": "Вторые блюда",
+    "servings": 3,
+    "time_total": 30,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/3498DB/FFFFFF?text=Fish",
+    "ingredients": [
+      { "id": "fish_fillet", "name": "Филе рыбы", "amount": "500 г" },
+      { "id": "egg", "name": "Яйцо", "amount": "2 шт" },
+      { "id": "flour", "name": "Мука", "amount": "3 ст.л." },
+      { "id": "milk", "name": "Молоко", "amount": "2 ст.л." },
+      { "id": "oil", "name": "Масло для жарки", "amount": "50 мл" }
+    ],
+    "steps": [
+      { "text": "Рыбу нарезать порционными кусочками, посолить и поперчить.", "time": 5 },
+      { "text": "Приготовить кляр: взбить яйца с молоком, солью и мукой до густоты сметаны.", "time": 5 },
+      { "text": "Разогреть масло в сковороде.", "time": 2 },
+      { "text": "Обмакивать каждый кусочек рыбы в кляр и жарить до золотистой корочки.", "time": 15 }
+    ],
+    "source": { "name": "russianfood.com", "url": "https://www.russianfood.com/recipes/bytype/?fid=128" }
+  },
+  {
+    "id": "chicken_soy_honey",
+    "title": "Курица в медово-соевом соусе",
+    "category": "Вторые блюда",
+    "servings": 4,
+    "time_total": 50,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/D35400/FFFFFF?text=Chicken",
+    "ingredients": [
+      { "id": "chicken", "name": "Куриные ножки/крылья", "amount": "800 г" },
+      { "id": "soy_sauce", "name": "Соевый соус", "amount": "4 ст.л." },
+      { "id": "honey", "name": "Мёд", "amount": "1 ст.л." },
+      { "id": "garlic", "name": "Чеснок", "amount": "3 зубчика" },
+      { "id": "oil", "name": "Масло растительное", "amount": "1 ст.л." }
+    ],
+    "steps": [
+      { "text": "Смешать соевый соус, мед, масло и измельченный чеснок.", "time": 5 },
+      { "text": "Замариновать курицу в соусе хотя бы на 15 минут (лучше дольше).", "time": 15 },
+      { "text": "Выложить курицу в форму для запекания.", "time": 2 },
+      { "text": "Запекать в духовке при 190°C около 35-40 минут до румяной корочки.", "time": 35 }
+    ],
+    "source": { "name": "gotovim-doma.ru", "url": "https://gotovim-doma.ru/recipe/view/kuritsa-v-medovo-soevom-souse" }
+  },
+  {
+    "id": "beet_salad_garlic",
+    "title": "Свекольный салат с чесноком",
+    "category": "Салаты",
+    "servings": 3,
+    "time_total": 60,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/8E44AD/FFFFFF?text=BeetSalad",
+    "ingredients": [
+      { "id": "beet", "name": "Свёкла", "amount": "3 шт" },
+      { "id": "garlic", "name": "Чеснок", "amount": "3 зубчика" },
+      { "id": "mayo", "name": "Майонез", "amount": "2 ст.л." },
+      { "id": "cheese", "name": "Сыр (по желанию)", "amount": "50 г" }
+    ],
+    "steps": [
+      { "text": "Свёклу отварить до готовности (или запечь в фольге). Остудить.", "time": 50 },
+      { "text": "Очистить свёклу и натереть на крупной терке.", "time": 5 },
+      { "text": "Чеснок пропустить через пресс.", "time": 2 },
+      { "text": "Смешать свеклу, чеснок и майонез. Можно добавить тертый сыр.", "time": 3 }
+    ],
+    "source": { "name": "povarenok.ru", "url": "https://www.povarenok.ru/recipes/show/111/" }
+  },
+  {
+    "id": "curd_cookies",
+    "title": "Творожное печенье (Треугольники)",
+    "category": "Выпечка",
+    "servings": 6,
+    "time_total": 50,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/F1C40F/333333?text=Cookies",
+    "ingredients": [
+      { "id": "cottage_cheese", "name": "Творог", "amount": "250 г" },
+      { "id": "butter", "name": "Сливочное масло", "amount": "100 г" },
+      { "id": "flour", "name": "Мука", "amount": "250 г" },
+      { "id": "sugar", "name": "Сахар", "amount": "100 г" },
+      { "id": "baking_powder", "name": "Разрыхлитель", "amount": "1 ч.л." }
+    ],
+    "steps": [
+      { "text": "Растереть творог с мягким маслом.", "time": 5 },
+      { "text": "Всыпать муку с разрыхлителем, замесить мягкое тесто. Убрать в холод на 15 мин.", "time": 20 },
+      { "text": "Раскатать тесто, вырезать кружочки стаканом.", "time": 10 },
+      { "text": "Каждый кружок обмакнуть в сахар, сложить пополам, снова в сахар и снова пополам.", "time": 5 },
+      { "text": "Выпекать при 180°C около 20 минут до золотистого цвета.", "time": 20 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/vypechka-deserty/tvorozhnoe-pechene" }
+  },
+  {
+    "id": "potato_zrazy",
+    "title": "Картофельные зразы с мясом",
+    "category": "Вторые блюда",
+    "servings": 4,
+    "time_total": 50,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/E67E22/FFFFFF?text=Zrazy",
+    "ingredients": [
+      { "id": "potato", "name": "Картофель", "amount": "800 г" },
+      { "id": "minced_meat", "name": "Фарш мясной (обжаренный)", "amount": "300 г" },
+      { "id": "egg", "name": "Яйцо", "amount": "1 шт" },
+      { "id": "flour", "name": "Мука", "amount": "3 ст.л." },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "oil", "name": "Масло для жарки", "amount": "50 мл" }
+    ],
+    "steps": [
+      { "text": "Картофель отварить и размять в пюре. Остудить.", "time": 30 },
+      { "text": "Лук мелко нарезать и обжарить с фаршем до готовности. Посолить.", "time": 15 },
+      { "text": "В пюре добавить яйцо и муку, перемешать (тесто должно быть мягким).", "time": 5 },
+      { "text": "Сделать лепешку из картофеля, положить начинку, закрыть края (как пирожок).", "time": 10 },
+      { "text": "Обвалять в муке и жарить на сковороде до румяной корочки.", "time": 10 }
+    ],
+    "source": { "name": "russianfood.com", "url": "https://www.russianfood.com/recipes/bytype/?fid=98" }
+  },
+  {
+    "id": "olivier_salad",
+    "title": "Салат Оливье",
+    "category": "Салаты",
+    "servings": 6,
+    "time_total": 50,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/27AE60/FFFFFF?text=Olivier",
+    "ingredients": [
+      { "id": "potato", "name": "Картофель", "amount": "3 шт" },
+      { "id": "carrot", "name": "Морковь", "amount": "1 шт" },
+      { "id": "egg", "name": "Яйцо", "amount": "4 шт" },
+      { "id": "sausage", "name": "Колбаса вареная", "amount": "300 г" },
+      { "id": "cucumber_pickled", "name": "Соленые огурцы", "amount": "3 шт" },
+      { "id": "peas_canned", "name": "Горошек", "amount": "1 банка" },
+      { "id": "mayo", "name": "Майонез", "amount": "150 г" }
+    ],
+    "steps": [
+      { "text": "Отварить картофель, морковь и яйца до готовности. Остудить.", "time": 30 },
+      { "text": "Нарезать все ингредиенты (овощи, яйца, колбасу, огурцы) мелкими кубиками.", "time": 15 },
+      { "text": "Смешать в большой миске, добавить горошек (без жидкости).", "time": 2 },
+      { "text": "Заправить майонезом, посолить и перемешать.", "time": 3 }
+    ],
+    "source": { "name": "russianfood.com", "url": "https://www.russianfood.com/recipes/bytype/?fid=34" }
+  },
+  {
+    "id": "pizza_pepperoni",
+    "title": "Домашняя пицца",
+    "category": "Выпечка",
+    "servings": 4,
+    "time_total": 45,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/E74C3C/FFFFFF?text=Pizza",
+    "ingredients": [
+      { "id": "flour", "name": "Мука", "amount": "300 г" },
+      { "id": "yeast", "name": "Дрожжи сухие", "amount": "1 ч.л." },
+      { "id": "water", "name": "Вода теплая", "amount": "150 мл" },
+      { "id": "oil", "name": "Растительное масло", "amount": "2 ст.л." },
+      { "id": "tomato_sauce", "name": "Томатный соус", "amount": "100 г" },
+      { "id": "cheese", "name": "Сыр", "amount": "150 г" },
+      { "id": "sausage", "name": "Колбаса/Ветчина", "amount": "100 г" }
+    ],
+    "steps": [
+      { "text": "Смешать муку, дрожжи, соль, воду и масло. Замесить эластичное тесто.", "time": 10 },
+      { "text": "Оставить тесто в тепле на 20-30 минут, чтобы поднялось.", "time": 20 },
+      { "text": "Раскатать тесто в круг. Смазать соусом.", "time": 5 },
+      { "text": "Выложить начинку и обильно посыпать сыром. Выпекать при 200°C 10-12 минут.", "time": 10 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/vypechka-deserty/picca" }
+  },
+  {
+    "id": "plov_chicken",
+    "title": "Плов с курицей",
+    "category": "Вторые блюда",
+    "servings": 5,
+    "time_total": 60,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/F39C12/FFFFFF?text=Plov",
+    "ingredients": [
+      { "id": "rice", "name": "Рис", "amount": "400 г" },
+      { "id": "chicken", "name": "Курица (филе/бедра)", "amount": "500 г" },
+      { "id": "carrot", "name": "Морковь", "amount": "2 шт" },
+      { "id": "onion", "name": "Лук", "amount": "2 шт" },
+      { "id": "garlic", "name": "Чеснок", "amount": "1 головка" },
+      { "id": "oil", "name": "Масло растительное", "amount": "100 мл" }
+    ],
+    "steps": [
+      { "text": "Нарезать лук полукольцами, морковь — брусочками, курицу — кусочками.", "time": 10 },
+      { "text": "В глубокой сковороде раскалить масло. Обжарить лук до золотистости.", "time": 5 },
+      { "text": "Добавить курицу, жарить до корочки. Затем морковь, жарить до мягкости.", "time": 10 },
+      { "text": "Всыпать рис, разровнять. Залить кипятком на 1.5 см выше риса. Вставить чеснок целиком.", "time": 5 },
+      { "text": "Тушить под крышкой на слабом огне до полного впитывания воды.", "time": 30 }
+    ],
+    "source": { "name": "gotovim-doma.ru", "url": "https://gotovim-doma.ru/recipe/view/plov-s-kuritsey" }
+  },
+  {
+    "id": "kharcho_soup",
+    "title": "Суп Харчо",
+    "category": "Супы",
+    "servings": 6,
+    "time_total": 90,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/C0392B/FFFFFF?text=Kharcho",
+    "ingredients": [
+      { "id": "beef", "name": "Говядина", "amount": "500 г" },
+      { "id": "rice", "name": "Рис", "amount": "100 г" },
+      { "id": "onion", "name": "Лук", "amount": "2 шт" },
+      { "id": "garlic", "name": "Чеснок", "amount": "3 зубчика" },
+      { "id": "tomato_paste", "name": "Томатная паста", "amount": "2 ст.л." },
+      { "id": "greens", "name": "Зелень (кинза/петрушка)", "amount": "пучок" }
+    ],
+    "steps": [
+      { "text": "Сварить бульон из говядины (около 1 часа). Мясо нарезать и вернуть в кастрюлю.", "time": 60 },
+      { "text": "Промыть рис и добавить в кипящий бульон. Варить 15 минут.", "time": 15 },
+      { "text": "Обжарить лук с томатной пастой. Добавить зажарку в суп.", "time": 10 },
+      { "text": "Добавить измельченный чеснок, специи (хмели-сунели) и зелень. Дать настояться.", "time": 5 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/supy/sup-harcho" }
+  },
+  {
+    "id": "okroshka_classic",
+    "title": "Окрошка на кефире",
+    "category": "Супы",
+    "servings": 4,
+    "time_total": 30,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/8BC34A/FFFFFF?text=Okroshka",
+    "ingredients": [
+      { "id": "kefir", "name": "Кефир", "amount": "1 л" },
+      { "id": "potato", "name": "Картофель отварной", "amount": "3 шт" },
+      { "id": "egg", "name": "Яйцо вареное", "amount": "3 шт" },
+      { "id": "cucumber", "name": "Огурец свежий", "amount": "2 шт" },
+      { "id": "sausage", "name": "Колбаса вареная", "amount": "200 г" },
+      { "id": "greens", "name": "Зелень (лук/укроп)", "amount": "пучок" }
+    ],
+    "steps": [
+      { "text": "Картофель и яйца отварить заранее, остудить и очистить.", "time": 0 },
+      { "text": "Нарезать все ингредиенты мелкими кубиками. Зелень порубить.", "time": 20 },
+      { "text": "Смешать всё в кастрюле, посолить.", "time": 5 },
+      { "text": "Залить холодным кефиром (можно разбавить минералкой по вкусу).", "time": 5 }
+    ],
+    "source": { "name": "povarenok.ru", "url": "https://www.povarenok.ru/recipes/show/12345/" }
+  },
+  {
+    "id": "julienne_chicken",
+    "title": "Жульен с курицей и грибами",
+    "category": "Вторые блюда",
+    "servings": 4,
+    "time_total": 40,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/F4D03F/FFFFFF?text=Julienne",
+    "ingredients": [
+      { "id": "chicken_breast", "name": "Куриное филе", "amount": "300 г" },
+      { "id": "mushrooms", "name": "Шампиньоны", "amount": "300 г" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "cheese", "name": "Сыр", "amount": "100 г" },
+      { "id": "cream", "name": "Сливки или сметана", "amount": "150 г" },
+      { "id": "flour", "name": "Мука", "amount": "1 ст.л." }
+    ],
+    "steps": [
+      { "text": "Курицу, грибы и лук мелко нарезать.", "time": 10 },
+      { "text": "Обжарить курицу с луком до побеления, добавить грибы, жарить до готовности.", "time": 15 },
+      { "text": "Добавить муку, перемешать. Влить сливки, посолить, прогреть до загустения.", "time": 5 },
+      { "text": "Разложить по формочкам, посыпать сыром и запечь в духовке 10-15 минут.", "time": 10 }
+    ],
+    "source": { "name": "gotovim-doma.ru", "url": "https://gotovim-doma.ru/recipe/view/zhulen" }
+  },
+  {
+    "id": "baked_potatoes_rustic",
+    "title": "Картофель по-деревенски",
+    "category": "Вторые блюда",
+    "servings": 4,
+    "time_total": 45,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/D35400/FFFFFF?text=Potato",
+    "ingredients": [
+      { "id": "potato", "name": "Картофель (молодой)", "amount": "1 кг" },
+      { "id": "oil", "name": "Растительное масло", "amount": "3 ст.л." },
+      { "id": "garlic", "name": "Чеснок", "amount": "3 зубчика" },
+      { "id": "greens", "name": "Зелень сушеная/свежая", "amount": "по вкусу" }
+    ],
+    "steps": [
+      { "text": "Картофель тщательно вымыть (можно не чистить) и нарезать дольками.", "time": 10 },
+      { "text": "В миске смешать картофель, масло, соль, специи и измельченный чеснок.", "time": 5 },
+      { "text": "Выложить дольки на противень в один слой.", "time": 5 },
+      { "text": "Запекать при 200°C до золотистой корочки и мягкости внутри (около 25-30 мин).", "time": 25 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/garniry/kartofel-po-derevenski" }
+  },
+  {
+    "id": "honey_cake_lazy",
+    "title": "Медовик (быстрый)",
+    "category": "Десерты",
+    "servings": 8,
+    "time_total": 60,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/F39C12/FFFFFF?text=Medovik",
+    "ingredients": [
+      { "id": "honey", "name": "Мёд", "amount": "2 ст.л." },
+      { "id": "butter", "name": "Сливочное масло", "amount": "100 г" },
+      { "id": "egg", "name": "Яйцо", "amount": "2 шт" },
+      { "id": "sugar", "name": "Сахар", "amount": "1 стакан" },
+      { "id": "flour", "name": "Мука", "amount": "2 стакана" },
+      { "id": "sour_cream", "name": "Сметана (для крема)", "amount": "400 г" }
+    ],
+    "steps": [
+      { "text": "Растопить мед с маслом и сахаром на водяной бане. Добавить соду (масса побелеет).", "time": 10 },
+      { "text": "Остудить, добавить яйца и муку. Замесить тесто.", "time": 10 },
+      { "text": "Разделить на части, раскатать коржи и испечь (пекутся очень быстро, по 3-4 мин).", "time": 20 },
+      { "text": "Смешать сметану с сахаром. Промазать коржи кремом.", "time": 10 },
+      { "text": "Посыпать крошкой от обрезков коржей. Оставить пропитаться.", "time": 10 }
+    ],
+    "source": { "name": "russianfood.com", "url": "https://www.russianfood.com/recipes/bytype/?fid=136" }
+  },
+  {
+    "id": "eggplant_rolls",
+    "title": "Рулетики из баклажанов",
+    "category": "Салаты",
+    "servings": 4,
+    "time_total": 30,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/8E44AD/FFFFFF?text=Eggplant",
+    "ingredients": [
+      { "id": "eggplant", "name": "Баклажан", "amount": "2 шт" },
+      { "id": "cheese", "name": "Сыр (творожный или твердый)", "amount": "150 г" },
+      { "id": "garlic", "name": "Чеснок", "amount": "2 зубчика" },
+      { "id": "mayo", "name": "Майонез", "amount": "2 ст.л." },
+      { "id": "oil", "name": "Масло для жарки", "amount": "50 мл" },
+      { "id": "greens", "name": "Зелень", "amount": "пучок" }
+    ],
+    "steps": [
+      { "text": "Баклажаны нарезать вдоль тонкими пластинами. Посолить, оставить на 10 мин.", "time": 15 },
+      { "text": "Обжарить полоски баклажанов с двух сторон до мягкости. Остудить.", "time": 10 },
+      { "text": "Смешать сыр, майонез, давленый чеснок и зелень.", "time": 5 },
+      { "text": "На край каждой полоски положить ложку начинки и свернуть рулетиком.", "time": 5 }
+    ],
+    "source": { "name": "gotovim-doma.ru", "url": "https://gotovim-doma.ru/recipe/view/ruletiki-iz-baklazhanov" }
+  },
+  {
+    "id": "chebureki",
+    "title": "Чебуреки домашние",
+    "category": "Вторые блюда",
+    "servings": 4,
+    "time_total": 50,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/F1C40F/333333?text=Chebureki",
+    "ingredients": [
+      { "id": "flour", "name": "Мука", "amount": "300 г" },
+      { "id": "water", "name": "Вода (кипяток)", "amount": "150 мл" },
+      { "id": "oil", "name": "Масло (в тесто + жарка)", "amount": "100 мл" },
+      { "id": "minced_meat", "name": "Фарш мясной", "amount": "300 г" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" }
+    ],
+    "steps": [
+      { "text": "Заварить муку кипятком с маслом и солью. Замесить тугое тесто.", "time": 15 },
+      { "text": "В фарш добавить много лука и немного воды для сочности. Перемешать.", "time": 10 },
+      { "text": "Раскатать тонкие круги теста, выложить фарш на половину, накрыть второй и защипать края.", "time": 15 },
+      { "text": "Жарить в большом количестве масла до пузырьков и золотистого цвета.", "time": 10 }
+    ],
+    "source": { "name": "povarenok.ru", "url": "https://www.povarenok.ru/recipes/show/chebureki" }
+  },
+  {
+    "id": "fish_soup_ukha",
+    "title": "Уха домашняя",
+    "category": "Супы",
+    "servings": 5,
+    "time_total": 45,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/3498DB/FFFFFF?text=Ukha",
+    "ingredients": [
+      { "id": "fish_fillet", "name": "Рыба (филе или куски)", "amount": "500 г" },
+      { "id": "potato", "name": "Картофель", "amount": "4 шт" },
+      { "id": "carrot", "name": "Морковь", "amount": "1 шт" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "greens", "name": "Зелень (укроп/петрушка)", "amount": "пучок" },
+      { "id": "black_pepper", "name": "Перец горошком", "amount": "5 шт" }
+    ],
+    "steps": [
+      { "text": "Воду вскипятить, положить нарезанный кубиками картофель.", "time": 10 },
+      { "text": "Морковь нарезать кружочками или соломкой, лук – мелко (или целиком). Добавить к картофелю.", "time": 5 },
+      { "text": "Через 10 минут добавить рыбу, нарезанную крупными кусками.", "time": 5 },
+      { "text": "Варить на слабом огне 15 минут, снимая пену. В конце посолить, поперчить и посыпать зеленью.", "time": 15 }
+    ],
+    "source": { "name": "russianfood.com", "url": "https://www.russianfood.com/recipes/bytype/?fid=36" }
+  },
+  {
+    "id": "oladii_kefir",
+    "title": "Пышные оладьи на кефире",
+    "category": "Завтраки",
+    "servings": 4,
+    "time_total": 30,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/F1C40F/333333?text=Oladii",
+    "ingredients": [
+      { "id": "kefir", "name": "Кефир (теплый)", "amount": "250 мл" },
+      { "id": "flour", "name": "Мука", "amount": "240 г" },
+      { "id": "egg", "name": "Яйцо", "amount": "1 шт" },
+      { "id": "sugar", "name": "Сахар", "amount": "1 ст.л." },
+      { "id": "baking_soda", "name": "Сода", "amount": "0.5 ч.л." },
+      { "id": "oil", "name": "Масло для жарки", "amount": "50 мл" }
+    ],
+    "steps": [
+      { "text": "Кефир смешать с яйцом, сахаром и солью.", "time": 5 },
+      { "text": "Постепенно всыпать муку, замешивая густое тесто.", "time": 5 },
+      { "text": "В самом конце добавить соду, быстро перемешать и оставить на 5 минут (больше не мешать!).", "time": 5 },
+      { "text": "Жарить на разогретом масле с двух сторон до румяности.", "time": 15 }
+    ],
+    "source": { "name": "gotovim-doma.ru", "url": "https://gotovim-doma.ru/recipe/view/oladi-na-kefire" }
+  },
+  {
+    "id": "caprese_salad",
+    "title": "Салат Капрезе",
+    "category": "Салаты",
+    "servings": 2,
+    "time_total": 10,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/E74C3C/FFFFFF?text=Caprese",
+    "ingredients": [
+      { "id": "tomato", "name": "Помидоры", "amount": "2 шт" },
+      { "id": "mozzarella", "name": "Моцарелла", "amount": "150 г" },
+      { "id": "olive_oil", "name": "Оливковое масло", "amount": "2 ст.л." },
+      { "id": "greens", "name": "Базилик (или другая зелень)", "amount": "веточки" }
+    ],
+    "steps": [
+      { "text": "Помидоры и моцареллу нарезать кружочками толщиной 0.5 см.", "time": 5 },
+      { "text": "Выложить на тарелку чередуя: помидор, сыр, помидор.", "time": 3 },
+      { "text": "Посолить, поперчить, украсить листьями базилика и полить маслом.", "time": 2 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/salaty/salat-kapreze" }
+  },
+  {
+    "id": "potato_casserole_meat",
+    "title": "Картофельная запеканка с фаршем",
+    "category": "Вторые блюда",
+    "servings": 6,
+    "time_total": 60,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/F39C12/FFFFFF?text=Casserole",
+    "ingredients": [
+      { "id": "potato", "name": "Картофель", "amount": "800 г" },
+      { "id": "minced_meat", "name": "Фарш мясной", "amount": "500 г" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "milk", "name": "Молоко", "amount": "100 мл" },
+      { "id": "butter", "name": "Масло сливочное", "amount": "30 г" },
+      { "id": "egg", "name": "Яйцо", "amount": "1 шт" },
+      { "id": "cheese", "name": "Сыр", "amount": "100 г" }
+    ],
+    "steps": [
+      { "text": "Сварить картофель и размять в пюре с молоком и маслом.", "time": 30 },
+      { "text": "Лук нарезать и обжарить с фаршем до готовности. Посолить.", "time": 15 },
+      { "text": "В форму выложить половину пюре, затем фарш, затем оставшееся пюре.", "time": 5 },
+      { "text": "Смазать яйцом, посыпать сыром. Запекать при 180°C до корочки (около 20 мин).", "time": 20 }
+    ],
+    "source": { "name": "russianfood.com", "url": "https://www.russianfood.com/recipes/bytype/?fid=116" }
+  },
+  {
+    "id": "pasta_mushrooms_cream",
+    "title": "Паста с грибами в сливочном соусе",
+    "category": "Вторые блюда",
+    "servings": 3,
+    "time_total": 30,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/F4D03F/333333?text=PastaMushrooms",
+    "ingredients": [
+      { "id": "pasta", "name": "Паста (любая)", "amount": "300 г" },
+      { "id": "mushrooms", "name": "Шампиньоны", "amount": "300 г" },
+      { "id": "cream", "name": "Сливки 20%", "amount": "200 мл" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "oil", "name": "Масло растительное", "amount": "2 ст.л." }
+    ],
+    "steps": [
+      { "text": "Поставить вариться пасту.", "time": 10 },
+      { "text": "Грибы нарезать пластинками, лук – кубиками. Обжарить до золотистости.", "time": 10 },
+      { "text": "Влить сливки к грибам, посолить, тушить до загустения (3-5 мин).", "time": 5 },
+      { "text": "Смешать готовую пасту с соусом.", "time": 2 }
+    ],
+    "source": { "name": "povarenok.ru", "url": "https://www.povarenok.ru/recipes/show/33333/" }
+  },
+  {
+    "id": "fried_zucchini_garlic",
+    "title": "Жареные кабачки с чесноком",
+    "category": "Вторые блюда",
+    "servings": 3,
+    "time_total": 30,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/8BC34A/FFFFFF?text=Zucchini",
+    "ingredients": [
+      { "id": "zucchini", "name": "Кабачок", "amount": "2 шт" },
+      { "id": "flour", "name": "Мука", "amount": "3 ст.л." },
+      { "id": "garlic", "name": "Чеснок", "amount": "3 зубчика" },
+      { "id": "mayo", "name": "Майонез", "amount": "3 ст.л." },
+      { "id": "oil", "name": "Масло для жарки", "amount": "50 мл" }
+    ],
+    "steps": [
+      { "text": "Кабачки нарезать кружочками толщиной 1 см. Посолить.", "time": 5 },
+      { "text": "Обвалять каждый кружок в муке.", "time": 5 },
+      { "text": "Жарить на масле с двух сторон до румяной корочки.", "time": 15 },
+      { "text": "Смешать майонез с давленым чесноком. Смазать готовые кабачки.", "time": 5 }
+    ],
+    "source": { "name": "gotovim-doma.ru", "url": "https://gotovim-doma.ru/recipe/view/zharenye-kabachki" }
+  },
+  {
+    "id": "chicken_chops",
+    "title": "Куриные отбивные",
+    "category": "Вторые блюда",
+    "servings": 4,
+    "time_total": 40,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/D35400/FFFFFF?text=Chops",
+    "ingredients": [
+      { "id": "chicken_breast", "name": "Куриное филе", "amount": "500 г" },
+      { "id": "egg", "name": "Яйцо", "amount": "2 шт" },
+      { "id": "flour", "name": "Мука", "amount": "4 ст.л." },
+      { "id": "oil", "name": "Масло для жарки", "amount": "50 мл" }
+    ],
+    "steps": [
+      { "text": "Филе нарезать пластинами и отбить молотком. Посолить, поперчить.", "time": 15 },
+      { "text": "Яйца взбить вилкой в миске.", "time": 2 },
+      { "text": "Обвалять каждый кусок в муке, затем в яйце.", "time": 5 },
+      { "text": "Жарить на среднем огне по 3-4 минуты с каждой стороны.", "time": 15 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/osnovnye-blyuda/kurinie-otbivnie" }
+  },
+  {
+    "id": "rice_vegetables",
+    "title": "Рис с овощами",
+    "category": "Вторые блюда",
+    "servings": 4,
+    "time_total": 35,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/E67E22/FFFFFF?text=RiceVeg",
+    "ingredients": [
+      { "id": "rice", "name": "Рис", "amount": "1 стакан" },
+      { "id": "onion", "name": "Лук", "amount": "1 шт" },
+      { "id": "carrot", "name": "Морковь", "amount": "1 шт" },
+      { "id": "pepper_bell", "name": "Болгарский перец", "amount": "1 шт" },
+      { "id": "corn_canned", "name": "Кукуруза (или горошек)", "amount": "100 г" },
+      { "id": "oil", "name": "Масло растительное", "amount": "3 ст.л." }
+    ],
+    "steps": [
+      { "text": "Сварить рис до готовности.", "time": 20 },
+      { "text": "Лук, морковь и перец нарезать мелкими кубиками.", "time": 10 },
+      { "text": "Обжарить овощи на масле до мягкости (7-10 мин). Добавить кукурузу.", "time": 10 },
+      { "text": "Добавить рис к овощам, перемешать и прогреть пару минут.", "time": 3 }
+    ],
+    "source": { "name": "povarenok.ru", "url": "https://www.povarenok.ru/recipes/show/ris-s-ovoschami/" }
+  },
+  {
+    "id": "tuna_sandwich",
+    "title": "Сэндвич с тунцом",
+    "category": "Завтраки",
+    "servings": 2,
+    "time_total": 10,
+    "difficulty": "easy",
+    "image": "https://placehold.co/600x400/8D6E63/FFFFFF?text=Sandwich",
+    "ingredients": [
+      { "id": "bread_white", "name": "Хлеб тостовый", "amount": "4 ломтика" },
+      { "id": "canned_fish", "name": "Тунец консервированный", "amount": "1 банка" },
+      { "id": "egg", "name": "Яйцо вареное", "amount": "1 шт" },
+      { "id": "cucumber", "name": "Огурец", "amount": "0.5 шт" },
+      { "id": "mayo", "name": "Майонез", "amount": "1 ст.л." },
+      { "id": "lettuce", "name": "Листья салата", "amount": "2 шт" }
+    ],
+    "steps": [
+      { "text": "Тунца размять вилкой, смешать с майонезом.", "time": 3 },
+      { "text": "Яйцо и огурец нарезать кружочками.", "time": 3 },
+      { "text": "На хлеб выложить лист салата, тунец, яйцо и огурец. Накрыть вторым куском.", "time": 4 }
+    ],
+    "source": { "name": "gotovim-doma.ru", "url": "https://gotovim-doma.ru/recipe/view/sendvich-s-tuntsom" }
+  },
+  {
+    "id": "napoleon_cake_lazy",
+    "title": "Торт Наполеон (из готового теста)",
+    "category": "Десерты",
+    "servings": 8,
+    "time_total": 60,
+    "difficulty": "medium",
+    "image": "https://placehold.co/600x400/F39C12/FFFFFF?text=Napoleon",
+    "ingredients": [
+      { "id": "flour", "name": "Слоеное тесто (готовое)", "amount": "500 г" },
+      { "id": "milk", "name": "Молоко", "amount": "500 мл" },
+      { "id": "sugar", "name": "Сахар", "amount": "150 г" },
+      { "id": "egg", "name": "Яйцо", "amount": "2 шт" },
+      { "id": "butter", "name": "Масло сливочное", "amount": "100 г" },
+      { "id": "flour", "name": "Мука (в крем)", "amount": "2 ст.л." }
+    ],
+    "steps": [
+      { "text": "Тесто разморозить, немного раскатать и выпечь коржи при 200°C (15 мин).", "time": 20 },
+      { "text": "Крем: смешать яйца, сахар и муку. Влить горячее молоко, помешивая.", "time": 10 },
+      { "text": "Варить крем на медленном огне до загустения. Снять, добавить масло.", "time": 10 },
+      { "text": "Коржи остудить, один раскрошить для посыпки. Промазать коржи кремом.", "time": 15 },
+      { "text": "Посыпать крошкой. Убрать в холод на пару часов.", "time": 5 }
+    ],
+    "source": { "name": "eda.ru", "url": "https://eda.ru/recepty/vypechka-deserty/tort-napoleon" }
   }
 ]
